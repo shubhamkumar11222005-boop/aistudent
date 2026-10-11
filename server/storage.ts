@@ -9,6 +9,7 @@ import {
   QuizAttemptRecord,
   ChatQueryRecord,
   ActivityItem,
+  SourceChunkItem,
 } from './types';
 import { chunkText } from './services/chunking';
 
@@ -203,30 +204,53 @@ class Storage {
 
   // --- Chunk Operations ---
   public getChunksForDocument(docId: number): DocumentChunkRecord[] {
+    const doc = this.getDocumentById(docId);
+    const docName = doc ? doc.original_filename : 'Document';
+
     let chunks = this.data.chunks
       .filter((c) => c.document_id === docId)
       .sort((a, b) => a.chunk_index - b.chunk_index);
 
-    if (chunks.length === 0) {
-      const doc = this.getDocumentById(docId);
-      if (doc && doc.extracted_text) {
-        const chunkItems = chunkText(doc.extracted_text);
-        for (const item of chunkItems) {
-          const rec: DocumentChunkRecord = {
-            id: this.data.nextChunkId++,
-            document_id: docId,
-            chunk_index: item.chunk_index,
-            page_number: item.page_number,
-            content: item.content,
-          };
-          this.data.chunks.push(rec);
-          chunks.push(rec);
-        }
-        this.saveToDisk();
+    if (chunks.length === 0 && doc && doc.extracted_text) {
+      const chunkItems = chunkText(doc.extracted_text);
+      for (const item of chunkItems) {
+        const rec: DocumentChunkRecord = {
+          id: this.data.nextChunkId++,
+          document_id: docId,
+          document_name: docName,
+          chunk_index: item.chunk_index,
+          page_number: item.page_number,
+          content: item.content,
+        };
+        this.data.chunks.push(rec);
+        chunks.push(rec);
       }
+      this.saveToDisk();
     }
 
-    return chunks;
+    return chunks.map((c) => ({
+      ...c,
+      document_name: docName,
+    }));
+  }
+
+  public getAllChunks(docIds?: number[]): DocumentChunkRecord[] {
+    const allDocs = this.getDocuments();
+    const docMap = new Map(allDocs.map((d) => [d.id, d.original_filename]));
+    const targetIds = docIds && docIds.length > 0 ? docIds : allDocs.map((d) => d.id);
+
+    const result: DocumentChunkRecord[] = [];
+    for (const id of targetIds) {
+      const chunks = this.getChunksForDocument(id);
+      const docName = docMap.get(id) || 'Document';
+      for (const c of chunks) {
+        result.push({
+          ...c,
+          document_name: docName,
+        });
+      }
+    }
+    return result;
   }
 
   // --- Quiz Operations ---
@@ -340,20 +364,20 @@ class Storage {
 
   // --- Chat Query Operations ---
   public addChatQuery(params: {
-    document_id: number;
+    document_id?: number | null;
+    document_name?: string;
     question: string;
     answer: string;
-    sources: {
-      chunk_index: number;
-      page_number: number;
-      content: string;
-      relevance_score: number;
-    }[];
+    sources: SourceChunkItem[];
   }): ChatQueryRecord {
     const id = this.data.nextQueryId++;
+    const doc = params.document_id ? this.getDocumentById(params.document_id) : null;
+    const docName = params.document_name || (doc ? doc.original_filename : 'All Documents');
+
     const query: ChatQueryRecord = {
       id,
-      document_id: params.document_id,
+      document_id: params.document_id ?? null,
+      document_name: docName,
       question: params.question,
       answer: params.answer,
       sources: params.sources,
@@ -362,15 +386,13 @@ class Storage {
 
     this.data.queries.push(query);
 
-    const doc = this.getDocumentById(params.document_id);
-    const docName = doc ? doc.original_filename : 'Document';
     const preview =
       params.question.length > 60 ? params.question.slice(0, 60) + '...' : params.question;
 
     this.addActivity({
       type: 'chat_question',
       title: `Asked AI: "${preview}"`,
-      description: `Grounded query on ${docName}`,
+      description: `RAG query on ${docName}`,
       meta: { document_name: docName },
     });
 
@@ -378,10 +400,24 @@ class Storage {
     return query;
   }
 
-  public getChatHistory(docId: number): ChatQueryRecord[] {
+  public getChatHistory(docId?: number | 'all' | null): ChatQueryRecord[] {
+    if (!docId || docId === 'all') {
+      return [...this.data.queries].sort(
+        (a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+      );
+    }
     return this.data.queries
-      .filter((q) => q.document_id === docId)
+      .filter((q) => q.document_id === Number(docId))
       .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+  }
+
+  public clearChatHistory(docId?: number | 'all' | null): void {
+    if (!docId || docId === 'all') {
+      this.data.queries = [];
+    } else {
+      this.data.queries = this.data.queries.filter((q) => q.document_id !== Number(docId));
+    }
+    this.saveToDisk();
   }
 
   // --- Activity & Analytics Operations ---

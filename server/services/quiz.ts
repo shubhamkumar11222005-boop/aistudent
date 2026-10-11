@@ -11,10 +11,11 @@ export class QuizService {
   }
 
   public isDemoMode(): boolean {
-    const demoEnv = (process.env.DEMO_MODE || '').toLowerCase();
-    const isExplicitDemo = demoEnv === 'true' || demoEnv === '1' || demoEnv === 'yes';
     const hasKey = Boolean(this.getApiKey());
-    return isExplicitDemo || !hasKey;
+    if (hasKey) {
+      return (process.env.DEMO_MODE || '').toLowerCase() === 'force';
+    }
+    return true;
   }
 
   public async generateQuestions(
@@ -79,8 +80,8 @@ Requirements:
 2. The 'correct_answer' MUST be identical to one of the strings in 'options'.
 3. The 'explanation' must explain why the correct answer is right based on the text.`;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
+    const callPromise = ai.models.generateContent({
+      model: 'gemini-3.1-flash-lite',
       contents: prompt,
       config: {
         responseMimeType: 'application/json',
@@ -104,6 +105,11 @@ Requirements:
       },
     });
 
+    const timeoutPromise = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('Quiz generation timed out after 8s')), 8000)
+    );
+
+    const response = await Promise.race([callPromise, timeoutPromise]);
     const parsed = JSON.parse(response.text?.trim() || '[]');
     if (Array.isArray(parsed)) {
       return parsed

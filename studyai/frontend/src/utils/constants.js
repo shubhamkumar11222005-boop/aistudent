@@ -3,7 +3,11 @@
  */
 export const APP_NAME = "StudyAI";
 export const APP_TAGLINE = "AI-Powered Study Assistant";
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+const rawBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').trim();
+export const API_BASE_URL =
+  rawBaseUrl.startsWith('http://') || rawBaseUrl.startsWith('https://')
+    ? rawBaseUrl.replace(/\/+$/, '')
+    : '';
 
 export const PROJECT_METADATA = {
   version: "0.2.0",

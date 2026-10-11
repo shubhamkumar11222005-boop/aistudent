@@ -205,6 +205,16 @@ export function DocumentsPage({ onNavigate }) {
           </button>
 
           <button
+            id="btn-chat-all-documents"
+            onClick={() => onNavigate && onNavigate('chat', 'all')}
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-indigo-300 bg-indigo-600/20 hover:bg-indigo-600 hover:text-white border border-indigo-500/30 transition-all shadow-sm"
+            title="Open common chat across all documents"
+          >
+            <Bot className="w-4 h-4" />
+            <span>Chat All PDFs</span>
+          </button>
+
+          <button
             id="btn-trigger-upload-top"
             onClick={() => fileInputRef.current?.click()}
             disabled={isUploading}

@@ -267,7 +267,7 @@ export function Sidebar({ currentRoute, onNavigate, healthStatus }) {
                 <span className={`w-1.5 h-1.5 rounded-full ${isOnline ? 'bg-emerald-400' : 'bg-amber-400'}`} />
                 <span className="font-medium text-slate-300">{isOnline ? 'Backend Online' : 'Connecting...'}</span>
               </div>
-              <span className="text-[10px] text-slate-500 font-mono">FastAPI</span>
+              <span className="text-[10px] text-slate-500 font-mono">StudyAI Core</span>
             </div>
 
             {/* Profile Card */}

@@ -85,18 +85,62 @@ apiRouter.post(
           .json({ detail: `Failed to parse PDF document: ${pdfErr.message || pdfErr}` });
       }
 
-      if (!extractedText.trim()) {
+      // Check if extracted text is only page numbers or virtually empty (scanned PDF)
+      const pureText = extractedText.replace(/--\s*\d+\s*of\s*\d+\s*--/gi, '').trim();
+      const apiKey = process.env.GEMINI_API_KEY || process.env.AI_API_KEY || '';
+
+      if (pureText.length < 50 && apiKey) {
+        try {
+          const { GoogleGenAI } = await import('@google/genai');
+          const ai = new GoogleGenAI({
+            apiKey,
+            httpOptions: { headers: { 'User-Agent': 'aistudio-build' } },
+          });
+          const ocrResponse = await ai.models.generateContent({
+            model: 'gemini-3.8-flash',
+            contents: [
+              {
+                inlineData: {
+                  mimeType: 'application/pdf',
+                  data: req.file.buffer.toString('base64'),
+                },
+              },
+              'Extract the complete academic study text, lecture notes, formulas, definitions, and main topics from this document. Organize by chapter or page where applicable.',
+            ],
+          });
+          const ocrText = ocrResponse.text?.trim();
+          if (ocrText && ocrText.length > 50) {
+            extractedText = ocrText;
+          }
+        } catch (ocrErr) {
+          console.warn('[StudyAI Server] Gemini OCR extraction warning:', ocrErr);
+        }
+      }
+
+      if (!extractedText.trim() || extractedText.replace(/--\s*\d+\s*of\s*\d+\s*--/gi, '').trim().length < 10) {
         return res.status(400).json({
           detail:
-            'The uploaded PDF contains no extractable text. Please ensure it is not a scanned image PDF.',
+            'The uploaded PDF contains no extractable text or recognizable content. Please ensure it has readable text.',
         });
       }
+
+      // Persist uploaded file to .data/uploads
+      const fs = await import('fs');
+      const path = await import('path');
+      const uploadsDir = path.resolve(process.cwd(), '.data/uploads');
+      if (!fs.existsSync(uploadsDir)) {
+        fs.mkdirSync(uploadsDir, { recursive: true });
+      }
+      const safeFilename = `${Date.now()}_${originalName.replace(/[^a-zA-Z0-9_\.-]/g, '_')}`;
+      const savedPath = path.join(uploadsDir, safeFilename);
+      fs.writeFileSync(savedPath, req.file.buffer);
 
       const doc = storage.addDocument({
         original_filename: originalName,
         file_size: req.file.size,
         page_count: pageCount,
         extracted_text: extractedText,
+        file_path: savedPath,
       });
 
       return res.status(201).json(doc);
@@ -151,15 +195,25 @@ apiRouter.get('/chat/status', (req: Request, res: Response) => {
   return res.json({
     demo_mode: demoMode,
     has_api_key: Boolean(apiKey.trim()),
-    model: 'gemini-3.8-flash',
-    retrieval_strategy: 'KeywordRelevanceRetriever (TF-ICF + Phrase Matching)',
+    model: 'gemini-3.1-flash-lite (Ultra Fast)',
+    retrieval_strategy: 'Multi-Document TF-ICF + Diversity Grounding',
     chunking_strategy: 'Sliding window (600 chars, 100 overlap, paragraph-aware)',
   });
 });
 
-// 8. Chat history
+// 8. Chat history (supports global unified history or per-document)
+apiRouter.get('/chat/history', (req: Request, res: Response) => {
+  const history = storage.getChatHistory('all');
+  return res.json(history);
+});
+
 apiRouter.get('/chat/history/:document_id', (req: Request, res: Response) => {
-  const docId = parseInt(req.params.document_id, 10);
+  const param = req.params.document_id;
+  if (!param || param === 'all') {
+    const history = storage.getChatHistory('all');
+    return res.json(history);
+  }
+  const docId = parseInt(param, 10);
   const doc = storage.getDocumentById(docId);
   if (!doc) {
     return res.status(404).json({ detail: `Document with ID ${docId} was not found.` });
@@ -168,48 +222,101 @@ apiRouter.get('/chat/history/:document_id', (req: Request, res: Response) => {
   return res.json(history);
 });
 
-// 9. Post chat query
+// Clear chat history
+apiRouter.delete('/chat/history', (req: Request, res: Response) => {
+  storage.clearChatHistory('all');
+  return res.json({ success: true, message: 'Chat history cleared successfully.' });
+});
+
+apiRouter.delete('/chat/history/:document_id', (req: Request, res: Response) => {
+  const param = req.params.document_id;
+  storage.clearChatHistory(param === 'all' ? 'all' : parseInt(param, 10));
+  return res.json({ success: true, message: 'Chat history cleared.' });
+});
+
+// 9. Post chat query (supports Multi-Document Global RAG across all uploaded PDFs)
 apiRouter.post('/chat', async (req: Request, res: Response) => {
-  const { document_id, question } = req.body;
-  const docId = Number(document_id);
-  if (!docId || !question || !String(question).trim()) {
-    return res.status(400).json({ detail: 'document_id and non-empty question are required.' });
+  const { document_id, document_ids, question } = req.body;
+  const cleanQ = String(question || '').trim();
+
+  if (!cleanQ) {
+    return res.status(400).json({ detail: 'A non-empty question is required.' });
   }
 
-  const doc = storage.getDocumentById(docId);
-  if (!doc) {
-    return res.status(404).json({ detail: `Document with ID ${docId} was not found.` });
-  }
-
-  const chunks = storage.getChunksForDocument(docId);
-  if (chunks.length === 0) {
+  const allDocs = storage.getDocuments();
+  if (allDocs.length === 0) {
     return res.json({
-      answer: `The document **${doc.original_filename}** has no extractable text.`,
+      answer: 'No study documents are currently uploaded in your library. Please upload a PDF to start asking grounded questions!',
       sources: [],
       demo_mode: aiService.isDemoMode(),
-      document_id: doc.id,
-      document_name: doc.original_filename,
+      document_id: null,
+      document_name: 'No Documents',
     });
   }
 
-  const retrieved = retrieveChunks(chunks, String(question).trim(), 4);
+  const isAllDocs = !document_id || document_id === 'all' || document_id === 0;
+  let targetDocId: number | null = null;
+  let scopeName = `All Documents (${allDocs.length} PDFs)`;
+  let chunks: any[] = [];
+
+  if (isAllDocs) {
+    // Multi-document search: gather chunks across all uploaded PDFs (or selected document_ids)
+    const filterIds = Array.isArray(document_ids) && document_ids.length > 0 ? document_ids : undefined;
+    chunks = storage.getAllChunks(filterIds);
+    targetDocId = null;
+    if (filterIds && filterIds.length === 1) {
+      const single = storage.getDocumentById(filterIds[0]);
+      if (single) scopeName = single.original_filename;
+    }
+  } else {
+    // Specific single document search
+    targetDocId = Number(document_id);
+    const doc = storage.getDocumentById(targetDocId);
+    if (!doc) {
+      return res.status(404).json({ detail: `Document with ID ${targetDocId} was not found.` });
+    }
+    scopeName = doc.original_filename;
+    chunks = storage.getChunksForDocument(targetDocId);
+  }
+
+  if (chunks.length === 0) {
+    return res.json({
+      answer: `The selected study materials (${scopeName}) contain no extractable text chunks to answer this question.`,
+      sources: [],
+      demo_mode: aiService.isDemoMode(),
+      document_id: targetDocId,
+      document_name: scopeName,
+    });
+  }
+
+  // Multi-document chunk retrieval with global TF-ICF ranking
+  let retrieved = retrieveChunks(chunks, cleanQ, 6);
+  if (retrieved.length === 0 && chunks.length > 0) {
+    retrieved = chunks.slice(0, 4).map((c) => ({
+      ...c,
+      score: 0.5,
+    }));
+  }
+
   const contextParts = retrieved.map(
-    (c) => `[Chunk ${c.chunk_index + 1} | Page ${c.page_number}]\n${c.content}`
+    (c, i) =>
+      `[Source ${i + 1} | Document: "${c.document_name || 'Document'}" | Page ${c.page_number} | Chunk ${c.chunk_index + 1}]\n${c.content}`
   );
-  const contextText = contextParts.join('\n\n');
+  const contextText = contextParts.join('\n\n---\n\n');
 
   try {
     const result = await aiService.answerQuestion(
-      String(question).trim(),
+      cleanQ,
       contextText,
-      doc.original_filename,
+      scopeName,
       retrieved
     );
 
-    // Save query to history
+    // Save query to unified history
     storage.addChatQuery({
-      document_id: docId,
-      question: String(question).trim(),
+      document_id: targetDocId,
+      document_name: scopeName,
+      question: cleanQ,
       answer: result.answer,
       sources: result.sources,
     });
@@ -218,8 +325,8 @@ apiRouter.post('/chat', async (req: Request, res: Response) => {
       answer: result.answer,
       sources: result.sources,
       demo_mode: result.demo_mode,
-      document_id: doc.id,
-      document_name: doc.original_filename,
+      document_id: targetDocId,
+      document_name: scopeName,
     });
   } catch (err: any) {
     console.error('[Chat error]', err);

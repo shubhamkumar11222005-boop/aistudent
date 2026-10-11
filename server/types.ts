@@ -14,6 +14,7 @@ export interface DocumentRecord {
 export interface DocumentChunkRecord {
   id: number;
   document_id: number;
+  document_name?: string;
   chunk_index: number;
   page_number: number;
   content: string;
@@ -49,17 +50,22 @@ export interface QuizAttemptRecord {
   completed_at: string;
 }
 
+export interface SourceChunkItem {
+  document_id?: number;
+  document_name?: string;
+  chunk_index: number;
+  page_number: number;
+  content: string;
+  relevance_score: number;
+}
+
 export interface ChatQueryRecord {
   id: number;
-  document_id: number;
+  document_id?: number | null;
+  document_name?: string;
   question: string;
   answer: string;
-  sources: {
-    chunk_index: number;
-    page_number: number;
-    content: string;
-    relevance_score: number;
-  }[];
+  sources: SourceChunkItem[];
   created_at: string;
 }
 

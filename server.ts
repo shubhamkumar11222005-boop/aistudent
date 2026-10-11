@@ -26,8 +26,9 @@ async function startServer() {
     console.warn('[StudyAI Server] Seeding error:', seedErr);
   }
 
-  // Mount API router under /api
+  // Mount API router under /api and support any prefixed paths (e.g. /Shubham123/api)
   app.use('/api', apiRouter);
+  app.use('/:prefix/api', apiRouter);
 
   // Frontend integration: Vite middleware in development, static files in production
   if (process.env.NODE_ENV === 'production') {

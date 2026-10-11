@@ -23,6 +23,30 @@
       "text_preview": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Disc...",
       "extracted_text": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --\n\n",
       "file_path": null
+    },
+    {
+      "id": 4,
+      "filename": "1791738940174_Signal System_260912_144655.pdf",
+      "original_filename": "Signal System_260912_144655.pdf",
+      "file_size": 5248279,
+      "page_count": 74,
+      "upload_date": "2026-10-11T17:15:40.174Z",
+      "processing_status": "completed",
+      "text_preview": "--- Page 1 ---\nChapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time sign...",
+      "extracted_text": "--- Page 1 ---\nChapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time signals x(t) are defined along a continuous independent time continuum t in R. Discrete-time signals x[n] are defined at integer index values n in Z, commonly obtained by periodic sampling with interval Ts.\n\n--- Page 2 ---\nElementary Signals:\n1. Unit Impulse Function delta(t): Characterized by zero value for all t != 0 and infinite height at t = 0 with unit area: integral from -infinity to +infinity of delta(t) dt = 1. The sifting property states: integral of x(t)*delta(t - t0) dt = x(t0).\n2. Unit Step Function u(t): Defined as u(t) = 1 for t >= 0 and u(t) = 0 for t < 0. Related to delta(t) via d/dt[u(t)] = delta(t).\n\n--- Page 3 ---\nSignal Operations & Classifications:\nTransformations of independent variable: Time shifting x(t - t0) (delay if t0 > 0, advance if t0 < 0), Time reversal x(-t), and Time scaling x(at) (compression if |a| > 1, expansion if 0 < |a| < 1).\nEnergy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt. Average power P = lim T->inf (1/2T) integral from -T to +T |x(t)|^2 dt. An energy signal has 0 < E < inf and P = 0. A power signal has 0 < P < inf and E = inf.\n\n--- Page 4 ---\nChapter 2: System Properties and Classifications\nA system takes an input signal x(t) and produces an output signal y(t) according to a transformation operator y(t) = T{x(t)}.\n1. Linearity: A system is linear if it satisfies the superposition principle (additivity and homogeneity): T{a*x1(t) + b*x2(t)} = a*T{x1(t)} + b*T{x2(t)} for all scalar constants a and b.\n\n--- Page 5 ---\n2. Time-Invariance: A system is time-invariant if a time shift in the input signal produces an identical time shift in the output: If x(t) -> y(t), then x(t - t0) -> y(t - t0) for all t0.\n3. Causality: A system is causal if the output at any time t0 depends only on input values at t <= t0 (present and past values), not on future values. For LTI systems, causality requires the impulse response h(t) = 0 for t < 0.\n\n--- Page 6 ---\n4. BIBO Stability: Bounded-Input Bounded-Output stability requires that every bounded input |x(t)| <= Mx < inf produces a bounded output |y(t)| <= My < inf. For continuous-time LTI systems, BIBO stability is equivalent to absolute integrability of impulse response: integral from -inf to +inf |h(t)| dt < inf.\n5. Memory (Static vs Dynamic): A memoryless (static) system output depends only on the current input at that exact instant.\n\n--- Page 7 ---\nChapter 3: Linear Time-Invariant (LTI) Systems and Convolution\nLTI systems are completely characterized by their impulse response h(t) = T{delta(t)}.\nContinuous-Time Convolution Integral:\ny(t) = x(t) * h(t) = integral from -infinity to +infinity of x(tau) * h(t - tau) dtau.\nDiscrete-Time Convolution Sum:\ny[n] = x[n] * h[n] = sum from k = -infinity to +infinity of x[k] * h[n - k].\n\n--- Page 8 ---\nProperties of Convolution:\n1. Commutative Property: x(t) * h(t) = h(t) * x(t).\n2. Associative Property: [x(t) * h1(t)] * h2(t) = x(t) * [h1(t) * h2(t)]. Series/cascade connection of LTI systems can be combined into h(t) = h1(t) * h2(t).\n3. Distributive Property: x(t) * [h1(t) + h2(t)] = x(t)*h1(t) + x(t)*h2(t). Parallel connection combines impulse responses by addition.\n\n--- Page 9 ---\nStep Response:\nThe step response s(t) is the response of an LTI system to a unit step input: s(t) = integral from -infinity to t of h(tau) dtau. Conversely, the impulse response is the time-derivative of the step response: h(t) = ds(t)/dt.\n\n--- Page 10 ---\nChapter 4: Fourier Analysis of Continuous-Time Signals\nContinuous-Time Fourier Series (CTFS): Any periodic signal x(t) with fundamental period T0 and fundamental frequency w0 = 2*pi/T0 satisfying the Dirichlet conditions can be represented as an infinite sum of harmonically related complex exponentials:\nx(t) = sum from k = -infinity to +infinity of a_k * exp(j * k * w0 * t),\nwhere Fourier coefficients a_k = (1/T0) * integral over T0 of x(t) * exp(-j * k * w0 * t) dt.\n\n--- Page 11 ---\nDirichlet Conditions for Fourier Series Convergence:\n1. Over any period, x(t) must be absolutely integrable: integral over T0 of |x(t)| dt < inf.\n2. In any finite interval, x(t) has a finite number of local maxima and minima.\n3. In any finite interval, x(t) has a finite number of discontinuities, and each discontinuity is finite.\n\n--- Page 12 ---\nParseval Relation for Fourier Series:\nThe average power of a periodic signal equals the sum of the average powers of its individual harmonic components: P = (1/T0) * integral over T0 of |x(t)|^2 dt = sum from k = -inf to +inf of |a_k|^2.\n\n--- Page 13 ---\nChapter 5: Continuous-Time Fourier Transform (CTFT)\nThe Fourier Transform extends frequency representation to aperiodic signals by taking T0 -> infinity.\nForward Fourier Transform: X(jw) = integral from -infinity to +infinity of x(t) * exp(-j * w * t) dt.\nInverse Fourier Transform: x(t) = (1 / (2*pi)) * integral from -infinity to +infinity of X(jw) * exp(j * w * t) dw.\n\n--- Page 14 ---\nKey Properties of Fourier Transform:\n1. Linearity: a*x1(t) + b*x2(t) <-> a*X1(jw) + b*X2(jw).\n2. Time Shifting: x(t - t0) <-> exp(-j * w * t0) * X(jw).\n3. Frequency Shifting: exp(j * w0 * t) * x(t) <-> X(j(w - w0)).\n4. Convolution in Time: x(t) * h(t) <-> X(jw) * H(jw). Convolution in time corresponds to point-by-point multiplication in frequency domain!\n5. Differentiation in Time: d/dt[x(t)] <-> (j*w) * X(jw).\n6. Parseval Energy Theorem: integral |x(t)|^2 dt = (1 / (2*pi)) * integral |X(jw)|^2 dw.\n\n--- Page 15 ---\nFrequency Response of LTI Systems:\nThe frequency response H(jw) is the Fourier transform of the impulse response h(t). It decomposes into magnitude response |H(jw)| (gain) and phase response theta(w) = angle(H(jw)). For an input sinusoidal signal x(t) = cos(w0*t), the output is y(t) = |H(jw0)| * cos(w0*t + angle(H(jw0))).\n\n--- Page 16 ---\nChapter 6: The Laplace Transform\nThe bilateral Laplace Transform is defined as: X(s) = integral from -infinity to +infinity of x(t) * exp(-s*t) dt, where s = sigma + j*w is the complex frequency variable.\nThe unilateral Laplace Transform integrates from 0- to infinity: X(s) = integral from 0- to +infinity of x(t) * exp(-s*t) dt, ideal for causal initial-value problems.\n\n--- Page 17 ---\nRegion of Convergence (ROC) for Laplace Transform:\n1. The ROC consists of strips parallel to the jw-axis in the s-plane: sigma1 < Re{s} < sigma2.\n2. The ROC cannot contain any poles.\n3. For right-sided signals (e.g. causal signals), the ROC is to the right of the rightmost pole: Re{s} > sigma_max.\n4. For an LTI system to be stable, the jw-axis must lie within the ROC, meaning Re{s} = 0 is included.\n\n--- Page 18 ---\nTransfer Function H(s) and System Stability:\nThe transfer function H(s) = Y(s) / X(s) = L{h(t)}. Roots of the numerator are zeros; roots of the denominator are poles. A causal LTI system is BIBO stable if and only if all poles of H(s) lie strictly in the open left-half of the s-plane: Re{p_i} < 0.\n\n--- Page 19 ---\nChapter 7: The Z-Transform for Discrete-Time Signals\nThe bilateral Z-Transform is defined as: X(z) = sum from n = -infinity to +infinity of x[n] * z^(-n), where z = r * exp(j*w) is a complex variable.\nThe Z-transform evaluated on the unit circle (|z| = 1, r = 1) reduces to the Discrete-Time Fourier Transform (DTFT): X(exp(jw)).\n\n--- Page 20 ---\nRegion of Convergence (ROC) in the Z-Plane:\n1. The ROC is a ring or annular region centered at the origin: r_min < |z| < r_max.\n2. The ROC cannot contain any poles.\n3. For a causal discrete-time signal, the ROC extends outward from the outermost pole: |z| > r_max.\n4. Stability Criterion: A causal discrete-time LTI system is BIBO stable if and only if all poles of H(z) lie strictly inside the unit circle: |p_i| < 1.\n\n--- Page 21 ---\nInverse Z-Transform Methods:\n1. Partial Fraction Expansion: Decompose H(z) into first and second-order terms and use transform lookup tables.\n2. Power Series / Long Division: Expand H(z) into negative powers of z, where the coefficients yield x[n] directly.\n3. Contour Integration: Using Cauchy Residue Theorem: x[n] = (1 / 2*pi*j) * contour_integral X(z) * z^(n-1) dz.\n\n--- Page 22 ---\nChapter 8: Sampling Theorem and Signal Reconstruction\nNyquist-Shannon Sampling Theorem:\nA continuous-time bandlimited signal x(t) with highest frequency f_max (or bandwidth w_max = 2*pi*f_max) can be uniquely and completely reconstructed from its samples x[n] = x(n*Ts) if and only if the sampling frequency fs satisfies:\nfs >= 2 * f_max  (or ws >= 2 * w_max).\nThe threshold frequency fs_nyquist = 2 * f_max is called the Nyquist rate.\n\n--- Page 23 ---\nAliasing and Anti-Aliasing Filters:\nIf sampling occurs at fs < 2*f_max (undersampling), spectral replicas overlap in the frequency domain, creating irreversible frequency distortion called aliasing.\nAn analog Anti-Aliasing Lowpass Filter is placed prior to the Analog-to-Digital Converter (ADC) to remove any spectral content above fs/2 before sampling.\n\n--- Page 24 ---\nIdeal Signal Reconstruction:\nUsing an ideal lowpass filter with cutoff wc = ws/2 and gain Ts, the continuous-time signal is reconstructed via Whittaker-Shannon interpolation formula:\nx(t) = sum from n = -infinity to +infinity of x(n*Ts) * sinc((t - n*Ts) / Ts),\nwhere sinc(u) = sin(pi*u) / (pi*u).\n\n--- Page 25 ---\nChapter 9: The Discrete Fourier Transform (DFT)\nThe N-point DFT converts an N-point sequence x[n] into N frequency samples:\nX[k] = sum from n = 0 to N-1 of x[n] * W_N^(k*n), where W_N = exp(-j * 2*pi / N) is the twiddle factor.\nThe Fast Fourier Transform (FFT) algorithms (Decimation-in-Time and Decimation-in-Frequency) reduce computation from O(N^2) complex operations down to O(N * log2(N)).\n\n--- Page 26 ---\nChapter 10: Analog and Digital Filter Foundations\nFilter Types: Lowpass, Highpass, Bandpass, and Bandstop filters.\nSpecifications: Passband ripple delta_p, Stopband attenuation delta_s, Passband cutoff wp, Stopband cutoff ws.\nButterworth Filter: Maximally flat magnitude response in the passband with no ripple: |H(jw)|^2 = 1 / [1 + (w/wc)^(2N)].\nChebyshev Type I Filter: Equiripple passband and monotonic stopband, providing steeper roll-off than Butterworth for the same filter order N.",
+      "file_path": null
+    },
+    {
+      "id": 7,
+      "filename": "1791741687225_Power Electronics notes (501).pdf",
+      "original_filename": "Power Electronics notes (501).pdf",
+      "file_size": 9608755,
+      "page_count": 99,
+      "upload_date": "2026-10-11T18:01:27.225Z",
+      "processing_status": "completed",
+      "text_preview": "Here is the comprehensive extraction and compilation of the academic study text, lecture notes, circuit analyses, formulas, and solved numerical problems from the manuscript, organized sequentially by...",
+      "extracted_text": "Here is the comprehensive extraction and compilation of the academic study text, lecture notes, circuit analyses, formulas, and solved numerical problems from the manuscript, organized sequentially by **Units** and **Pages**.\n\n---\n\n# UNIT 1: POWER SEMICONDUCTOR DEVICES\n\n---\n\n### Page 1\n#### Block Diagram of a Typical Power Electronic System\n* **Elements:**\n  * **Command Signal** $\\rightarrow$ **Control Unit** $\\rightarrow$ **Digital Circuit** $\\rightarrow$ **Power Electronic Circuit** $\\rightarrow$ **Load**\n  * **Main Power Source** supplies the Power Electronic Circuit.\n  * **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit.\n\n* **Key Concepts:**\n  * The control of electric motor devices requires control of electric power.\n  * Power electronics is based on the switching of power semiconductor devices.\n\n#### Broad Categorization of Power Semiconductor Devices:\n1. **Power Diodes** (e.g., ratings up to $600\\text{ V}, 4500\\text{ A}$)\n2. **Transistors** (BJT, MOSFET, IGBT)\n3. **Thyristors** (e.g., ratings up to $10\\text{ kV}, 300\\text{ A}, 30\\text{ MW}$)\n\n#### Power Diode\n* A power diode is a type of diode that is commonly used in power electronics circuits.\n\n#### Characteristics of Power Diodes:\n* **Reverse Recovery Time ($t_{rr}$):** After the forward-bias diode current decays to zero, the diode continues to conduct in the reverse direction because of the presence of stored charges in the two layers (junction/depletion regions).\n\n---\n\n### Page 2\n* The reverse current flows for a time called the **Reverse Recovery Time ($t_{rr}$)**.\n* **Definition of $t_{rr}$:** The time interval between the instant the forward current becomes zero and the instant the reverse recovery current decays to $25\\%$ of its peak reverse value ($I_{RM}$).\n  $$t_{rr} = t_a + t_b$$\n  * **$t_a$:** Time between zero crossing of forward current and peak reverse current $I_{RM}$. During time $t_a$, charge stored in the depletion region is removed.\n  * **$t_b$:** Time from the instant of peak reverse current $I_{RM}$ to the instant where $0.25\\,I_{RM}$ is reached.\n* **Softness Factor ($S$-factor):**\n  $$S\\text{-factor} = \\frac{t_a}{t_b}$$\n\n#### Power Transistors Types:\n1. **Bipolar Junction Transistors (BJT)**\n2. **Metal Oxide Semiconductor Field-Effect Transistors (MOSFET)**\n3. **Insulated Gate Bipolar Transistors (IGBT)**\n\n---\n\n### Page 3\n#### 1. Power BJT (Bipolar Junction Transistor)\n* A BJT has three terminals named: **Collector ($C$)**, **Emitter ($E$)**, and **Base ($B$)**.\n* The term \"bipolar\" denotes that current flow in the device is due to the movement of both holes and electrons.\n\n#### Circuit Equations (Applying KVL to input and output):\n* **Input loop:**\n  $$V_B - R_B I_B - V_{BE} = 0 \\implies I_B = \\frac{V_B - V_{BE}}{R_B}$$\n* **Output loop:**\n  $$V_{CC} = V_{CE} + I_C R_C \\implies V_{CE} = V_{CC} - I_C R_C = V_{CC} - \\beta I_B R_C$$\n  $$V_{CE} = V_{CB} + V_{BE} \\implies V_{CB} = V_{CE} - V_{BE}$$\n\n#### NPN Transistor Characteristics:\n1. **Input Characteristics:**\n   * Graph between base current $I_B$ and base-emitter voltage $V_{BE}$ for constant $V_{CE}$.\n   * As the base-emitter junction is like a diode, the curve resembles a standard forward diode characteristic.\n2. **Output Characteristics:**\n   * Graph between collector current $I_C$ and collector-emitter voltage $V_{CE}$ for various values of base current $I_B$ ($I_{B4} > I_{B3} > I_{B2} > I_{B1}$).\n   * Regions: **Saturation Region**, **Active Region**, and **Cutoff Region** (leakage current when $I_B = 0$).\n\n---\n\n### Page 4\n#### Output Characteristics and DC Load Line for NPN Transistor\n* **Saturation Point:** Where $V_{CE} \\approx 0$, $I_C = \\frac{V_{CC}}{R_C}$.\n* **Cutoff Point:** Where $I_B = 0$, $V_{CE} = V_{CC}$.\n* **Load line equation:**\n  $$I_C = \\frac{V_{CC} - V_{CE}}{R_C}$$\n* **Breakdown & Breakover Voltage:** Beyond safe operating voltage limits, device enters breakdown.\n\n#### 2. Power MOSFET\n* A Power MOSFET has three terminals: **Drain ($D$)**, **Source ($S$)**, and **Gate ($G$)**.\n* **Comparison:**\n  * BJT is a **current-controlled** device.\n  * MOSFET is a **voltage-controlled** device.\n* **Basic Structure:** N-Channel Enhancement Type Power MOSFET consists of a $p$-substrate with heavily doped $n^+$ regions forming source and drain, separated by a channel controlled by an insulated gate electrode.\n\n---\n\n### Page 5\n#### MOSFET Classification:\n* $n$-channel Enhancement MOSFET\n* $p$-channel Enhancement MOSFET\n\n#### MOSFET Characteristics:\nThe variation of drain current $I_D$ as a function of gate-source voltage $V_{GS}$ and drain-source voltage $V_{DS}$.\n1. **Transfer Characteristics:**\n   * Plot of drain current $I_D$ versus gate-source voltage $V_{GS}$.\n   * Device remains OFF until $V_{GS}$ exceeds the threshold voltage $V_{GST}$ ($V_{th}$).\n2. **Output Characteristics:**\n   * Plot of drain current $I_D$ versus drain-source voltage $V_{DS}$ for different values of $V_{GS}$ ($V_{GS5} > V_{GS4} > V_{GS3} > V_{GS2} > V_{GS1}$).\n   * A load line intersects the output characteristics at points $A$ (ON state / saturation) and $B$ (OFF state / cutoff), functioning as a switch like a BJT.\n3. **Switching Characteristics:**\n   * Heavily influenced by internal capacitances ($C_{gs}, C_{gd}, C_{ds}$) and internal impedance of the gate drive circuit.\n   * **Turn-on Delay Time ($t_{dn}$):** Time during which input capacitance charges to gate threshold voltage $V_{GST}$.\n   * **Rise Time ($t_r$):** Time during which gate voltage rises from $V_{GST}$ to full gate voltage $V_{GSP}$ sufficient to drive the device into full conduction.\n\n---\n\n### Page 6\n* **Total Turn-On Time:**\n  $$t_{on} = t_{dn} + t_r$$\n  * Turn-on time can be reduced by using a low-impedance gate drive source.\n  * During $t_r$, drain current rises from zero to full load current $I_D$.\n* **Turn-Off Process:**\n  * Initiated upon removal of gate voltage at instant $t_1$.\n  * **Turn-off Delay Time ($t_{df}$):** Time during which input capacitance discharges from gate drive voltage $V_1$ down to plateau level $V_{GSP}$.\n  * **Fall Time ($t_f$):** Time during which input capacitance discharges from $V_{GSP}$ down to $V_{GST}$, and drain current falls from $I_D$ to zero.\n\n---\n\n### Page 6 – Page 7\n#### Thyristors (SCR - Silicon Controlled Rectifier)\n* Developed at **Bell Laboratories (USA) in 1957**.\n* A four-layer ($p$-$n$-$p$-$n$), three-junction ($J_1, J_2, J_3$) switching device.\n* **Name Etymology:** Combination of **THY**ratron tube and trans**ISTOR**.\n* **Three Terminals:**\n  * **Anode ($A$):** Connected to outer $p$-region.\n  * **Cathode ($K$):** Connected to outer $n$-region.\n  * **Gate ($G$):** Connected to inner $p$-region.\n* **Ratings:**\n  * Voltage rating up to $10\\text{ kV}$, RMS current up to $3000\\text{ A}$, power capacity up to $30\\text{ MW}$.\n* **Constructional Features:**\n  * Threaded stud portion for tightening the thyristor to the heatsink/frame with a nut.\n  * Requires cooling to prevent thermal runaway.\n* **Properties:**\n  * Unidirectional device.\n  * Compact, high reliability, low on-state loss.\n  * Low gate power (e.g., $1\\text{ A}, 10\\text{ W}$) can trigger high power conduction.\n\n---\n\n### Page 8\n#### Static V-I Characteristics of a Thyristor\n* **Modes of Operation:**\n  1. **Reverse Blocking Mode:** Anode is negative with respect to cathode. Junctions $J_1$ and $J_3$ are reverse biased; $J_2$ is forward biased. Only reverse leakage current flows until reverse breakdown voltage ($V_{BR}$) is reached.\n  2. **Forward Blocking Mode:** Anode is positive with respect to cathode with gate open ($I_g = 0$). $J_1$ and $J_3$ are forward biased; $J_2$ is reverse biased. A small forward leakage current flows until forward breakover voltage ($V_{BO}$) is reached.\n  3. **Forward Conduction Mode:** Device switches to low-resistance, high-current ON-state either when $V_{AK} > V_{BO}$ or by injecting a gate current pulse $I_g$ ($I_{g3} > I_{g2} > I_{g1}$).\n* **Definitions:**\n  * **Forward Breakover Voltage ($V_{BO}$):** Minimum forward voltage at which SCR starts conducting without gate signal.\n  * **Reverse Breakover Voltage ($V_{BR}$):** Maximum reverse voltage before avalanche occurs.\n\n---\n\n### Page 9\n* **Switch Analogy:** In forward blocking mode, the SCR acts as an open switch. In conduction mode, it behaves like a closed switch with a small forward voltage drop ($1\\text{ to }2\\text{ V}$).\n* **Advantages of Thyristor:**\n  1. High switching speed.\n  2. Small size, highly reliable operation.\n  3. Power delivered to the load can be precisely controlled.\n  4. Low forward voltage drop in conducting state.\n* **Disadvantages:**\n  1. Unidirectional current device.\n  2. Can turn ON inadvertently due to high $dv/dt$ spikes in supply.\n  3. Cannot be turned off by gate control (requires external commutation).\n* **Applications:**\n  1. Speed control of AC and DC motors.\n  2. Voltage stabilizers, temperature controllers, static circuit breakers.\n  3. Inverters (DC to AC), rectifiers (AC to DC).\n\n---\n\n### Page 10\n#### Thyristor Turn-ON Methods:\n1. **Forward Voltage Triggering:** Increasing $V_{AK}$ beyond $V_{BO}$.\n2. **Gate Triggering:** Injecting current into the gate terminal.\n3. **$dv/dt$ Triggering:** Rapid rate of rise of anode voltage inducing junction capacitance displacement current.\n4. **Temperature Triggering:** Increased temperature reduces $J_2$ depletion width.\n5. **Light Triggering (LASCR):** Light radiation creates electron-hole pairs near $J_2$.\n\n#### Critical Current Definitions:\n* **Latching Current ($I_L$):** The minimum anode current that the SCR must attain during the turn-on process to maintain conduction when the gate signal is removed.\n* **Holding Current ($I_H$):** The minimum value of anode current below which it must fall to turn off the thyristor ($I_L > I_H$).\n\n---\n\n### Page 11\n#### Waveforms of Half-Wave SCR Circuit:\n* **Supply Voltage:** $V_i = V_m \\sin \\omega t$.\n* **Gate Pulse:** Applied at firing angle $\\alpha$, $2\\pi+\\alpha$, etc.\n* **Output Voltage ($v_o$):** Conduction occurs from $\\alpha$ to $\\pi$, $2\\pi+\\alpha$ to $3\\pi$, etc.\n* **Output Current ($i_o$):** Same waveform shape as output voltage for resistive load.\n* **SCR Voltage ($v_T$):** Equal to $V_i$ when OFF; drops to zero (approx.) when ON.\n\n---\n\n### Page 12\n#### Switching Parameters (Dynamic Characteristics during Turn-on):\n1. **Delay Time ($t_d$):** Time during which anode voltage falls from $V_a$ to $0.9\\,V_a$ (or anode current rises from $0$ to $0.1\\,I_a$).\n2. **Rise Time ($t_r$):** Time taken by anode current to rise from $0.1\\,I_a$ to $0.9\\,I_a$ (or anode voltage falls from $0.9\\,V_a$ to $0.1\\,V_a$).\n3. **Spread Time ($t_p$):** Time taken by anode current to increase from $0.9\\,I_a$ to full steady-state value $I_a$, or voltage to drop from $0.1\\,V_a$ to on-state conduction drop.\n4. **Commutation Process:** The process of turning off an SCR from conduction state to forward blocking state.\n\n#### Two-Transistor Model of SCR:\n* SCR split into two interconnected transistors:\n  * $Q_1$: $p$-$n$-$p$ transistor (formed by $P_1-N_1-P_2$)\n  * $Q_2$: $n$-$p$-$n$ transistor (formed by $N_1-P_2-N_2$)\n* Collector of $Q_1$ connects to base of $Q_2$; collector of $Q_2$ connects to base of $Q_1$.\n\n---\n\n### Page 13 – Page 14\n#### Two-Transistor Derivation:\n* Emitter currents: $I_{E1} = I_A$, $I_{E2} = I_K$.\n* Collector currents with common-base current gains $\\alpha_1, \\alpha_2$ and leakage currents $I_{CO1}, I_{CO2}$:\n  $$I_{C1} = \\alpha_1 I_A + I_{CO1}$$\n  $$I_{C2} = \\alpha_2 I_K + I_{CO2}$$\n* Total anode current:\n  $$I_A = I_{C1} + I_{C2} + I_g$$\n  For gate current $I_g = 0$, $I_K = I_A$:\n  $$I_A = \\alpha_1 I_A + I_{CO1} + \\alpha_2 I_A + I_{CO2}$$\n  $$I_A [1 - (\\alpha_1 + \\alpha_2)] = I_{CO1} + I_{CO2}$$\n  $$I_A = \\frac{I_{CO1} + I_{CO2}}{1 - (\\alpha_1 + \\alpha_2)}$$\n* **Regenerative Action:** As $\\alpha_1 + \\alpha_2 \\to 1$, $I_A \\to \\infty$ (limited only by external load), turning the device fully ON.\n\n#### Bias States of Junctions:\n| Mode | Anode | Cathode | $J_1$ | $J_2$ | $J_3$ |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **Forward Bias** | $+Ve$ | $-Ve$ | Forward Biased | Reverse Biased | Forward Biased |\n| **Reverse Bias** | $-Ve$ | $+Ve$ | Reverse Biased | Forward Biased | Reverse Biased |\n\n---\n\n### Page 14 – Page 15\n#### Bilateral Devices\nDevices that can conduct in both forward and reverse directions.\n1. **DIAC (Bilateral Diode):**\n   * Diode for AC ($\\text{DI} + \\text{AC}$).\n   * Two terminals ($A_1$ and $A_2$), five layers.\n   * Symmetrical bidirectional trigger diode.\n   * **Operation:** Symmetrical breakdown in both quadrants. Conduction occurs via $P_1 N_1 P_2 N_2$ or $P_2 N_1 P_1 N_3$ depending on terminal polarity when applied voltage exceeds breakdown voltage ($V_{BR}$).\n   * Features a negative resistance region after breakdown.\n\n---\n\n### Page 16 – Page 18\n#### 2. TRIAC (Bilateral Triode)\n* TRIode for AC ($\\text{TRI} + \\text{AC}$).\n* Three terminals: **$MT_1$ (Main Terminal 1)**, **$MT_2$ (Main Terminal 2)**, and **Gate ($G$)**.\n* Bidirectional switching device that can conduct current in both directions.\n\n#### Four Triggering Modes of Operation:\n1. **Mode 1: $MT_2$ (+), Gate (+):**\n   * $MT_2$ is positive wrt $MT_1$, Gate is positive wrt $MT_1$.\n   * Conduction path: $P_1-N_1-P_2-N_2$. Most sensitive mode.\n2. **Mode 2: $MT_2$ (+), Gate (-):**\n   * Gate negative wrt $MT_1$. Junction $P_2-N_3$ forward biased; initiates conduction via $P_1-N_1-P_2-N_2$.\n3. **Mode 3: $MT_2$ (-), Gate (+):**\n   * $MT_2$ negative wrt $MT_1$, Gate positive wrt $MT_1$. Gate injects electrons; conduction via $P_2-N_1-P_1-N_4$.\n4. **Mode 4: $MT_2$ (-), Gate (-):**\n   * $MT_2$ negative, Gate negative. Highly sensitive mode; conduction via $P_2-N_1-P_1-N_4$.\n\n#### Pros, Cons, and Applications of TRIAC:\n* **Advantages:**\n  1. Operates in both directions.\n  2. Suitable for full-wave AC control with a single gate circuit.\n* **Drawbacks:**\n  1. Slower turn-off recovery time compared to SCR.\n  2. Lower $dv/dt$ ratings, susceptible to misfiring with inductive loads.\n* **Applications:** Motor speed regulation, light dimmers, static AC power switches.\n\n---\n\n### Page 19 – Page 20\n#### GTO (Gate Turn-Off Thyristor)\n* A four-layer $PNPN$ device that can be turned **ON** with a positive gate current pulse and turned **OFF** with a negative gate current pulse.\n* **Triggering Current:** $\\approx 20\\text{ mA}$.\n* Turn-off requires a large reverse gate pulse (current gain $\\beta_{off} \\approx 3\\text{ to }5$).\n\n#### Switching Performance of GTO:\n* **Turn-off Time ($t_q$):**\n  $$t_q = t_s + t_f + t_t$$\n  * $t_s$: Storage time\n  * $t_f$: Fall time\n  * $t_t$: Tail time\n* **Advantages:** Fast switching speed, high efficiency, compact weight and size.\n* **Drawbacks:** Higher latching/holding currents ($I_L, I_H$), lower reverse blocking capability.\n\n---\n\n### Page 20 – Page 22\n#### MCT (MOS-Controlled Thyristor)\n* Thyristor structure with integrated MOS gates for turn-on and turn-off:\n  * **ON-FET:** $p$-channel MOSFET (turns MCT ON with negative gate pulse wrt anode).\n  * **OFF-FET:** $n$-channel MOSFET (turns MCT OFF with positive gate pulse wrt anode).\n* **Turn-ON Process:** Negative voltage pulse applied at gate wrt anode turns ON the $p$-channel FET, latching the internal thyristor.\n* **Turn-OFF Process:** Positive gate voltage pulse turns ON the $n$-channel FET, which shunts the base-emitter junction of the NPN transistor, breaking regenerative feedback.\n* **Advantages:** Extremely low forward conduction drop, fast turn-on and turn-off times.\n* **Applications:** DC/AC motor drives, UPS systems, induction heating.\n\n---\n\n### Page 22 – Page 25\n#### IGBT (Insulated Gate Bipolar Transistor)\n* Also known as IGT, MOSIGT, COMFET (Conductivity Modulated FET).\n* Combines the **high input impedance** and high speed of a Power MOSFET with the **low on-state conduction loss** of a BJT.\n* **Terminals:** Gate ($G$), Collector ($C$), Emitter ($E$).\n* Voltage-controlled device (controlled by $V_{GE}$).\n\n#### Structural and Operational Features:\n* Four layers ($P^+-N^--P-N^+$). The $P^+$ substrate injects minority carriers into the wide $N^-$ drift region during conduction, reducing resistivity (conductivity modulation).\n* **Output Characteristics:** Resembles BJT ($I_C$ vs $V_{CE}$ controlled by $V_{GE}$).\n* **Transfer Characteristics:** Similar to MOSFET ($I_C$ vs $V_{GE}$ above threshold voltage $V_{GET}$).\n* **Advantages:**\n  * Simple voltage drive circuitry.\n  * Fast switching speed ($\\sim 20\\text{ kHz}$).\n  * High voltage and current handling ($1200\\text{ V}, 500\\text{ A}$).\n* **Disadvantages:** Possibility of dynamic latch-up; cannot block high reverse voltage.\n\n---\n\n### Solved Examples from Unit 1 (Pages 26 – 28)\n\n#### Numerical 1 (Page 26):\n**Problem:** A diode with internal resistance $r_d = 20\\,\\Omega$ supplies power to a load $R = 1000\\,\\Omega$ from a $230\\text{ V (rms)}$ AC supply. Find:\n(a) Peak load current $I_m$\n(b) DC load current $I_{dc}$\n(c) DC diode voltage $V_o$\n(d) Percentage voltage regulation\n\n* **Solution:**\n  * (a) $V_m = 230\\sqrt{2} \\approx 325.27\\text{ V}$\n    $$I_m = \\frac{V_m}{r_d + R} = \\frac{230\\sqrt{2}}{20 + 1000} = \\frac{325.27}{1020} = 0.3189\\text{ A}$$\n  * (b) $I_{dc} = \\frac{I_m}{\\pi} = \\frac{0.3189}{3.14} = 0.10156\\text{ A}$\n  * (c) Diode DC voltage drop:\n    $$V_{dc} = I_{dc} \\cdot r_d = 0.10156 \\times 20 = 2.031\\text{ V}$$\n  * (d) Voltage Regulation:\n    $$V_{NL} = \\frac{V_m}{\\pi} = \\frac{230\\sqrt{2}}{\\pi} = 103.57\\text{ V}$$\n    $$V_L = I_{dc} R = \\frac{230\\sqrt{2}}{\\pi} \\left(\\frac{1000}{1020}\\right) = 101.49\\text{ V}$$\n    $$\\% \\text{Regulation} = \\frac{V_{NL} - V_L}{V_{NL}} \\times 100 = \\frac{103.57 - 101.49}{103.57} \\times 100 = 1.93\\%$$\n\n---\n\n#### Numerical 2 (Page 27):\n**Problem:** For an SCR, the gate-cathode characteristic has a slope of $130$. The gate source voltage is $15\\text{ V}$ and allowable gate power dissipation is $0.5\\text{ W}$. Compute the gate source resistance $R_s$.\n\n* **Solution:**\n  $$\\frac{V_g}{I_g} = 130 \\implies V_g = 130 I_g$$\n  $$P_g = V_g I_g = 130 I_g^2 = 0.5 \\implies I_g = \\sqrt{\\frac{0.5}{130}} \\approx 0.062\\text{ A} = 62\\text{ mA}$$\n  $$V_g = 130 \\times 0.062 = 8.06\\text{ V}$$\n  From gate circuit loop: $E_s = I_g R_s + V_g$\n  $$15 = 0.062 R_s + 8.06 \\implies R_s = \\frac{15 - 8.06}{0.062} = 111.94\\,\\Omega$$\n\n---\n\n#### Numerical 3 (Pages 27 – 28):\n**Problem:** The trigger circuit of a thyristor has a source voltage of $15\\text{ V}$ and load line slope of $-120\\text{ V/A}$. Minimum gate current is $25\\text{ mA}$. Compute:\n(i) Source resistance required\n(ii) Trigger voltage and current for an average gate power dissipation of $0.4\\text{ W}$.\n\n* **Solution:**\n  * (i) Source series resistance = Magnitude of load line slope: $R_s = 120\\,\\Omega$.\n  * (ii) Load line equation:\n    $$E_s = R_s I_g + V_g \\implies 15 = 120 I_g + \\frac{0.4}{I_g}$$\n    $$120 I_g^2 - 15 I_g + 0.4 = 0$$\n    Solving the quadratic equation:\n    $$I_g = 38.56\\text{ mA} \\quad \\text{or} \\quad 86.44\\text{ mA}$$\n    Corresponding gate voltages:\n    $$V_{g1} = \\frac{0.4}{38.56 \\times 10^{-3}} = 10.37\\text{ V}$$\n    $$V_{g2} = \\frac{0.4}{86.44 \\times 10^{-3}} = 4.627\\text{ V}$$\n    For higher reliability gate trigger: $I_g = 86.44\\text{ mA}, V_g = 4.627\\text{ V}$.\n\n---\n\n#### Numerical 4 (Pages 28 – 29):\n**Problem:** The latching current for an SCR circuit is $100\\text{ mA}$ connected to a DC supply of $200\\text{ V}$. Find the minimum pulse width required to turn on the SCR for:\n(a) Pure inductive load of $L = 0.2\\text{ H}$\n(b) $R = 20\\,\\Omega$ in series with $L = 0.2\\text{ H}$\n(c) $R = 20\\,\\Omega$ in series with $L = 2\\text{ H}$\n\n* **Solution:**\n  * **Case (a):** Pure inductor $L \\frac{di}{dt} = E \\implies i = \\frac{E}{L} t$\n    $$0.1 = \\frac{200}{0.2} t \\implies t = 100\\,\\mu\\text{s}$$\n  * **Case (b):** $R$-$L$ circuit:\n    $$i(t) = \\frac{E}{R} \\left(1 - e^{-Rt/L}\\right)$$\n    $$0.1 = \\frac{200}{20} \\left(1 - e^{-\\frac{20}{0.2} t}\\right) = 10 \\left(1 - e^{-100t}\\right)$$\n    $$e^{-100t} = 1 - 0.01 = 0.99 \\implies t \\approx 100.5\\,\\mu\\text{s}$$\n  * **Case (c):** $R = 20\\,\\Omega, L = 2\\text{ H}$:\n    $$0.1 = 10 \\left(1 - e^{-10t}\\right) \\implies e^{-10t} = 0.99 \\implies t \\approx 1005\\,\\mu\\text{s} = 1.005\\text{ ms}$$\n\n---\n\n# UNIT 2: PROTECTION, COMMUTATION, AND CHOPPERS\n\n---\n\n### Page 29 – Page 32\n#### Thyristor Protection Circuits\n1. **Overcurrent Protection:** Fuses and circuit breakers.\n2. **Overvoltage Protection:** Non-linear resistor (Varistors/Metal Oxide Varistors).\n3. **High $di/dt$ Protection:**\n   * Localized hotspot heating occurs near the gate due to slow carrier spread across the junction area.\n   * **Remedy:** A small inductor $L$ connected in series with the thyristor anode circuit.\n4. **High $dv/dt$ Protection:**\n   * Rapid rise of anode voltage causes junction charging current $i = C_j \\frac{dv}{dt}$ across reverse-biased $J_2$, leading to false triggering.\n   * **Remedy:** Snubber circuit (series combination of resistor $R_s$ and capacitor $C_s$) placed in parallel across the SCR.\n   * **Role of $R_s$ in Snubber:** When SCR turns ON, $C_s$ discharges through the SCR. $R_s$ limits this discharge current to a safe value.\n\n---\n\n### Page 32 – Page 34\n#### Series Operation of Thyristors\nUsed for high voltage ratings exceeding the rating of a single SCR. Due to manufacturing variations, leakage characteristics differ.\n* **Static Equalizing Network:** High-value resistors $R$ in parallel with each thyristor ensure equal steady-state voltage distribution:\n  $$V_{Os(\\max)} = \\frac{V_s + (n_s - 1) R \\Delta I_O}{n_s}$$\n  Worst case ($\\Delta I_O = I_{O2}$):\n  $$R \\le \\frac{n_s V_{Os(\\max)} - V_s}{(n_s - 1) I_{O2}}$$\n* **Dynamic Equalizing Network:** Capacitors $C_1$ in parallel with each device equalize transient voltage sharing during turn-on and turn-off:\n  $$V_{DT(\\max)} = \\frac{1}{n_s} \\left[V_s + \\frac{(n_s - 1) \\Delta Q}{C_1}\\right]$$\n* **Derating Factor (DRF):**\n  $$\\text{DRF} = 1 - \\text{String Efficiency} = 1 - \\frac{V_s}{n_s V_{Os(\\max)}}$$\n\n---\n\n### Page 35\n#### Parallel Operation of Thyristors\nUsed when high load current is required. Differences in forward $V$-$I$ characteristics cause unequal current sharing.\n* **Thermal Runaway:** The SCR carrying more current heats up, reduces internal resistance, draws even more current, and gets damaged.\n* **Static Current Sharing:** Resistors placed in series with each device.\n* **Dynamic Current Sharing:** Magnetically coupled reactors (inductors) placed in series with thyristors.\n\n---\n\n### Page 36 – Page 37\n#### Commutation Techniques of Thyristor\nCommutation is the process of turning OFF a conducting thyristor by reducing its forward current below holding current $I_H$ and applying a reverse voltage for a sufficient period.\n1. **Natural (Line) Commutation (Class F):** AC mains voltage naturally alternates to negative, turning OFF the SCR. Used in line-commutated rectifiers and AC controllers.\n2. **Forced Commutation:** Used in DC circuits (choppers and inverters) where DC voltage must be forced across the thyristor using auxiliary components.\n   * Class A: Self-commutation by resonance.\n   * Class B: Resonant LC circuit across SCR.\n   * Class C: Complementary commutation.\n   * Class D: Auxiliary commutation (impulse).\n   * Class E: External pulse commutation.\n\n---\n\n### Page 37 – Page 39\n#### Detailed Forced Commutation Analysis\n\n#### Class B (Self / Resonant Commutation) (Page 37 – 39):\n* An LC circuit is connected in parallel with the main SCR.\n* Differential equation during resonance:\n  $$L \\frac{di}{dt} + \\frac{1}{C}\\int i\\,dt = V$$\n* Laplace form:\n  $$I(s) = \\frac{V/L}{s^2 + \\frac{1}{LC}} \\implies i(t) = V\\sqrt{\\frac{C}{L}} \\sin\\left(\\frac{t}{\\sqrt{LC}}\\right)$$\n* Peak resonant pulse current:\n  $$I_{c(\\text{peak})} = V\\sqrt{\\frac{C}{L}}$$\n\n#### Class D (Auxiliary / Impulse Commutation) (Page 39 – 40):\n* Auxiliary thyristor $Th_A$ turns ON to apply capacitor reverse voltage across main thyristor $Th_1$.\n* Turn-off time provided to the circuit:\n  $$t_{off} = \\frac{C \\cdot V_c}{I_L}$$\n  $$C = \\frac{I_L \\cdot t_{off}}{V_c}$$\n* For successful commutation, the condition $V\\sqrt{\\frac{C}{L}} > I_L$ must hold, which gives:\n  $$L < \\frac{V^2 C}{I_{\\max}^2}$$\n\n#### Class C (Complementary Commutation) (Page 40 – 42):\n* Two thyristors ($Th_1$ and $Th_2$) with two loads and a coupling capacitor $C$.\n* Circuit equation for capacitor voltage reversal:\n  $$v_c(t) = V \\left(1 - 2 e^{-t / R_1 C}\\right)$$\n* Setting $v_c(t_{off}) = 0$:\n  $$1 - 2 e^{-t_{off}/R_1 C} = 0 \\implies t_{off} = R_1 C \\ln 2 \\approx 0.693 R_1 C$$\n\n---\n\n### Page 43 – Page 46\n#### DC-to-DC Converters (Choppers)\n* A chopper is a high-speed static semiconductor switch that converts fixed DC input voltage directly to a variable DC output voltage.\n\n#### Principle of Step-Down Chopper (Buck Converter):\n* **Average Output Voltage:**\n  $$V_{av} = V \\cdot \\frac{T_{on}}{T_{on} + T_{off}} = V \\cdot \\frac{T_{on}}{T} = \\alpha V$$\n  * Where $\\alpha = \\frac{T_{on}}{T}$ is the **Duty Cycle** ($0 \\le \\alpha \\le 1$).\n  * Chopping frequency $f = \\frac{1}{T}$.\n\n#### Control Strategies for Duty Cycle ($\\alpha$):\n1. **Time Ratio Control (TRC) / Pulse Width Modulation (PWM):** Frequency $f$ (and time period $T$) is kept constant while $T_{on}$ is varied.\n2. **Frequency Modulation (FM):** Either $T_{on}$ or $T_{off}$ is kept constant while frequency $f$ is varied.\n\n---\n\n### Page 45 – Page 50\n#### Equations and Fourier Analysis of Step-Down Chopper\n* **RMS Output Voltage:**\n  $$V_{rms} = \\sqrt{\\frac{1}{T} \\int_0^{T_{on}} V^2\\,dt} = \\sqrt{\\alpha} \\, V$$\n* **Output Power:**\n  $$P_o = \\frac{V_{rms}^2}{R} = \\frac{\\alpha V^2}{R}$$\n* **Effective Input Resistance seen by supply:**\n  $$R_{in} = \\frac{V}{I_{in(av)}} = \\frac{V}{\\alpha I_o} = \\frac{R}{\\alpha}$$\n* **Ripple Voltage and Ripple Factor:**\n  $$\\text{Ripple Voltage } V_r = \\sqrt{V_{rms}^2 - V_{av}^2} = V \\sqrt{\\alpha - \\alpha^2}$$\n  $$\\text{Ripple Factor (RF)} = \\frac{V_r}{V_{av}} = \\sqrt{\\frac{1}{\\alpha} - 1}$$\n\n---\n\n### Page 47 – Page 49\n#### Analysis of Step-Down Chopper with R-L-E Load\n* **Mode I ($0 \\le t \\le T_{on}$):** Thyristor conducts.\n  $$V = R i + L \\frac{di}{dt} + E$$\n  Solution with initial current $I_{\\min}$:\n  $$i(t) = \\frac{V - E}{R} \\left(1 - e^{-Rt/L}\\right) + I_{\\min} e^{-Rt/L}$$\n* **Mode II ($T_{on} \\le t \\le T$):** Free-wheeling diode conducts.\n  $$0 = R i + L \\frac{di}{dt} + E$$\n  Solution with initial current $I_{\\max}$ at $t' = t - T_{on}$:\n  $$i(t') = I_{\\max} e^{-R t'/L} - \\frac{E}{R} \\left(1 - e^{-R t'/L}\\right)$$\n\n---\n\n### Page 50 – Page 52\n#### Step-Up Chopper (Boost Converter)\n* When thyristor is ON for $T_{on}$, energy is stored in inductor $L$:\n  $$E_{in} = V \\cdot I \\cdot T_{on}$$\n* When thyristor is OFF for $T_{off}$, inductor releases energy into load via diode:\n  $$E_{out} = (V_L - V) I \\cdot T_{off}$$\n* Equating input and output energy under lossless conditions:\n  $$V \\cdot I \\cdot T_{on} = (V_L - V) I \\cdot T_{off}$$\n  $$V_L = V \\left(\\frac{T_{on} + T_{off}}{T_{off}}\\right) = V \\left(\\frac{T}{T - T_{on}}\\right) = \\frac{V}{1 - \\alpha}$$\n  Since $\\alpha < 1$, $V_L > V$.\n\n#### Solved Problems (Pages 51 – 52):\n1. **Problem 1:** A step-up chopper has $V = 200\\text{ V}$, $V_o = 250\\text{ V}$, $T_{off} = 0.6 \\times 10^{-3}\\text{ s}$. Find conduction period $T_{on}$.\n   $$V_o = V \\left(\\frac{T_{on} + T_{off}}{T_{off}}\\right) \\implies 250 = 200 \\left(\\frac{T_{on} + 0.6 \\times 10^{-3}}{0.6 \\times 10^{-3}}\\right)$$\n   $$T_{on} + T_{off} = 0.75 \\times 10^{-3}\\text{ s} \\implies T_{on} = (0.75 - 0.6) \\times 10^{-3} = 0.15\\text{ ms}$$\n\n2. **Problem 2:** Input voltage $= 150\\text{ V}$, output voltage $= 250\\text{ V}$, $T_{off} = 1\\text{ ms}$. Find $T_{on}$.\n   $$250 = 150 \\left(\\frac{T_{on} + 10^{-3}}{10^{-3}}\\right) \\implies T_{on} = 0.667\\text{ ms}$$\n\n---\n\n### Page 53 – Page 57\n#### Classification of Chopper Circuits\n* **Class A Chopper (First Quadrant):**\n  * $V_L > 0$, $I_L > 0$. Power flows from source to load.\n* **Class B Chopper (Second Quadrant):**\n  * $V_L > 0$, $I_L < 0$. Power flows from load back to source (regenerative braking).\n* **Class C Chopper (Two Quadrant: First & Second):**\n  * Parallel combination of Class A and Class B. $V_L$ always positive, $I_L$ can be positive or negative.\n* **Class D Chopper (Two Quadrant: First & Fourth):**\n  * $I_L$ always positive, $V_L$ can be positive or negative. Average voltage positive if $T_{on} > T_{off}$, negative if $T_{on} < T_{off}$.\n* **Class E Chopper (Four Quadrant):**\n  * Complete H-bridge configuration with four switches ($S_1$ to $S_4$) and four antiparallel diodes ($D_1$ to $D_4$). Both voltage and current can be positive or negative in all four quadrants.\n\n---\n\n# UNIT 3: PHASE CONTROLLED CONVERTERS\n\n---\n\n### Page 58\n#### Performance Parameters of Rectifiers\n1. **Average Output DC Voltage:**\n   $$V_{dc} = \\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} v(\\omega t)\\,d(\\omega t), \\quad I_{dc} = \\frac{V_{dc}}{R}$$\n2. **Output DC Power:** $P_{dc} = V_{dc} I_{dc}$\n3. **RMS Output Voltage & Current:**\n   $$V_{rms} = \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} v^2(\\omega t)\\,d(\\omega t)\\right]^{1/2}, \\quad I_{rms} = \\frac{V_{rms}}{R}$$\n4. **Output AC Power:** $P_{ac} = V_{rms} I_{rms}$\n5. **Rectification Efficiency:** $\\eta = \\frac{P_{dc}}{P_{ac}}$\n6. **Form Factor (FF):** $\\text{FF} = \\frac{V_{rms}}{V_{dc}}$\n7. **Ripple Factor (RF):** $\\text{RF} = \\sqrt{\\text{FF}^2 - 1}$\n8. **Transformer Utilization Factor (TUF):** $\\text{TUF} = \\frac{P_{dc}}{V_s I_s}$\n9. **Displacement Factor (DF):** $\\text{DF} = \\cos \\phi$\n10. **Input Harmonic Factor (HF):** $\\text{HF} = \\left[\\left(\\frac{I_s}{I_{s1}}\\right)^2 - 1\\right]^{1/2}$\n11. **Input Power Factor (PF):** $\\text{PF} = \\left(\\frac{I_{s1}}{I_s}\\right) \\cos \\phi$\n\n---\n\n### Page 59 – Page 61\n#### Single-Phase Half-Wave Controlled Rectifier (R Load)\n* **Average Output Voltage:**\n  $$V_{dc} = \\frac{1}{2\\pi} \\int_{\\alpha}^{\\pi} V_m \\sin \\omega t\\,d(\\omega t) = \\frac{V_m}{2\\pi} (1 + \\cos \\alpha)$$\n* **RMS Output Voltage:**\n  $$V_{rms} = \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{\\pi} V_m^2 \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2} = \\frac{V_m}{2\\sqrt{\\pi}} \\left[(\\pi - \\alpha) + \\frac{1}{2}\\sin 2\\alpha\\right]^{1/2}$$\n\n#### Solved Problem (Page 60 – 61):\n**Problem:** Single-phase half-wave converter fed by transformer secondary voltage $v = 400 \\sin \\omega t$, firing angle $\\alpha = 30^\\circ$, load $R = 50\\,\\Omega$. Compute $V_{dc}, I_{dc}, V_{rms}, I_{rms}$.\n* **Solution:**\n  $$V_m = 400\\text{ V}, \\quad \\alpha = 30^\\circ = \\frac{\\pi}{6}\\text{ rad}$$\n  $$V_{dc} = \\frac{400}{2\\pi}(1 + \\cos 30^\\circ) = \\frac{400}{6.28}(1 + 0.866) = 118.48\\text{ V}$$\n  $$I_{dc} = \\frac{118.48}{50} = 2.37\\text{ A}$$\n  $$V_{rms} = \\frac{400}{2\\sqrt{\\pi}} \\left[\\left(\\pi - \\frac{\\pi}{6}\\right) + \\frac{1}{2}\\sin 60^\\circ\\right]^{1/2} = 112.86 \\times [2.62 + 0.433]^{1/2} = 197.5\\text{ V}$$\n  $$I_{rms} = \\frac{197.5}{50} = 3.95\\text{ A}$$\n\n---\n\n### Page 61 – Page 63\n#### Single-Phase Half-Wave Converter with RL Load and Freewheeling Diode (FD)\n* Freewheeling diode prevents load voltage from going negative by conducting during the negative half-cycle ($\\pi$ to $2\\pi+\\alpha$).\n* Improves load current waveform and avoids discontinuous current.\n* Output voltage formula identical to R-load case:\n  $$V_{dc} = \\frac{V_m}{2\\pi} (1 + \\cos \\alpha)$$\n\n---\n\n### Page 64 – Page 67\n#### Single-Phase Full-Wave Mid-Point / Bridge Converter (R & RL Load)\n* **Average Output Voltage (Continuous Conduction):**\n  $$V_{dc} = \\frac{1}{\\pi} \\int_{\\alpha}^{\\pi + \\alpha} V_m \\sin \\omega t\\,d(\\omega t) = \\frac{2 V_m}{\\pi} \\cos \\alpha$$\n* **RMS Output Voltage:**\n  $$V_{rms} = \\frac{V_m}{\\sqrt{2}}$$\n\n#### Solved Problem (Page 67 – 68):\n**Problem:** Center-tapped transformer with secondary voltage $150\\text{ V (rms)}$ per half, resistive load $R = 30\\,\\Omega$, $\\alpha = 45^\\circ$.\n* **Solution:**\n  $$V_m = 150\\sqrt{2} \\approx 212.13\\text{ V}$$\n  $$V_{dc} = \\frac{V_m}{\\pi} (1 + \\cos \\alpha) = \\frac{150\\sqrt{2}}{\\pi}(1 + \\cos 45^\\circ) = 115.32\\text{ V}$$\n  $$I_{dc} = \\frac{115.32}{30} = 3.84\\text{ A}$$\n  $$V_{rms} = V_m \\left[\\frac{1}{2\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2} = 142.9\\text{ V}$$\n  $$I_{rms} = \\frac{142.9}{30} = 4.76\\text{ A}$$\n\n---\n\n### Page 70 – Page 71\n#### Single-Phase Semi-Converter (Half-Controlled Bridge) with RLE Load\n* Uses two thyristors and two diodes (with a freewheeling diode).\n* Output voltage cannot become negative:\n  $$V_{dc} = \\frac{V_m}{\\pi} (1 + \\cos \\alpha)$$\n  $$V_{rms} = \\frac{V_m}{\\sqrt{2}} \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n\n---\n\n### Page 72 – Page 74\n#### Three-Phase Full-Wave Controlled Converter (6-Pulse)\n* Six thyristors ($Th_1$ to $Th_6$). Firing sequence: $Th_1, Th_2, Th_3, Th_4, Th_5, Th_6$.\n* Each thyristor conducts for $120^\\circ$. Commutation occurs every $60^\\circ$.\n* **Average Output Voltage:**\n  $$V_{dc} = \\frac{3}{\\pi} \\int_{\\frac{\\pi}{6} + \\alpha}^{\\frac{\\pi}{2} + \\alpha} v_{ab}\\,d(\\omega t) = \\frac{3\\sqrt{3} V_m}{\\pi} \\cos \\alpha = \\frac{3 V_{ml}}{\\pi} \\cos \\alpha$$\n* **RMS Output Voltage:**\n  $$V_{rms} = \\sqrt{3} V_m \\left[\\frac{1}{2} + \\frac{3\\sqrt{3}}{4\\pi}\\cos 2\\alpha\\right]^{1/2}$$\n\n---\n\n### Page 75 – Page 79\n#### Dual Converters\nConsists of two full converters connected back-to-back across the same load to provide four-quadrant operation:\n$$V_{dc1} = \\frac{2V_m}{\\pi}\\cos \\alpha_1, \\quad V_{dc2} = \\frac{2V_m}{\\pi}\\cos \\alpha_2$$\nTo ensure equal average DC terminal voltages ($V_{dc1} = -V_{dc2}$):\n$$\\cos \\alpha_2 = -\\cos \\alpha_1 = \\cos(\\pi - \\alpha_1) \\implies \\alpha_1 + \\alpha_2 = 180^\\circ$$\n\n#### Modes of Dual Converter:\n1. **Non-Circulating Current Mode:** Only one converter operates at any time. Requires a dead time of $10\\text{ to }20\\text{ ms}$ before switching between converters.\n2. **Circulating Current Mode:** Both converters operate simultaneously. An inductor (reactor) is connected between converters to limit the circulating ripple currents:\n   $$i_r(\\omega t) = \\frac{2V_m}{\\omega L} (\\cos \\omega t - \\cos \\alpha_1)$$\n\n#### Solved Problems on Dual Converter:\n* **Problem 1 (Page 78):** $V_s = 230\\text{ V}, 50\\text{ Hz}, R = 15\\,\\Omega, L = 50\\text{ mH}, \\alpha_1 = 60^\\circ, \\alpha_2 = 120^\\circ$.\n  $$\\omega L = 2\\pi(50)(0.05) = 15.71\\,\\Omega, \\quad V_m = 230\\sqrt{2} = 325.2\\text{ V}$$\n  $$\\text{Peak Circulating Current } I_{r(\\text{peak})} = \\frac{2 \\times 325.2}{15.71}(1 - \\cos 60^\\circ) = 20.7\\text{ A}$$\n  $$\\text{Peak Load Current} = \\frac{325.2}{15} = 21.68\\text{ A}$$\n  $$\\text{Total Peak Converter Current} = 21.68 + 20.7 = 42.38\\text{ A}$$\n* **Problem 2 (Page 79):** Given peak circulating current $= 10.2\\text{ A}$, find required reactor inductance $L$:\n  $$L = \\frac{230\\sqrt{2} \\times 2 \\times (1 - \\cos 30^\\circ)}{314 \\times 10.2} = 0.0272\\text{ H} = 27.2\\text{ mH}$$\n\n---\n\n# UNIT 4: AC VOLTAGE CONTROLLERS & CYCLOCONVERTERS\n\n---\n\n### Page 80 – Page 82\n#### AC Voltage Controllers\nUsed to convert fixed AC voltage directly into variable AC voltage at the same frequency.\n1. **Integral Cycle Control (ON-OFF Control):**\n   * Thyristors conduct for $n$ cycles and remain OFF for $m$ cycles.\n   * Duty Cycle: $\\alpha = \\frac{n}{n + m}$\n   * RMS Output Voltage:\n     $$V_L = V_i \\sqrt{\\frac{n}{n + m}} = V_i \\sqrt{\\alpha}$$\n2. **Phase Control:**\n   * **Single-Phase Half-Wave Regulator:** (One SCR and one Diode in antiparallel):\n     $$V_{rms} = V_m \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2}$$\n\n---\n\n### Page 83 – Page 85\n#### Single-Phase Full-Wave AC Voltage Controller (Two Thyristors in Antiparallel)\n* **Average Output Voltage:** $V_{av} = 0$ (symmetrical AC).\n* **RMS Output Voltage (Resistive Load):**\n  $$V_{rms} = V_m \\left[\\frac{1}{\\pi} \\int_{\\alpha}^{\\pi} \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2} = V_i \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n* **Average Power Delivered to Load:**\n  $$P = \\frac{V_{rms}^2}{R} = \\frac{V_m^2}{2\\pi R}\\left[(\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right]$$\n* **Input Power Factor:**\n  $$\\text{PF} = \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n\n---\n\n### Page 86 – Page 88\n#### Three-Phase Full-Wave AC Voltage Controller\n* Six thyristors connected in star or delta configurations.\n* **Control Ranges:**\n  * **$0 \\le \\alpha \\le 60^\\circ$:** Conduction alternates between 2 and 3 thyristors conducting.\n  * **$60^\\circ \\le \\alpha \\le 90^\\circ$:** Only 2 thyristors conduct at any instant.\n  * **$90^\\circ \\le \\alpha \\le 150^\\circ$:** Either 2 thyristors conduct or none conduct (discontinuous).\n  * **$\\alpha \\ge 150^\\circ$:** Output voltage drops to zero.\n\n---\n\n### Page 89 – Page 91\n#### Static On-Load Tap Changing of Transformers\n* Uses pairs of inverse-parallel thyristors on transformer taps to achieve fast, arc-less voltage adjustment under load.\n* Output voltage can transition smoothly between tap voltage $V_1$ and $(V_1 + V_2)$ by phase control without short-circuiting windings.\n\n---\n\n### Page 92 – Page 99\n#### Cycloconverters\nA cycloconverter converts input AC power at one frequency to output AC power at a different (lower) frequency without an intermediate DC link.\n\n#### Classifications:\n1. **By relative frequency:**\n   * **Step-Down Cycloconverter:** Output frequency $f_o < f_s$ (uses natural/line commutation).\n   * **Step-Up Cycloconverter:** Output frequency $f_o > f_s$ (requires forced commutation).\n2. **By phases:**\n   * $1$-phase to $1$-phase\n   * $3$-phase to $1$-phase\n   * $3$-phase to $3$-phase\n\n#### Operation Principle:\n* Composed of a **Positive (+ve) Converter Group** and a **Negative (-ve) Converter Group**.\n* The positive group conducts for half the desired output period ($\\frac{T_o}{2}$), creating positive half-cycles.\n* The negative group conducts for the next half-period, creating negative half-cycles.\n\n#### Mathematical Analysis of a $P$-Pulse Cycloconverter:\n* Conduction period per phase segment $= \\frac{2\\pi}{P}$.\n* **Mean Output Voltage:**\n  $$V_{mean} = \\frac{P V_m}{\\pi} \\sin\\left(\\frac{\\pi}{P}\\right) \\cos \\alpha$$\n* **Maximum Output Voltage (at $\\alpha = 0^\\circ$):**\n  $$V_{o(\\max)} = \\frac{P V_m}{\\pi} \\sin\\left(\\frac{\\pi}{P}\\right)$$\n* **RMS Value of Output Voltage:**\n  $$V_{o(rms)} = \\frac{P}{\\pi} \\frac{V_m}{\\sqrt{2}} \\sin\\left(\\frac{\\pi}{P}\\right) \\cos \\alpha$$",
+      "file_path": "/app/applet/.data/uploads/1791741687219_Power_Electronics_notes__501_.pdf"
     }
   ],
   "chunks": [
@@ -46,6 +70,825 @@
       "chunk_index": 0,
       "page_number": 1,
       "content": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --"
+    },
+    {
+      "id": 8,
+      "document_id": 4,
+      "chunk_index": 0,
+      "page_number": 1,
+      "content": "Chapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time signals x(t) are defined along a continuous independent time continuum t in R. Discrete-time signals x[n] are defined at integer index values n in Z, commonly obtained by periodic sampling with interval Ts."
+    },
+    {
+      "id": 9,
+      "document_id": 4,
+      "chunk_index": 1,
+      "page_number": 2,
+      "content": "Elementary Signals:\n1. Unit Impulse Function delta(t): Characterized by zero value for all t != 0 and infinite height at t = 0 with unit area: integral from -infinity to +infinity of delta(t) dt = 1. The sifting property states: integral of x(t)*delta(t - t0) dt = x(t0).\n2. Unit Step Function u(t): Defined as u(t) = 1 for t >= 0 and u(t) = 0 for t < 0. Related to delta(t) via d/dt[u(t)] = delta(t)."
+    },
+    {
+      "id": 10,
+      "document_id": 4,
+      "chunk_index": 2,
+      "page_number": 3,
+      "content": "Signal Operations & Classifications:\nTransformations of independent variable: Time shifting x(t - t0) (delay if t0 > 0, advance if t0 < 0), Time reversal x(-t), and Time scaling x(at) (compression if |a| > 1, expansion if 0 < |a| < 1).\nEnergy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt. Average power P = lim T->inf (1/2T) integral from -T to +T |x(t)|^2 dt. An energy signal has 0 < E < inf and P = 0. A power signal has 0 < P < inf and E = inf."
+    },
+    {
+      "id": 11,
+      "document_id": 4,
+      "chunk_index": 3,
+      "page_number": 4,
+      "content": "Chapter 2: System Properties and Classifications\nA system takes an input signal x(t) and produces an output signal y(t) according to a transformation operator y(t) = T{x(t)}.\n1. Linearity: A system is linear if it satisfies the superposition principle (additivity and homogeneity): T{a*x1(t) + b*x2(t)} = a*T{x1(t)} + b*T{x2(t)} for all scalar constants a and b."
+    },
+    {
+      "id": 12,
+      "document_id": 4,
+      "chunk_index": 4,
+      "page_number": 5,
+      "content": "2. Time-Invariance: A system is time-invariant if a time shift in the input signal produces an identical time shift in the output: If x(t) -> y(t), then x(t - t0) -> y(t - t0) for all t0.\n3. Causality: A system is causal if the output at any time t0 depends only on input values at t <= t0 (present and past values), not on future values. For LTI systems, causality requires the impulse response h(t) = 0 for t < 0."
+    },
+    {
+      "id": 13,
+      "document_id": 4,
+      "chunk_index": 5,
+      "page_number": 6,
+      "content": "4. BIBO Stability: Bounded-Input Bounded-Output stability requires that every bounded input |x(t)| <= Mx < inf produces a bounded output |y(t)| <= My < inf. For continuous-time LTI systems, BIBO stability is equivalent to absolute integrability of impulse response: integral from -inf to +inf |h(t)| dt < inf.\n5. Memory (Static vs Dynamic): A memoryless (static) system output depends only on the current input at that exact instant."
+    },
+    {
+      "id": 14,
+      "document_id": 4,
+      "chunk_index": 6,
+      "page_number": 7,
+      "content": "Chapter 3: Linear Time-Invariant (LTI) Systems and Convolution\nLTI systems are completely characterized by their impulse response h(t) = T{delta(t)}.\nContinuous-Time Convolution Integral:\ny(t) = x(t) * h(t) = integral from -infinity to +infinity of x(tau) * h(t - tau) dtau.\nDiscrete-Time Convolution Sum:\ny[n] = x[n] * h[n] = sum from k = -infinity to +infinity of x[k] * h[n - k]."
+    },
+    {
+      "id": 15,
+      "document_id": 4,
+      "chunk_index": 7,
+      "page_number": 8,
+      "content": "Properties of Convolution:\n1. Commutative Property: x(t) * h(t) = h(t) * x(t).\n2. Associative Property: [x(t) * h1(t)] * h2(t) = x(t) * [h1(t) * h2(t)]. Series/cascade connection of LTI systems can be combined into h(t) = h1(t) * h2(t).\n3. Distributive Property: x(t) * [h1(t) + h2(t)] = x(t)*h1(t) + x(t)*h2(t). Parallel connection combines impulse responses by addition."
+    },
+    {
+      "id": 16,
+      "document_id": 4,
+      "chunk_index": 8,
+      "page_number": 9,
+      "content": "Step Response:\nThe step response s(t) is the response of an LTI system to a unit step input: s(t) = integral from -infinity to t of h(tau) dtau. Conversely, the impulse response is the time-derivative of the step response: h(t) = ds(t)/dt."
+    },
+    {
+      "id": 17,
+      "document_id": 4,
+      "chunk_index": 9,
+      "page_number": 10,
+      "content": "Chapter 4: Fourier Analysis of Continuous-Time Signals\nContinuous-Time Fourier Series (CTFS): Any periodic signal x(t) with fundamental period T0 and fundamental frequency w0 = 2*pi/T0 satisfying the Dirichlet conditions can be represented as an infinite sum of harmonically related complex exponentials:\nx(t) = sum from k = -infinity to +infinity of a_k * exp(j * k * w0 * t),\nwhere Fourier coefficients a_k = (1/T0) * integral over T0 of x(t) * exp(-j * k * w0 * t) dt."
+    },
+    {
+      "id": 18,
+      "document_id": 4,
+      "chunk_index": 10,
+      "page_number": 11,
+      "content": "Dirichlet Conditions for Fourier Series Convergence:\n1. Over any period, x(t) must be absolutely integrable: integral over T0 of |x(t)| dt < inf.\n2. In any finite interval, x(t) has a finite number of local maxima and minima.\n3. In any finite interval, x(t) has a finite number of discontinuities, and each discontinuity is finite."
+    },
+    {
+      "id": 19,
+      "document_id": 4,
+      "chunk_index": 11,
+      "page_number": 12,
+      "content": "Parseval Relation for Fourier Series:\nThe average power of a periodic signal equals the sum of the average powers of its individual harmonic components: P = (1/T0) * integral over T0 of |x(t)|^2 dt = sum from k = -inf to +inf of |a_k|^2."
+    },
+    {
+      "id": 20,
+      "document_id": 4,
+      "chunk_index": 12,
+      "page_number": 13,
+      "content": "Chapter 5: Continuous-Time Fourier Transform (CTFT)\nThe Fourier Transform extends frequency representation to aperiodic signals by taking T0 -> infinity.\nForward Fourier Transform: X(jw) = integral from -infinity to +infinity of x(t) * exp(-j * w * t) dt.\nInverse Fourier Transform: x(t) = (1 / (2*pi)) * integral from -infinity to +infinity of X(jw) * exp(j * w * t) dw."
+    },
+    {
+      "id": 21,
+      "document_id": 4,
+      "chunk_index": 13,
+      "page_number": 14,
+      "content": "Key Properties of Fourier Transform:\n1. Linearity: a*x1(t) + b*x2(t) <-> a*X1(jw) + b*X2(jw).\n2. Time Shifting: x(t - t0) <-> exp(-j * w * t0) * X(jw).\n3. Frequency Shifting: exp(j * w0 * t) * x(t) <-> X(j(w - w0)).\n4. Convolution in Time: x(t) * h(t) <-> X(jw) * H(jw). Convolution in time corresponds to point-by-point multiplication in frequency domain!\n5. Differentiation in Time: d/dt[x(t)] <-> (j*w) * X(jw).\n6. Parseval Energy Theorem: integral |x(t)|^2 dt = (1 / (2*pi)) * integral |X(jw)|^2 dw."
+    },
+    {
+      "id": 22,
+      "document_id": 4,
+      "chunk_index": 14,
+      "page_number": 15,
+      "content": "Frequency Response of LTI Systems:\nThe frequency response H(jw) is the Fourier transform of the impulse response h(t). It decomposes into magnitude response |H(jw)| (gain) and phase response theta(w) = angle(H(jw)). For an input sinusoidal signal x(t) = cos(w0*t), the output is y(t) = |H(jw0)| * cos(w0*t + angle(H(jw0)))."
+    },
+    {
+      "id": 23,
+      "document_id": 4,
+      "chunk_index": 15,
+      "page_number": 16,
+      "content": "Chapter 6: The Laplace Transform\nThe bilateral Laplace Transform is defined as: X(s) = integral from -infinity to +infinity of x(t) * exp(-s*t) dt, where s = sigma + j*w is the complex frequency variable.\nThe unilateral Laplace Transform integrates from 0- to infinity: X(s) = integral from 0- to +infinity of x(t) * exp(-s*t) dt, ideal for causal initial-value problems."
+    },
+    {
+      "id": 24,
+      "document_id": 4,
+      "chunk_index": 16,
+      "page_number": 17,
+      "content": "Region of Convergence (ROC) for Laplace Transform:\n1. The ROC consists of strips parallel to the jw-axis in the s-plane: sigma1 < Re{s} < sigma2.\n2. The ROC cannot contain any poles.\n3. For right-sided signals (e.g. causal signals), the ROC is to the right of the rightmost pole: Re{s} > sigma_max.\n4. For an LTI system to be stable, the jw-axis must lie within the ROC, meaning Re{s} = 0 is included."
+    },
+    {
+      "id": 25,
+      "document_id": 4,
+      "chunk_index": 17,
+      "page_number": 18,
+      "content": "Transfer Function H(s) and System Stability:\nThe transfer function H(s) = Y(s) / X(s) = L{h(t)}. Roots of the numerator are zeros; roots of the denominator are poles. A causal LTI system is BIBO stable if and only if all poles of H(s) lie strictly in the open left-half of the s-plane: Re{p_i} < 0."
+    },
+    {
+      "id": 26,
+      "document_id": 4,
+      "chunk_index": 18,
+      "page_number": 19,
+      "content": "Chapter 7: The Z-Transform for Discrete-Time Signals\nThe bilateral Z-Transform is defined as: X(z) = sum from n = -infinity to +infinity of x[n] * z^(-n), where z = r * exp(j*w) is a complex variable.\nThe Z-transform evaluated on the unit circle (|z| = 1, r = 1) reduces to the Discrete-Time Fourier Transform (DTFT): X(exp(jw))."
+    },
+    {
+      "id": 27,
+      "document_id": 4,
+      "chunk_index": 19,
+      "page_number": 20,
+      "content": "Region of Convergence (ROC) in the Z-Plane:\n1. The ROC is a ring or annular region centered at the origin: r_min < |z| < r_max.\n2. The ROC cannot contain any poles.\n3. For a causal discrete-time signal, the ROC extends outward from the outermost pole: |z| > r_max.\n4. Stability Criterion: A causal discrete-time LTI system is BIBO stable if and only if all poles of H(z) lie strictly inside the unit circle: |p_i| < 1."
+    },
+    {
+      "id": 28,
+      "document_id": 4,
+      "chunk_index": 20,
+      "page_number": 21,
+      "content": "Inverse Z-Transform Methods:\n1. Partial Fraction Expansion: Decompose H(z) into first and second-order terms and use transform lookup tables.\n2. Power Series / Long Division: Expand H(z) into negative powers of z, where the coefficients yield x[n] directly.\n3. Contour Integration: Using Cauchy Residue Theorem: x[n] = (1 / 2*pi*j) * contour_integral X(z) * z^(n-1) dz."
+    },
+    {
+      "id": 29,
+      "document_id": 4,
+      "chunk_index": 21,
+      "page_number": 22,
+      "content": "Chapter 8: Sampling Theorem and Signal Reconstruction\nNyquist-Shannon Sampling Theorem:\nA continuous-time bandlimited signal x(t) with highest frequency f_max (or bandwidth w_max = 2*pi*f_max) can be uniquely and completely reconstructed from its samples x[n] = x(n*Ts) if and only if the sampling frequency fs satisfies:\nfs >= 2 * f_max  (or ws >= 2 * w_max).\nThe threshold frequency fs_nyquist = 2 * f_max is called the Nyquist rate."
+    },
+    {
+      "id": 30,
+      "document_id": 4,
+      "chunk_index": 22,
+      "page_number": 23,
+      "content": "Aliasing and Anti-Aliasing Filters:\nIf sampling occurs at fs < 2*f_max (undersampling), spectral replicas overlap in the frequency domain, creating irreversible frequency distortion called aliasing.\nAn analog Anti-Aliasing Lowpass Filter is placed prior to the Analog-to-Digital Converter (ADC) to remove any spectral content above fs/2 before sampling."
+    },
+    {
+      "id": 31,
+      "document_id": 4,
+      "chunk_index": 23,
+      "page_number": 24,
+      "content": "Ideal Signal Reconstruction:\nUsing an ideal lowpass filter with cutoff wc = ws/2 and gain Ts, the continuous-time signal is reconstructed via Whittaker-Shannon interpolation formula:\nx(t) = sum from n = -infinity to +infinity of x(n*Ts) * sinc((t - n*Ts) / Ts),\nwhere sinc(u) = sin(pi*u) / (pi*u)."
+    },
+    {
+      "id": 32,
+      "document_id": 4,
+      "chunk_index": 24,
+      "page_number": 25,
+      "content": "Chapter 9: The Discrete Fourier Transform (DFT)\nThe N-point DFT converts an N-point sequence x[n] into N frequency samples:\nX[k] = sum from n = 0 to N-1 of x[n] * W_N^(k*n), where W_N = exp(-j * 2*pi / N) is the twiddle factor.\nThe Fast Fourier Transform (FFT) algorithms (Decimation-in-Time and Decimation-in-Frequency) reduce computation from O(N^2) complex operations down to O(N * log2(N))."
+    },
+    {
+      "id": 33,
+      "document_id": 4,
+      "chunk_index": 25,
+      "page_number": 26,
+      "content": "Chapter 10: Analog and Digital Filter Foundations\nFilter Types: Lowpass, Highpass, Bandpass, and Bandstop filters.\nSpecifications: Passband ripple delta_p, Stopband attenuation delta_s, Passband cutoff wp, Stopband cutoff ws.\nButterworth Filter: Maximally flat magnitude response in the passband with no ripple: |H(jw)|^2 = 1 / [1 + (w/wc)^(2N)].\nChebyshev Type I Filter: Equiripple passband and monotonic stopband, providing steeper roll-off than Butterworth for the same filter order N."
+    },
+    {
+      "id": 36,
+      "document_id": 7,
+      "chunk_index": 0,
+      "page_number": 1,
+      "content": "Here is the comprehensive extraction and compilation of the academic study text, lecture notes, circuit analyses, formulas, and solved numerical problems from the manuscript, organized sequentially by **Units** and **Pages**.\n\n---\n\n# UNIT 1: POWER SEMICONDUCTOR DEVICES\n\n---"
+    },
+    {
+      "id": 37,
+      "document_id": 7,
+      "chunk_index": 1,
+      "page_number": 1,
+      "content": "organized sequentially by **Units** and **Pages**.\n\n---\n\n# UNIT 1: POWER SEMICONDUCTOR DEVICES\n\n---\n\n### Page 1\n#### Block Diagram of a Typical Power Electronic System\n* **Elements:**\n* **Command Signal** $\\rightarrow$ **Control Unit** $\\rightarrow$ **Digital Circuit** $\\rightarrow$ **Power Electronic Circuit** $\\rightarrow$ **Load**\n* **Main Power Source** supplies the Power Electronic Circuit.\n* **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit."
+    },
+    {
+      "id": 38,
+      "document_id": 7,
+      "chunk_index": 2,
+      "page_number": 1,
+      "content": "ctronic Circuit.\n* **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit.\n\n* **Key Concepts:**\n* The control of electric motor devices requires control of electric power.\n* Power electronics is based on the switching of power semiconductor devices.\n\n#### Broad Categorization of Power Semiconductor Devices:\n1. **Power Diodes** (e.g., ratings up to $600\\text{ V}, 4500\\text{ A}$)\n2. **Transistors** (BJT, MOSFET, IGBT)\n3. **Thyristors** (e.g., ratings up to $10\\text{ kV}, 300\\text{ A}, 30\\text{ MW}$)"
+    },
+    {
+      "id": 39,
+      "document_id": 7,
+      "chunk_index": 3,
+      "page_number": 1,
+      "content": "JT, MOSFET, IGBT)\n3. **Thyristors** (e.g., ratings up to $10\\text{ kV}, 300\\text{ A}, 30\\text{ MW}$)\n\n#### Power Diode\n* A power diode is a type of diode that is commonly used in power electronics circuits.\n\n#### Characteristics of Power Diodes:\n* **Reverse Recovery Time ($t_{rr}$):** After the forward-bias diode current decays to zero, the diode continues to conduct in the reverse direction because of the presence of stored charges in the two layers (junction/depletion regions).\n\n---"
+    },
+    {
+      "id": 40,
+      "document_id": 7,
+      "chunk_index": 4,
+      "page_number": 1,
+      "content": "ction because of the presence of stored charges in the two layers (junction/depletion regions).\n\n---\n\n### Page 2\n* The reverse current flows for a time called the **Reverse Recovery Time ($t_{rr}$)**.\n* **Definition of $t_{rr}$:** The time interval between the instant the forward current becomes zero and the instant the reverse recovery current decays to $25\\%$ of its peak reverse value ($I_{RM}$).\n$$t_{rr} = t_a + t_b$$\n* **$t_a$:** Time between zero crossing of forward current and peak reverse current $I_{RM}$. During time $t_a$, charge stored in the depletion region is removed.\n* **$t_b$:** Time from the instant of peak reverse current $I_{RM}$ to the instant where $0.25\\,I_{RM}$ is reached.\n* **Softness Factor ($S$-factor):**\n$$S\\text{-factor} = \\frac{t_a}{t_b}$$"
+    },
+    {
+      "id": 41,
+      "document_id": 7,
+      "chunk_index": 5,
+      "page_number": 1,
+      "content": "$0.25\\,I_{RM}$ is reached.\n* **Softness Factor ($S$-factor):**\n$$S\\text{-factor} = \\frac{t_a}{t_b}$$\n\n#### Power Transistors Types:\n1. **Bipolar Junction Transistors (BJT)**\n2. **Metal Oxide Semiconductor Field-Effect Transistors (MOSFET)**\n3. **Insulated Gate Bipolar Transistors (IGBT)**\n\n---\n\n### Page 3\n#### 1. Power BJT (Bipolar Junction Transistor)\n* A BJT has three terminals named: **Collector ($C$)**, **Emitter ($E$)**, and **Base ($B$)**.\n* The term \"bipolar\" denotes that current flow in the device is due to the movement of both holes and electrons."
+    },
+    {
+      "id": 42,
+      "document_id": 7,
+      "chunk_index": 6,
+      "page_number": 1,
+      "content": "bipolar\" denotes that current flow in the device is due to the movement of both holes and electrons.\n\n#### Circuit Equations (Applying KVL to input and output):\n* **Input loop:**\n$$V_B - R_B I_B - V_{BE} = 0 \\implies I_B = \\frac{V_B - V_{BE}}{R_B}$$\n* **Output loop:**\n$$V_{CC} = V_{CE} + I_C R_C \\implies V_{CE} = V_{CC} - I_C R_C = V_{CC} - \\beta I_B R_C$$\n$$V_{CE} = V_{CB} + V_{BE} \\implies V_{CB} = V_{CE} - V_{BE}$$"
+    },
+    {
+      "id": 43,
+      "document_id": 7,
+      "chunk_index": 7,
+      "page_number": 1,
+      "content": "- I_C R_C = V_{CC} - \\beta I_B R_C$$\n$$V_{CE} = V_{CB} + V_{BE} \\implies V_{CB} = V_{CE} - V_{BE}$$\n\n#### NPN Transistor Characteristics:\n1. **Input Characteristics:**\n* Graph between base current $I_B$ and base-emitter voltage $V_{BE}$ for constant $V_{CE}$.\n* As the base-emitter junction is like a diode, the curve resembles a standard forward diode characteristic.\n2. **Output Characteristics:**\n* Graph between collector current $I_C$ and collector-emitter voltage $V_{CE}$ for various values of base current $I_B$ ($I_{B4} > I_{B3} > I_{B2} > I_{B1}$).\n* Regions: **Saturation Region**, **Active Region**, and **Cutoff Region** (leakage current when $I_B = 0$)."
+    },
+    {
+      "id": 44,
+      "document_id": 7,
+      "chunk_index": 8,
+      "page_number": 1,
+      "content": "s: **Saturation Region**, **Active Region**, and **Cutoff Region** (leakage current when $I_B = 0$).\n\n---\n\n### Page 4\n#### Output Characteristics and DC Load Line for NPN Transistor\n* **Saturation Point:** Where $V_{CE} \\approx 0$, $I_C = \\frac{V_{CC}}{R_C}$.\n* **Cutoff Point:** Where $I_B = 0$, $V_{CE} = V_{CC}$.\n* **Load line equation:**\n$$I_C = \\frac{V_{CC} - V_{CE}}{R_C}$$\n* **Breakdown & Breakover Voltage:** Beyond safe operating voltage limits, device enters breakdown."
+    },
+    {
+      "id": 45,
+      "document_id": 7,
+      "chunk_index": 9,
+      "page_number": 1,
+      "content": "* **Breakdown & Breakover Voltage:** Beyond safe operating voltage limits, device enters breakdown.\n\n#### 2. Power MOSFET\n* A Power MOSFET has three terminals: **Drain ($D$)**, **Source ($S$)**, and **Gate ($G$)**.\n* **Comparison:**\n* BJT is a **current-controlled** device.\n* MOSFET is a **voltage-controlled** device.\n* **Basic Structure:** N-Channel Enhancement Type Power MOSFET consists of a $p$-substrate with heavily doped $n^+$ regions forming source and drain, separated by a channel controlled by an insulated gate electrode.\n\n---"
+    },
+    {
+      "id": 46,
+      "document_id": 7,
+      "chunk_index": 10,
+      "page_number": 1,
+      "content": "ons forming source and drain, separated by a channel controlled by an insulated gate electrode.\n\n---\n\n### Page 5\n#### MOSFET Classification:\n* $n$-channel Enhancement MOSFET\n* $p$-channel Enhancement MOSFET"
+    },
+    {
+      "id": 47,
+      "document_id": 7,
+      "chunk_index": 11,
+      "page_number": 1,
+      "content": "Page 5\n#### MOSFET Classification:\n* $n$-channel Enhancement MOSFET\n* $p$-channel Enhancement MOSFET\n\n#### MOSFET Characteristics:\nThe variation of drain current $I_D$ as a function of gate-source voltage $V_{GS}$ and drain-source voltage $V_{DS}$.\n1. **Transfer Characteristics:**\n* Plot of drain current $I_D$ versus gate-source voltage $V_{GS}$.\n* Device remains OFF until $V_{GS}$ exceeds the threshold voltage $V_{GST}$ ($V_{th}$).\n2."
+    },
+    {
+      "id": 48,
+      "document_id": 7,
+      "chunk_index": 12,
+      "page_number": 1,
+      "content": "$V_{GS}$.\n* Device remains OFF until $V_{GS}$ exceeds the threshold voltage $V_{GST}$ ($V_{th}$).\n2. **Output Characteristics:**\n* Plot of drain current $I_D$ versus drain-source voltage $V_{DS}$ for different values of $V_{GS}$ ($V_{GS5} > V_{GS4} > V_{GS3} > V_{GS2} > V_{GS1}$).\n* A load line intersects the output characteristics at points $A$ (ON state / saturation) and $B$ (OFF state / cutoff), functioning as a switch like a BJT.\n3. **Switching Characteristics:**\n* Heavily influenced by internal capacitances ($C_{gs}, C_{gd}, C_{ds}$) and internal impedance of the gate drive circuit.\n* **Turn-on Delay Time ($t_{dn}$):** Time during which input capacitance charges to gate threshold voltage $V_{GST}$.\n* **Rise Time ($t_r$):** Time during which gate voltage rises from $V_{GST}$ to full gate voltage $V_{GSP}$ sufficient to drive the device into full conduction."
+    },
+    {
+      "id": 49,
+      "document_id": 7,
+      "chunk_index": 13,
+      "page_number": 1,
+      "content": "s from $V_{GST}$ to full gate voltage $V_{GSP}$ sufficient to drive the device into full conduction.\n\n---"
+    },
+    {
+      "id": 50,
+      "document_id": 7,
+      "chunk_index": 14,
+      "page_number": 1,
+      "content": "m $V_{GST}$ to full gate voltage $V_{GSP}$ sufficient to drive the device into full conduction.\n\n---\n\n### Page 6\n* **Total Turn-On Time:**\n$$t_{on} = t_{dn} + t_r$$\n* Turn-on time can be reduced by using a low-impedance gate drive source.\n* During $t_r$, drain current rises from zero to full load current $I_D$.\n* **Turn-Off Process:**\n* Initiated upon removal of gate voltage at instant $t_1$.\n* **Turn-off Delay Time ($t_{df}$):** Time during which input capacitance discharges from gate drive voltage $V_1$ down to plateau level $V_{GSP}$.\n* **Fall Time ($t_f$):** Time during which input capacitance discharges from $V_{GSP}$ down to $V_{GST}$, and drain current falls from $I_D$ to zero."
+    },
+    {
+      "id": 51,
+      "document_id": 7,
+      "chunk_index": 15,
+      "page_number": 1,
+      "content": "capacitance discharges from $V_{GSP}$ down to $V_{GST}$, and drain current falls from $I_D$ to zero.\n\n---"
+    },
+    {
+      "id": 52,
+      "document_id": 7,
+      "chunk_index": 16,
+      "page_number": 1,
+      "content": "itance discharges from $V_{GSP}$ down to $V_{GST}$, and drain current falls from $I_D$ to zero.\n\n---\n\n### Page 6 – Page 7\n#### Thyristors (SCR - Silicon Controlled Rectifier)\n* Developed at **Bell Laboratories (USA) in 1957**.\n* A four-layer ($p$-$n$-$p$-$n$), three-junction ($J_1, J_2, J_3$) switching device.\n* **Name Etymology:** Combination of **THY**ratron tube and trans**ISTOR**.\n* **Three Terminals:**\n* **Anode ($A$):** Connected to outer $p$-region.\n* **Cathode ($K$):** Connected to outer $n$-region.\n* **Gate ($G$):** Connected to inner $p$-region.\n* **Ratings:**\n* Voltage rating up to"
+    },
+    {
+      "id": 53,
+      "document_id": 7,
+      "chunk_index": 17,
+      "page_number": 1,
+      "content": "$n$-region.\n* **Gate ($G$):** Connected to inner $p$-region.\n* **Ratings:**\n* Voltage rating up to $10\\text{ kV}$, RMS current up to $3000\\text{ A}$, power capacity up to $30\\text{ MW}$.\n* **Constructional Features:**\n* Threaded stud portion for tightening the thyristor to the heatsink/frame with a nut.\n* Requires cooling to prevent thermal runaway.\n* **Properties:**\n* Unidirectional device.\n* Compact, high reliability, low on-state loss.\n* Low gate power (e.g., $1\\text{ A}, 10\\text{ W}$) can trigger high power conduction.\n\n---"
+    },
+    {
+      "id": 54,
+      "document_id": 7,
+      "chunk_index": 18,
+      "page_number": 1,
+      "content": "ate loss.\n* Low gate power (e.g., $1\\text{ A}, 10\\text{ W}$) can trigger high power conduction.\n\n---\n\n### Page 8\n#### Static V-I Characteristics of a Thyristor\n* **Modes of Operation:**\n1. **Reverse Blocking Mode:** Anode is negative with respect to cathode. Junctions $J_1$ and $J_3$ are reverse biased; $J_2$ is forward biased. Only reverse leakage current flows until reverse breakdown voltage ($V_{BR}$) is reached.\n2. **Forward Blocking Mode:** Anode is positive with respect to cathode with gate open ($I_g = 0$). $J_1$ and $J_3$ are forward biased; $J_2$ is reverse biased."
+    },
+    {
+      "id": 55,
+      "document_id": 7,
+      "chunk_index": 19,
+      "page_number": 1,
+      "content": "to cathode with gate open ($I_g = 0$). $J_1$ and $J_3$ are forward biased; $J_2$ is reverse biased. A small forward leakage current flows until forward breakover voltage ($V_{BO}$) is reached.\n3. **Forward Conduction Mode:** Device switches to low-resistance, high-current ON-state either when $V_{AK} > V_{BO}$ or by injecting a gate current pulse $I_g$ ($I_{g3} > I_{g2} > I_{g1}$).\n* **Definitions:**\n* **Forward Breakover Voltage ($V_{BO}$):** Minimum forward voltage at which SCR starts conducting without gate signal.\n* **Reverse Breakover Voltage ($V_{BR}$):** Maximum reverse voltage before avalanche occurs."
+    },
+    {
+      "id": 56,
+      "document_id": 7,
+      "chunk_index": 20,
+      "page_number": 1,
+      "content": "signal.\n* **Reverse Breakover Voltage ($V_{BR}$):** Maximum reverse voltage before avalanche occurs.\n\n---"
+    },
+    {
+      "id": 57,
+      "document_id": 7,
+      "chunk_index": 21,
+      "page_number": 1,
+      "content": "l.\n* **Reverse Breakover Voltage ($V_{BR}$):** Maximum reverse voltage before avalanche occurs.\n\n---\n\n### Page 9\n* **Switch Analogy:** In forward blocking mode, the SCR acts as an open switch. In conduction mode, it behaves like a closed switch with a small forward voltage drop ($1\\text{ to }2\\text{ V}$).\n* **Advantages of Thyristor:**\n1. High switching speed.\n2. Small size, highly reliable operation.\n3. Power delivered to the load can be precisely controlled.\n4. Low forward voltage drop in conducting state.\n* **Disadvantages:**\n1. Unidirectional current device.\n2. Can turn ON inadvertently due to high $dv/dt$ spikes in supply.\n3. Cannot be turned off by gate control (requires external commutation).\n* **Applications:**\n1. Speed control of AC and DC motors.\n2. Voltage stabilizers, temperature controllers, static circuit breakers.\n3. Inverters (DC to AC), rectifiers (AC to DC)."
+    },
+    {
+      "id": 58,
+      "document_id": 7,
+      "chunk_index": 22,
+      "page_number": 1,
+      "content": "s, temperature controllers, static circuit breakers.\n3. Inverters (DC to AC), rectifiers (AC to DC).\n\n---\n\n### Page 10\n#### Thyristor Turn-ON Methods:\n1. **Forward Voltage Triggering:** Increasing $V_{AK}$ beyond $V_{BO}$.\n2. **Gate Triggering:** Injecting current into the gate terminal.\n3. **$dv/dt$ Triggering:** Rapid rate of rise of anode voltage inducing junction capacitance displacement current.\n4. **Temperature Triggering:** Increased temperature reduces $J_2$ depletion width.\n5. **Light Triggering (LASCR):** Light radiation creates electron-hole pairs near $J_2$."
+    },
+    {
+      "id": 59,
+      "document_id": 7,
+      "chunk_index": 23,
+      "page_number": 1,
+      "content": "tion width.\n5. **Light Triggering (LASCR):** Light radiation creates electron-hole pairs near $J_2$.\n\n#### Critical Current Definitions:\n* **Latching Current ($I_L$):** The minimum anode current that the SCR must attain during the turn-on process to maintain conduction when the gate signal is removed.\n* **Holding Current ($I_H$):** The minimum value of anode current below which it must fall to turn off the thyristor ($I_L > I_H$).\n\n---"
+    },
+    {
+      "id": 60,
+      "document_id": 7,
+      "chunk_index": 24,
+      "page_number": 1,
+      "content": "inimum value of anode current below which it must fall to turn off the thyristor ($I_L > I_H$).\n\n---\n\n### Page 11\n#### Waveforms of Half-Wave SCR Circuit:\n* **Supply Voltage:** $V_i = V_m \\sin \\omega t$.\n* **Gate Pulse:** Applied at firing angle $\\alpha$, $2\\pi+\\alpha$, etc.\n* **Output Voltage ($v_o$):** Conduction occurs from $\\alpha$ to $\\pi$, $2\\pi+\\alpha$ to $3\\pi$, etc.\n* **Output Current ($i_o$):** Same waveform shape as output voltage for resistive load.\n* **SCR Voltage ($v_T$):** Equal to $V_i$ when OFF; drops to zero (approx.) when ON.\n\n---"
+    },
+    {
+      "id": 61,
+      "document_id": 7,
+      "chunk_index": 25,
+      "page_number": 1,
+      "content": "tive load.\n* **SCR Voltage ($v_T$):** Equal to $V_i$ when OFF; drops to zero (approx.) when ON.\n\n---\n\n### Page 12\n#### Switching Parameters (Dynamic Characteristics during Turn-on):\n1. **Delay Time ($t_d$):** Time during which anode voltage falls from $V_a$ to $0.9\\,V_a$ (or anode current rises from $0$ to $0.1\\,I_a$).\n2. **Rise Time ($t_r$):** Time taken by anode current to rise from $0.1\\,I_a$ to $0.9\\,I_a$ (or anode voltage falls from $0.9\\,V_a$ to $0.1\\,V_a$).\n3. **Spread Time ($t_p$):** Time taken by anode current to increase from $0.9\\,I_a$ to full steady-state value $I_a$, or voltage to drop from $0.1\\,V_a$ to on-state conduction drop.\n4. **Commutation Process:** The process of turning off an SCR from conduction state to forward blocking state."
+    },
+    {
+      "id": 62,
+      "document_id": 7,
+      "chunk_index": 26,
+      "page_number": 1,
+      "content": "tation Process:** The process of turning off an SCR from conduction state to forward blocking state.\n\n#### Two-Transistor Model of SCR:\n* SCR split into two interconnected transistors:\n* $Q_1$: $p$-$n$-$p$ transistor (formed by $P_1-N_1-P_2$)\n* $Q_2$: $n$-$p$-$n$ transistor (formed by $N_1-P_2-N_2$)\n* Collector of $Q_1$ connects to base of $Q_2$; collector of $Q_2$ connects to base of $Q_1$.\n\n---"
+    },
+    {
+      "id": 63,
+      "document_id": 7,
+      "chunk_index": 27,
+      "page_number": 1,
+      "content": ")\n* Collector of $Q_1$ connects to base of $Q_2$; collector of $Q_2$ connects to base of $Q_1$.\n\n---\n\n### Page 13 – Page 14\n#### Two-Transistor Derivation:\n* Emitter currents: $I_{E1} = I_A$, $I_{E2} = I_K$.\n* Collector currents with common-base current gains $\\alpha_1, \\alpha_2$ and leakage currents $I_{CO1}, I_{CO2}$:\n$$I_{C1} = \\alpha_1 I_A + I_{CO1}$$\n$$I_{C2} = \\alpha_2 I_K + I_{CO2}$$\n* Total anode current:\n$$I_A = I_{C1} + I_{C2} + I_g$$\nFor gate current $I_g = 0$, $I_K = I_A$:\n$$I_A = \\alpha_1 I_A + I_{CO1} + \\alpha_2 I_A + I_{CO2}$$\n$$I_A [1 - (\\alpha_1 + \\alpha_2)] = I_{CO1} + I_{CO2}$$\n$$I_A = \\frac{I_{CO1} + I_{CO2}}{1 - (\\alpha_1 + \\alpha_2)}$$\n* **Regenerative Action:** As $\\alpha_1 + \\alpha_2 \\to 1$, $I_A \\to \\infty$ (limited only by external load), turning the device fully ON."
+    },
+    {
+      "id": 64,
+      "document_id": 7,
+      "chunk_index": 28,
+      "page_number": 1,
+      "content": "_1 + \\alpha_2 \\to 1$, $I_A \\to \\infty$ (limited only by external load), turning the device fully ON.\n\n#### Bias States of Junctions:\n| Mode | Anode | Cathode | $J_1$ | $J_2$ | $J_3$ |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **Forward Bias** | $+Ve$ | $-Ve$ | Forward Biased | Reverse Biased | Forward Biased |\n| **Reverse Bias** | $-Ve$ | $+Ve$ | Reverse Biased | Forward Biased | Reverse Biased |\n\n---"
+    },
+    {
+      "id": 65,
+      "document_id": 7,
+      "chunk_index": 29,
+      "page_number": 1,
+      "content": "iased |\n| **Reverse Bias** | $-Ve$ | $+Ve$ | Reverse Biased | Forward Biased | Reverse Biased |\n\n---\n\n### Page 14 – Page 15\n#### Bilateral Devices\nDevices that can conduct in both forward and reverse directions.\n1. **DIAC (Bilateral Diode):**\n* Diode for AC ($\\text{DI} + \\text{AC}$).\n* Two terminals ($A_1$ and $A_2$), five layers.\n* Symmetrical bidirectional trigger diode.\n* **Operation:** Symmetrical breakdown in both quadrants. Conduction occurs via $P_1 N_1 P_2 N_2$ or $P_2 N_1 P_1 N_3$ depending on terminal polarity when applied voltage exceeds breakdown voltage ($V_{BR}$).\n* Features a negative resistance region after breakdown."
+    },
+    {
+      "id": 66,
+      "document_id": 7,
+      "chunk_index": 30,
+      "page_number": 1,
+      "content": "ltage exceeds breakdown voltage ($V_{BR}$).\n* Features a negative resistance region after breakdown.\n\n---\n\n### Page 16 – Page 18\n#### 2. TRIAC (Bilateral Triode)\n* TRIode for AC ($\\text{TRI} + \\text{AC}$).\n* Three terminals: **$MT_1$ (Main Terminal 1)**, **$MT_2$ (Main Terminal 2)**, and **Gate ($G$)**.\n* Bidirectional switching device that can conduct current in both directions."
+    },
+    {
+      "id": 67,
+      "document_id": 7,
+      "chunk_index": 31,
+      "page_number": 1,
+      "content": "*, and **Gate ($G$)**.\n* Bidirectional switching device that can conduct current in both directions.\n\n#### Four Triggering Modes of Operation:\n1. **Mode 1: $MT_2$ (+), Gate (+):**\n* $MT_2$ is positive wrt $MT_1$, Gate is positive wrt $MT_1$.\n* Conduction path: $P_1-N_1-P_2-N_2$. Most sensitive mode.\n2. **Mode 2: $MT_2$ (+), Gate (-):**\n* Gate negative wrt $MT_1$. Junction $P_2-N_3$ forward biased; initiates conduction via $P_1-N_1-P_2-N_2$.\n3. **Mode 3: $MT_2$ (-), Gate (+):**\n* $MT_2$ negative wrt $MT_1$, Gate positive wrt $MT_1$. Gate injects electrons; conduction via $P_2-N_1-P_1-N_4$.\n4. **Mode 4: $MT_2$ (-), Gate (-):**\n* $MT_2$ negative, Gate negative. Highly sensitive mode; conduction via $P_2-N_1-P_1-N_4$."
+    },
+    {
+      "id": 68,
+      "document_id": 7,
+      "chunk_index": 32,
+      "page_number": 1,
+      "content": "te (-):**\n* $MT_2$ negative, Gate negative. Highly sensitive mode; conduction via $P_2-N_1-P_1-N_4$.\n\n#### Pros, Cons, and Applications of TRIAC:\n* **Advantages:**\n1. Operates in both directions.\n2. Suitable for full-wave AC control with a single gate circuit.\n* **Drawbacks:**\n1. Slower turn-off recovery time compared to SCR.\n2. Lower $dv/dt$ ratings, susceptible to misfiring with inductive loads.\n* **Applications:** Motor speed regulation, light dimmers, static AC power switches.\n\n---"
+    },
+    {
+      "id": 69,
+      "document_id": 7,
+      "chunk_index": 33,
+      "page_number": 1,
+      "content": "ive loads.\n* **Applications:** Motor speed regulation, light dimmers, static AC power switches.\n\n---\n\n### Page 19 – Page 20\n#### GTO (Gate Turn-Off Thyristor)\n* A four-layer $PNPN$ device that can be turned **ON** with a positive gate current pulse and turned **OFF** with a negative gate current pulse.\n* **Triggering Current:** $\\approx 20\\text{ mA}$.\n* Turn-off requires a large reverse gate pulse (current gain $\\beta_{off} \\approx 3\\text{ to }5$)."
+    },
+    {
+      "id": 70,
+      "document_id": 7,
+      "chunk_index": 34,
+      "page_number": 1,
+      "content": ".\n* Turn-off requires a large reverse gate pulse (current gain $\\beta_{off} \\approx 3\\text{ to }5$).\n\n#### Switching Performance of GTO:\n* **Turn-off Time ($t_q$):**\n$$t_q = t_s + t_f + t_t$$\n* $t_s$: Storage time\n* $t_f$: Fall time\n* $t_t$: Tail time\n* **Advantages:** Fast switching speed, high efficiency, compact weight and size.\n* **Drawbacks:** Higher latching/holding currents ($I_L, I_H$), lower reverse blocking capability.\n\n---"
+    },
+    {
+      "id": 71,
+      "document_id": 7,
+      "chunk_index": 35,
+      "page_number": 1,
+      "content": "*Drawbacks:** Higher latching/holding currents ($I_L, I_H$), lower reverse blocking capability.\n\n---\n\n### Page 20 – Page 22\n#### MCT (MOS-Controlled Thyristor)\n* Thyristor structure with integrated MOS gates for turn-on and turn-off:\n* **ON-FET:** $p$-channel MOSFET (turns MCT ON with negative gate pulse wrt anode).\n* **OFF-FET:** $n$-channel MOSFET (turns MCT OFF with positive gate pulse wrt anode).\n* **Turn-ON Process:** Negative voltage pulse applied at gate wrt anode turns ON the $p$-channel FET, latching the internal thyristor.\n* **Turn-OFF Process:** Positive gate voltage pulse turns ON the $n$-channel FET, which shunts the base-emitter junction of the NPN transistor, breaking regenerative feedback.\n* **Advantages:** Extremely low forward conduction drop, fast turn-on and turn-off times.\n* **Applications:** DC/AC motor drives, UPS systems, induction heating."
+    },
+    {
+      "id": 72,
+      "document_id": 7,
+      "chunk_index": 36,
+      "page_number": 1,
+      "content": "turn-on and turn-off times.\n* **Applications:** DC/AC motor drives, UPS systems, induction heating.\n\n---\n\n### Page 22 – Page 25\n#### IGBT (Insulated Gate Bipolar Transistor)\n* Also known as IGT, MOSIGT, COMFET (Conductivity Modulated FET).\n* Combines the **high input impedance** and high speed of a Power MOSFET with the **low on-state conduction loss** of a BJT.\n* **Terminals:** Gate ($G$), Collector ($C$), Emitter ($E$).\n* Voltage-controlled device (controlled by $V_{GE}$)."
+    },
+    {
+      "id": 73,
+      "document_id": 7,
+      "chunk_index": 37,
+      "page_number": 1,
+      "content": "** Gate ($G$), Collector ($C$), Emitter ($E$).\n* Voltage-controlled device (controlled by $V_{GE}$).\n\n#### Structural and Operational Features:\n* Four layers ($P^+-N^--P-N^+$). The $P^+$ substrate injects minority carriers into the wide $N^-$ drift region during conduction, reducing resistivity (conductivity modulation).\n* **Output Characteristics:** Resembles BJT ($I_C$ vs $V_{CE}$ controlled by $V_{GE}$).\n* **Transfer Characteristics:** Similar to MOSFET ($I_C$ vs $V_{GE}$ above threshold voltage $V_{GET}$).\n* **Advantages:**\n* Simple voltage drive circuitry.\n* Fast switching speed ($\\sim 20\\text{ kHz}$).\n* High voltage and current handling ($1200\\text{ V}, 500\\text{ A}$).\n* **Disadvantages:** Possibility of dynamic latch-up; cannot block high reverse voltage."
+    },
+    {
+      "id": 74,
+      "document_id": 7,
+      "chunk_index": 38,
+      "page_number": 1,
+      "content": "text{ A}$).\n* **Disadvantages:** Possibility of dynamic latch-up; cannot block high reverse voltage.\n\n---\n\n### Solved Examples from Unit 1 (Pages 26 – 28)\n\n#### Numerical 1 (Page 26):\n**Problem:** A diode with internal resistance $r_d = 20\\,\\Omega$ supplies power to a load $R = 1000\\,\\Omega$ from a $230\\text{ V (rms)}$ AC supply. Find:\n(a) Peak load current $I_m$\n(b) DC load current $I_{dc}$\n(c) DC diode voltage $V_o$\n(d) Percentage voltage regulation"
+    },
+    {
+      "id": 75,
+      "document_id": 7,
+      "chunk_index": 39,
+      "page_number": 1,
+      "content": "rent $I_m$\n(b) DC load current $I_{dc}$\n(c) DC diode voltage $V_o$\n(d) Percentage voltage regulation\n\n* **Solution:**\n* (a) $V_m = 230\\sqrt{2} \\approx 325.27\\text{ V}$\n$$I_m = \\frac{V_m}{r_d + R} = \\frac{230\\sqrt{2}}{20 + 1000} = \\frac{325.27}{1020} = 0.3189\\text{ A}$$\n* (b) $I_{dc} = \\frac{I_m}{\\pi} = \\frac{0.3189}{3.14} = 0.10156\\text{ A}$\n* (c) Diode DC voltage drop:\n$$V_{dc} = I_{dc} \\cdot r_d = 0.10156 \\times 20 = 2.031\\text{ V}$$\n* (d) Voltage Regulation:\n$$V_{NL} = \\frac{V_m}{\\pi} = \\frac{230\\sqrt{2}}{\\pi} = 103.57\\text{ V}$$\n$$V_L = I_{dc} R = \\frac{230\\sqrt{2}}{\\pi} \\left(\\frac{1000}{1020}\\right) = 101.49\\text{ V}$$\n$$\\% \\text{Regulation} = \\frac{V_{NL} - V_L}{V_{NL}} \\times 100 = \\frac{103.57 - 101.49}{103.57} \\times 100 = 1.93\\%$$"
+    },
+    {
+      "id": 76,
+      "document_id": 7,
+      "chunk_index": 40,
+      "page_number": 1,
+      "content": "ion} = \\frac{V_{NL} - V_L}{V_{NL}} \\times 100 = \\frac{103.57 - 101.49}{103.57} \\times 100 = 1.93\\%$$\n\n---\n\n#### Numerical 2 (Page 27):\n**Problem:** For an SCR, the gate-cathode characteristic has a slope of $130$. The gate source voltage is $15\\text{ V}$ and allowable gate power dissipation is $0.5\\text{ W}$. Compute the gate source resistance $R_s$."
+    },
+    {
+      "id": 77,
+      "document_id": 7,
+      "chunk_index": 41,
+      "page_number": 1,
+      "content": "}$ and allowable gate power dissipation is $0.5\\text{ W}$. Compute the gate source resistance $R_s$.\n\n* **Solution:**\n$$\\frac{V_g}{I_g} = 130 \\implies V_g = 130 I_g$$\n$$P_g = V_g I_g = 130 I_g^2 = 0.5 \\implies I_g = \\sqrt{\\frac{0.5}{130}} \\approx 0.062\\text{ A} = 62\\text{ mA}$$\n$$V_g = 130 \\times 0.062 = 8.06\\text{ V}$$\nFrom gate circuit loop: $E_s = I_g R_s + V_g$\n$$15 = 0.062 R_s + 8.06 \\implies R_s = \\frac{15 - 8.06}{0.062} = 111.94\\,\\Omega$$\n\n---"
+    },
+    {
+      "id": 78,
+      "document_id": 7,
+      "chunk_index": 42,
+      "page_number": 1,
+      "content": "_g R_s + V_g$\n$$15 = 0.062 R_s + 8.06 \\implies R_s = \\frac{15 - 8.06}{0.062} = 111.94\\,\\Omega$$\n\n---\n\n#### Numerical 3 (Pages 27 – 28):\n**Problem:** The trigger circuit of a thyristor has a source voltage of $15\\text{ V}$ and load line slope of $-120\\text{ V/A}$. Minimum gate current is $25\\text{ mA}$. Compute:\n(i) Source resistance required\n(ii) Trigger voltage and current for an average gate power dissipation of $0.4\\text{ W}$."
+    },
+    {
+      "id": 79,
+      "document_id": 7,
+      "chunk_index": 43,
+      "page_number": 1,
+      "content": "e required\n(ii) Trigger voltage and current for an average gate power dissipation of $0.4\\text{ W}$.\n\n* **Solution:**\n* (i) Source series resistance = Magnitude of load line slope: $R_s = 120\\,\\Omega$.\n* (ii) Load line equation:\n$$E_s = R_s I_g + V_g \\implies 15 = 120 I_g + \\frac{0.4}{I_g}$$\n$$120 I_g^2 - 15 I_g + 0.4 = 0$$\nSolving the quadratic equation:\n$$I_g = 38.56\\text{ mA} \\quad \\text{or} \\quad 86.44\\text{ mA}$$\nCorresponding gate voltages:\n$$V_{g1} = \\frac{0.4}{38.56 \\times 10^{-3}} = 10.37\\text{ V}$$\n$$V_{g2} = \\frac{0.4}{86.44 \\times 10^{-3}} = 4.627\\text{ V}$$\nFor higher reliability gate trigger: $I_g = 86.44\\text{ mA}, V_g = 4.627\\text{ V}$."
+    },
+    {
+      "id": 80,
+      "document_id": 7,
+      "chunk_index": 44,
+      "page_number": 1,
+      "content": "4.627\\text{ V}$$\nFor higher reliability gate trigger: $I_g = 86.44\\text{ mA}, V_g = 4.627\\text{ V}$.\n\n---\n\n#### Numerical 4 (Pages 28 – 29):\n**Problem:** The latching current for an SCR circuit is $100\\text{ mA}$ connected to a DC supply of $200\\text{ V}$. Find the minimum pulse width required to turn on the SCR for:\n(a) Pure inductive load of $L = 0.2\\text{ H}$\n(b) $R = 20\\,\\Omega$ in series with $L = 0.2\\text{ H}$\n(c) $R = 20\\,\\Omega$ in series with $L = 2\\text{ H}$"
+    },
+    {
+      "id": 81,
+      "document_id": 7,
+      "chunk_index": 45,
+      "page_number": 1,
+      "content": "= 20\\,\\Omega$ in series with $L = 0.2\\text{ H}$\n(c) $R = 20\\,\\Omega$ in series with $L = 2\\text{ H}$\n\n* **Solution:**\n* **Case (a):** Pure inductor $L \\frac{di}{dt} = E \\implies i = \\frac{E}{L} t$\n$$0.1 = \\frac{200}{0.2} t \\implies t = 100\\,\\mu\\text{s}$$\n* **Case (b):** $R$-$L$ circuit:\n$$i(t) = \\frac{E}{R} \\left(1 - e^{-Rt/L}\\right)$$\n$$0.1 = \\frac{200}{20} \\left(1 - e^{-\\frac{20}{0.2} t}\\right) = 10 \\left(1 - e^{-100t}\\right)$$\n$$e^{-100t} = 1 - 0.01 = 0.99 \\implies t \\approx 100.5\\,\\mu\\text{s}$$\n* **Case (c):** $R = 20\\,\\Omega, L = 2\\text{ H}$:\n$$0.1 = 10 \\left(1 - e^{-10t}\\right) \\implies e^{-10t} = 0.99 \\implies t \\approx 1005\\,\\mu\\text{s} = 1.005\\text{ ms}$$"
+    },
+    {
+      "id": 82,
+      "document_id": 7,
+      "chunk_index": 46,
+      "page_number": 1,
+      "content": "- e^{-10t}\\right) \\implies e^{-10t} = 0.99 \\implies t \\approx 1005\\,\\mu\\text{s} = 1.005\\text{ ms}$$\n\n---\n\n# UNIT 2: PROTECTION, COMMUTATION, AND CHOPPERS\n\n---"
+    },
+    {
+      "id": 83,
+      "document_id": 7,
+      "chunk_index": 47,
+      "page_number": 1,
+      "content": "rox 1005\\,\\mu\\text{s} = 1.005\\text{ ms}$$\n\n---\n\n# UNIT 2: PROTECTION, COMMUTATION, AND CHOPPERS\n\n---\n\n### Page 29 – Page 32\n#### Thyristor Protection Circuits\n1. **Overcurrent Protection:** Fuses and circuit breakers.\n2. **Overvoltage Protection:** Non-linear resistor (Varistors/Metal Oxide Varistors).\n3. **High $di/dt$ Protection:**\n* Localized hotspot heating occurs near the gate due to slow carrier spread across the junction area.\n* **Remedy:** A small inductor $L$ connected in series with the thyristor anode circuit.\n4."
+    },
+    {
+      "id": 84,
+      "document_id": 7,
+      "chunk_index": 48,
+      "page_number": 1,
+      "content": "on area.\n* **Remedy:** A small inductor $L$ connected in series with the thyristor anode circuit.\n4. **High $dv/dt$ Protection:**\n* Rapid rise of anode voltage causes junction charging current $i = C_j \\frac{dv}{dt}$ across reverse-biased $J_2$, leading to false triggering.\n* **Remedy:** Snubber circuit (series combination of resistor $R_s$ and capacitor $C_s$) placed in parallel across the SCR.\n* **Role of $R_s$ in Snubber:** When SCR turns ON, $C_s$ discharges through the SCR. $R_s$ limits this discharge current to a safe value.\n\n---"
+    },
+    {
+      "id": 85,
+      "document_id": 7,
+      "chunk_index": 49,
+      "page_number": 1,
+      "content": "urns ON, $C_s$ discharges through the SCR. $R_s$ limits this discharge current to a safe value.\n\n---\n\n### Page 32 – Page 34\n#### Series Operation of Thyristors\nUsed for high voltage ratings exceeding the rating of a single SCR. Due to manufacturing variations, leakage characteristics differ.\n* **Static Equalizing Network:** High-value resistors $R$ in parallel with each thyristor ensure equal steady-state voltage distribution:\n$$V_{Os(\\max)} = \\frac{V_s + (n_s - 1) R \\Delta I_O}{n_s}$$\nWorst case ($\\Delta I_O = I_{O2}$):\n$$R \\le \\frac{n_s V_{Os(\\max)} - V_s}{(n_s - 1) I_{O2}}$$\n* **Dynamic Equ"
+    },
+    {
+      "id": 86,
+      "document_id": 7,
+      "chunk_index": 50,
+      "page_number": 1,
+      "content": "e ($\\Delta I_O = I_{O2}$):\n$$R \\le \\frac{n_s V_{Os(\\max)} - V_s}{(n_s - 1) I_{O2}}$$\n* **Dynamic Equalizing Network:** Capacitors $C_1$ in parallel with each device equalize transient voltage sharing during turn-on and turn-off:\n$$V_{DT(\\max)} = \\frac{1}{n_s} \\left[V_s + \\frac{(n_s - 1) \\Delta Q}{C_1}\\right]$$\n* **Derating Factor (DRF):**\n$$\\text{DRF} = 1 - \\text{String Efficiency} = 1 - \\frac{V_s}{n_s V_{Os(\\max)}}$$\n\n---"
+    },
+    {
+      "id": 87,
+      "document_id": 7,
+      "chunk_index": 51,
+      "page_number": 1,
+      "content": "actor (DRF):**\n$$\\text{DRF} = 1 - \\text{String Efficiency} = 1 - \\frac{V_s}{n_s V_{Os(\\max)}}$$\n\n---\n\n### Page 35\n#### Parallel Operation of Thyristors\nUsed when high load current is required. Differences in forward $V$-$I$ characteristics cause unequal current sharing.\n* **Thermal Runaway:** The SCR carrying more current heats up, reduces internal resistance, draws even more current, and gets damaged.\n* **Static Current Sharing:** Resistors placed in series with each device.\n* **Dynamic Current Sharing:** Magnetically coupled reactors (inductors) placed in series with thyristors.\n\n---"
+    },
+    {
+      "id": 88,
+      "document_id": 7,
+      "chunk_index": 52,
+      "page_number": 1,
+      "content": "Current Sharing:** Magnetically coupled reactors (inductors) placed in series with thyristors.\n\n---\n\n### Page 36 – Page 37\n#### Commutation Techniques of Thyristor\nCommutation is the process of turning OFF a conducting thyristor by reducing its forward current below holding current $I_H$ and applying a reverse voltage for a sufficient period.\n1. **Natural (Line) Commutation (Class F):** AC mains voltage naturally alternates to negative, turning OFF the SCR. Used in line-commutated rectifiers and AC controllers.\n2. **Forced Commutation:** Used in DC circuits (choppers and inverters) where DC voltage must be forced across the thyristor using auxiliary components.\n* Class A: Self-commutation by resonance.\n* Class B: Resonant LC circuit across SCR.\n* Class C: Complementary commutation.\n* Class D: Auxiliary commutation (impulse).\n* Class E: External pulse commutation."
+    },
+    {
+      "id": 89,
+      "document_id": 7,
+      "chunk_index": 53,
+      "page_number": 1,
+      "content": "tary commutation.\n* Class D: Auxiliary commutation (impulse).\n* Class E: External pulse commutation.\n\n---\n\n### Page 37 – Page 39\n#### Detailed Forced Commutation Analysis\n\n#### Class B (Self / Resonant Commutation) (Page 37 – 39):\n* An LC circuit is connected in parallel with the main SCR.\n* Differential equation during resonance:\n$$L \\frac{di}{dt} + \\frac{1}{C}\\int i\\,dt = V$$\n* Laplace form:\n$$I(s) = \\frac{V/L}{s^2 + \\frac{1}{LC}} \\implies i(t) = V\\sqrt{\\frac{C}{L}} \\sin\\left(\\frac{t}{\\sqrt{LC}}\\right)$$\n* Peak resonant pulse current:\n$$I_{c(\\text{peak})} = V\\sqrt{\\frac{C}{L}}$$"
+    },
+    {
+      "id": 90,
+      "document_id": 7,
+      "chunk_index": 54,
+      "page_number": 1,
+      "content": "c{t}{\\sqrt{LC}}\\right)$$\n* Peak resonant pulse current:\n$$I_{c(\\text{peak})} = V\\sqrt{\\frac{C}{L}}$$\n\n#### Class D (Auxiliary / Impulse Commutation) (Page 39 – 40):\n* Auxiliary thyristor $Th_A$ turns ON to apply capacitor reverse voltage across main thyristor $Th_1$.\n* Turn-off time provided to the circuit:\n$$t_{off} = \\frac{C \\cdot V_c}{I_L}$$\n$$C = \\frac{I_L \\cdot t_{off}}{V_c}$$\n* For successful commutation, the condition $V\\sqrt{\\frac{C}{L}} > I_L$ must hold, which gives:\n$$L < \\frac{V^2 C}{I_{\\max}^2}$$"
+    },
+    {
+      "id": 91,
+      "document_id": 7,
+      "chunk_index": 55,
+      "page_number": 1,
+      "content": ", the condition $V\\sqrt{\\frac{C}{L}} > I_L$ must hold, which gives:\n$$L < \\frac{V^2 C}{I_{\\max}^2}$$\n\n#### Class C (Complementary Commutation) (Page 40 – 42):\n* Two thyristors ($Th_1$ and $Th_2$) with two loads and a coupling capacitor $C$.\n* Circuit equation for capacitor voltage reversal:\n$$v_c(t) = V \\left(1 - 2 e^{-t / R_1 C}\\right)$$\n* Setting $v_c(t_{off}) = 0$:\n$$1 - 2 e^{-t_{off}/R_1 C} = 0 \\implies t_{off} = R_1 C \\ln 2 \\approx 0.693 R_1 C$$\n\n---"
+    },
+    {
+      "id": 92,
+      "document_id": 7,
+      "chunk_index": 56,
+      "page_number": 1,
+      "content": "off}) = 0$:\n$$1 - 2 e^{-t_{off}/R_1 C} = 0 \\implies t_{off} = R_1 C \\ln 2 \\approx 0.693 R_1 C$$\n\n---\n\n### Page 43 – Page 46\n#### DC-to-DC Converters (Choppers)\n* A chopper is a high-speed static semiconductor switch that converts fixed DC input voltage directly to a variable DC output voltage.\n\n#### Principle of Step-Down Chopper (Buck Converter):\n* **Average Output Voltage:**\n$$V_{av} = V \\cdot \\frac{T_{on}}{T_{on} + T_{off}} = V \\cdot \\frac{T_{on}}{T} = \\alpha V$$\n* Where $\\alpha = \\frac{T_{on}}{T}$ is the **Duty Cycle** ($0 \\le \\alpha \\le 1$).\n* Chopping frequency $f = \\frac{1}{T}$."
+    },
+    {
+      "id": 93,
+      "document_id": 7,
+      "chunk_index": 57,
+      "page_number": 1,
+      "content": "ac{T_{on}}{T}$ is the **Duty Cycle** ($0 \\le \\alpha \\le 1$).\n* Chopping frequency $f = \\frac{1}{T}$.\n\n#### Control Strategies for Duty Cycle ($\\alpha$):\n1. **Time Ratio Control (TRC) / Pulse Width Modulation (PWM):** Frequency $f$ (and time period $T$) is kept constant while $T_{on}$ is varied.\n2. **Frequency Modulation (FM):** Either $T_{on}$ or $T_{off}$ is kept constant while frequency $f$ is varied.\n\n---"
+    },
+    {
+      "id": 94,
+      "document_id": 7,
+      "chunk_index": 58,
+      "page_number": 1,
+      "content": "Modulation (FM):** Either $T_{on}$ or $T_{off}$ is kept constant while frequency $f$ is varied.\n\n---\n\n### Page 45 – Page 50\n#### Equations and Fourier Analysis of Step-Down Chopper\n* **RMS Output Voltage:**\n$$V_{rms} = \\sqrt{\\frac{1}{T} \\int_0^{T_{on}} V^2\\,dt} = \\sqrt{\\alpha} \\, V$$\n* **Output Power:**\n$$P_o = \\frac{V_{rms}^2}{R} = \\frac{\\alpha V^2}{R}$$\n* **Effective Input Resistance seen by supply:**\n$$R_{in} = \\frac{V}{I_{in(av)}} = \\frac{V}{\\alpha I_o} = \\frac{R}{\\alpha}$$\n* **Ripple Voltage and Ripple Factor:**\n$$\\text{Ripple Voltage } V_r = \\sqrt{V_{rms}^2 - V_{av}^2} = V \\sqrt{\\alpha - \\alpha^2}$$\n$$\\text{Ripple Factor (RF)} = \\frac{V_r}{V_{av}} = \\sqrt{\\frac{1}{\\alpha} - 1}$$"
+    },
+    {
+      "id": 95,
+      "document_id": 7,
+      "chunk_index": 59,
+      "page_number": 1,
+      "content": "alpha - \\alpha^2}$$\n$$\\text{Ripple Factor (RF)} = \\frac{V_r}{V_{av}} = \\sqrt{\\frac{1}{\\alpha} - 1}$$\n\n---"
+    },
+    {
+      "id": 96,
+      "document_id": 7,
+      "chunk_index": 60,
+      "page_number": 1,
+      "content": "- \\alpha^2}$$\n$$\\text{Ripple Factor (RF)} = \\frac{V_r}{V_{av}} = \\sqrt{\\frac{1}{\\alpha} - 1}$$\n\n---\n\n### Page 47 – Page 49\n#### Analysis of Step-Down Chopper with R-L-E Load\n* **Mode I ($0 \\le t \\le T_{on}$):** Thyristor conducts.\n$$V = R i + L \\frac{di}{dt} + E$$\nSolution with initial current $I_{\\min}$:\n$$i(t) = \\frac{V - E}{R} \\left(1 - e^{-Rt/L}\\right) + I_{\\min} e^{-Rt/L}$$\n* **Mode II ($T_{on} \\le t \\le T$):** Free-wheeling diode conducts.\n$$0 = R i + L \\frac{di}{dt} + E$$\nSolution with initial current $I_{\\max}$ at $t' = t - T_{on}$:\n$$i(t') = I_{\\max} e^{-R t'/L} - \\frac{E}{R} \\left(1 - e^{-R t'/L}\\right)$$"
+    },
+    {
+      "id": 97,
+      "document_id": 7,
+      "chunk_index": 61,
+      "page_number": 1,
+      "content": "}$ at $t' = t - T_{on}$:\n$$i(t') = I_{\\max} e^{-R t'/L} - \\frac{E}{R} \\left(1 - e^{-R t'/L}\\right)$$\n\n---"
+    },
+    {
+      "id": 98,
+      "document_id": 7,
+      "chunk_index": 62,
+      "page_number": 1,
+      "content": "$t' = t - T_{on}$:\n$$i(t') = I_{\\max} e^{-R t'/L} - \\frac{E}{R} \\left(1 - e^{-R t'/L}\\right)$$\n\n---\n\n### Page 50 – Page 52\n#### Step-Up Chopper (Boost Converter)\n* When thyristor is ON for $T_{on}$, energy is stored in inductor $L$:\n$$E_{in} = V \\cdot I \\cdot T_{on}$$\n* When thyristor is OFF for $T_{off}$, inductor releases energy into load via diode:\n$$E_{out} = (V_L - V) I \\cdot T_{off}$$\n* Equating input and output energy under lossless conditions:\n$$V \\cdot I \\cdot T_{on} = (V_L - V) I \\cdot T_{off}$$\n$$V_L = V \\left(\\frac{T_{on} + T_{off}}{T_{off}}\\right) = V \\left(\\frac{T}{T - T_{on}}\\right) = \\frac{V}{1 - \\alpha}$$\nSince $\\alpha < 1$, $V_L > V$."
+    },
+    {
+      "id": 99,
+      "document_id": 7,
+      "chunk_index": 63,
+      "page_number": 1,
+      "content": "right) = V \\left(\\frac{T}{T - T_{on}}\\right) = \\frac{V}{1 - \\alpha}$$\nSince $\\alpha < 1$, $V_L > V$.\n\n#### Solved Problems (Pages 51 – 52):\n1. **Problem 1:** A step-up chopper has $V = 200\\text{ V}$, $V_o = 250\\text{ V}$, $T_{off} = 0.6 \\times 10^{-3}\\text{ s}$. Find conduction period $T_{on}$.\n$$V_o = V \\left(\\frac{T_{on} + T_{off}}{T_{off}}\\right) \\implies 250 = 200 \\left(\\frac{T_{on} + 0.6 \\times 10^{-3}}{0.6 \\times 10^{-3}}\\right)$$\n$$T_{on} + T_{off} = 0.75 \\times 10^{-3}\\text{ s} \\implies T_{on} = (0.75 - 0.6) \\times 10^{-3} = 0.15\\text{ ms}$$"
+    },
+    {
+      "id": 100,
+      "document_id": 7,
+      "chunk_index": 64,
+      "page_number": 1,
+      "content": "off} = 0.75 \\times 10^{-3}\\text{ s} \\implies T_{on} = (0.75 - 0.6) \\times 10^{-3} = 0.15\\text{ ms}$$\n\n2. **Problem 2:** Input voltage $= 150\\text{ V}$, output voltage $= 250\\text{ V}$, $T_{off} = 1\\text{ ms}$. Find $T_{on}$.\n$$250 = 150 \\left(\\frac{T_{on} + 10^{-3}}{10^{-3}}\\right) \\implies T_{on} = 0.667\\text{ ms}$$\n\n---"
+    },
+    {
+      "id": 101,
+      "document_id": 7,
+      "chunk_index": 65,
+      "page_number": 1,
+      "content": ".\n$$250 = 150 \\left(\\frac{T_{on} + 10^{-3}}{10^{-3}}\\right) \\implies T_{on} = 0.667\\text{ ms}$$\n\n---\n\n### Page 53 – Page 57\n#### Classification of Chopper Circuits\n* **Class A Chopper (First Quadrant):**\n* $V_L > 0$, $I_L > 0$. Power flows from source to load.\n* **Class B Chopper (Second Quadrant):**\n* $V_L > 0$, $I_L < 0$. Power flows from load back to source (regenerative braking).\n* **Class C Chopper (Two Quadrant: First & Second):**\n* Parallel combination of Class A and Class B."
+    },
+    {
+      "id": 102,
+      "document_id": 7,
+      "chunk_index": 66,
+      "page_number": 1,
+      "content": "* **Class C Chopper (Two Quadrant: First & Second):**\n* Parallel combination of Class A and Class B. $V_L$ always positive, $I_L$ can be positive or negative.\n* **Class D Chopper (Two Quadrant: First & Fourth):**\n* $I_L$ always positive, $V_L$ can be positive or negative. Average voltage positive if $T_{on} > T_{off}$, negative if $T_{on} < T_{off}$.\n* **Class E Chopper (Four Quadrant):**\n* Complete H-bridge configuration with four switches ($S_1$ to $S_4$) and four antiparallel diodes ($D_1$ to $D_4$). Both voltage and current can be positive or negative in all four quadrants.\n\n---"
+    },
+    {
+      "id": 103,
+      "document_id": 7,
+      "chunk_index": 67,
+      "page_number": 1,
+      "content": "s ($D_1$ to $D_4$). Both voltage and current can be positive or negative in all four quadrants.\n\n---\n\n# UNIT 3: PHASE CONTROLLED CONVERTERS\n\n---"
+    },
+    {
+      "id": 104,
+      "document_id": 7,
+      "chunk_index": 68,
+      "page_number": 1,
+      "content": "can be positive or negative in all four quadrants.\n\n---\n\n# UNIT 3: PHASE CONTROLLED CONVERTERS\n\n---\n\n### Page 58\n#### Performance Parameters of Rectifiers\n1. **Average Output DC Voltage:**\n$$V_{dc} = \\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} v(\\omega t)\\,d(\\omega t), \\quad I_{dc} = \\frac{V_{dc}}{R}$$\n2. **Output DC Power:** $P_{dc} = V_{dc} I_{dc}$\n3. **RMS Output Voltage & Current:**\n$$V_{rms} = \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} v^2(\\omega t)\\,d(\\omega t)\\right]^{1/2}, \\quad I_{rms} = \\frac{V_{rms}}{R}$$\n4. **Output AC Power:** $P_{ac} = V_{rms} I_{rms}$\n5."
+    },
+    {
+      "id": 105,
+      "document_id": 7,
+      "chunk_index": 69,
+      "page_number": 1,
+      "content": "ht]^{1/2}, \\quad I_{rms} = \\frac{V_{rms}}{R}$$\n4. **Output AC Power:** $P_{ac} = V_{rms} I_{rms}$\n5. **Rectification Efficiency:** $\\eta = \\frac{P_{dc}}{P_{ac}}$\n6. **Form Factor (FF):** $\\text{FF} = \\frac{V_{rms}}{V_{dc}}$\n7. **Ripple Factor (RF):** $\\text{RF} = \\sqrt{\\text{FF}^2 - 1}$\n8. **Transformer Utilization Factor (TUF):** $\\text{TUF} = \\frac{P_{dc}}{V_s I_s}$\n9. **Displacement Factor (DF):** $\\text{DF} = \\cos \\phi$\n10. **Input Harmonic Factor (HF):** $\\text{HF} = \\left[\\left(\\frac{I_s}{I_{s1}}\\right)^2 - 1\\right]^{1/2}$\n11. **Input Power Factor (PF):** $\\text{PF} = \\left(\\frac{I_{s1}}{I_s}\\right) \\cos \\phi$"
+    },
+    {
+      "id": 106,
+      "document_id": 7,
+      "chunk_index": 70,
+      "page_number": 1,
+      "content": "ght]^{1/2}$\n11. **Input Power Factor (PF):** $\\text{PF} = \\left(\\frac{I_{s1}}{I_s}\\right) \\cos \\phi$\n\n---\n\n### Page 59 – Page 61\n#### Single-Phase Half-Wave Controlled Rectifier (R Load)\n* **Average Output Voltage:**\n$$V_{dc} = \\frac{1}{2\\pi} \\int_{\\alpha}^{\\pi} V_m \\sin \\omega t\\,d(\\omega t) = \\frac{V_m}{2\\pi} (1 + \\cos \\alpha)$$\n* **RMS Output Voltage:**\n$$V_{rms} = \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{\\pi} V_m^2 \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2} = \\frac{V_m}{2\\sqrt{\\pi}} \\left[(\\pi - \\alpha) + \\frac{1}{2}\\sin 2\\alpha\\right]^{1/2}$$"
+    },
+    {
+      "id": 107,
+      "document_id": 7,
+      "chunk_index": 71,
+      "page_number": 1,
+      "content": "right]^{1/2} = \\frac{V_m}{2\\sqrt{\\pi}} \\left[(\\pi - \\alpha) + \\frac{1}{2}\\sin 2\\alpha\\right]^{1/2}$$\n\n#### Solved Problem (Page 60 – 61):\n**Problem:** Single-phase half-wave converter fed by transformer secondary voltage $v = 400 \\sin \\omega t$, firing angle $\\alpha = 30^\\circ$, load $R = 50\\,\\Omega$. Compute $V_{dc}, I_{dc}, V_{rms}, I_{rms}$.\n* **Solution:**\n$$V_m = 400\\text{ V}, \\quad \\alpha = 30^\\circ = \\frac{\\pi}{6}\\text{ rad}$$\n$$V_{dc} = \\frac{400}{2\\pi}(1 + \\cos 30^\\circ) = \\frac{400}{6.28}(1 + 0.866) = 118.48\\text{ V}$$\n$$I_{dc} = \\frac{118.48}{50} = 2.37\\text{ A}$$\n$$V_{rms} = \\frac{400}{2\\sqrt{\\pi}} \\left[\\left(\\pi - \\frac{\\pi}{6}\\right) + \\frac{1}{2}\\sin 60^\\circ\\right]^{1/2} = 112.86 \\times [2.62 + 0.433]^{1/2} = 197.5\\text{ V}$$\n$$I_{rms} = \\frac{197.5}{50} = 3.95\\text{ A}$$"
+    },
+    {
+      "id": 108,
+      "document_id": 7,
+      "chunk_index": 72,
+      "page_number": 1,
+      "content": "112.86 \\times [2.62 + 0.433]^{1/2} = 197.5\\text{ V}$$\n$$I_{rms} = \\frac{197.5}{50} = 3.95\\text{ A}$$\n\n---\n\n### Page 61 – Page 63\n#### Single-Phase Half-Wave Converter with RL Load and Freewheeling Diode (FD)\n* Freewheeling diode prevents load voltage from going negative by conducting during the negative half-cycle ($\\pi$ to $2\\pi+\\alpha$).\n* Improves load current waveform and avoids discontinuous current.\n* Output voltage formula identical to R-load case:\n$$V_{dc} = \\frac{V_m}{2\\pi} (1 + \\cos \\alpha)$$\n\n---"
+    },
+    {
+      "id": 109,
+      "document_id": 7,
+      "chunk_index": 73,
+      "page_number": 1,
+      "content": "utput voltage formula identical to R-load case:\n$$V_{dc} = \\frac{V_m}{2\\pi} (1 + \\cos \\alpha)$$\n\n---\n\n### Page 64 – Page 67\n#### Single-Phase Full-Wave Mid-Point / Bridge Converter (R & RL Load)\n* **Average Output Voltage (Continuous Conduction):**\n$$V_{dc} = \\frac{1}{\\pi} \\int_{\\alpha}^{\\pi + \\alpha} V_m \\sin \\omega t\\,d(\\omega t) = \\frac{2 V_m}{\\pi} \\cos \\alpha$$\n* **RMS Output Voltage:**\n$$V_{rms} = \\frac{V_m}{\\sqrt{2}}$$"
+    },
+    {
+      "id": 110,
+      "document_id": 7,
+      "chunk_index": 74,
+      "page_number": 1,
+      "content": "ga t) = \\frac{2 V_m}{\\pi} \\cos \\alpha$$\n* **RMS Output Voltage:**\n$$V_{rms} = \\frac{V_m}{\\sqrt{2}}$$\n\n#### Solved Problem (Page 67 – 68):\n**Problem:** Center-tapped transformer with secondary voltage $150\\text{ V (rms)}$ per half, resistive load $R = 30\\,\\Omega$, $\\alpha = 45^\\circ$.\n* **Solution:**\n$$V_m = 150\\sqrt{2} \\approx 212.13\\text{ V}$$\n$$V_{dc} = \\frac{V_m}{\\pi} (1 + \\cos \\alpha) = \\frac{150\\sqrt{2}}{\\pi}(1 + \\cos 45^\\circ) = 115.32\\text{ V}$$\n$$I_{dc} = \\frac{115.32}{30} = 3.84\\text{ A}$$\n$$V_{rms} = V_m \\left[\\frac{1}{2\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2} = 142.9\\text{ V}$$\n$$I_{rms} = \\frac{142.9}{30} = 4.76\\text{ A}$$"
+    },
+    {
+      "id": 111,
+      "document_id": 7,
+      "chunk_index": 75,
+      "page_number": 1,
+      "content": "in 2\\alpha}{2}\\right)\\right]^{1/2} = 142.9\\text{ V}$$\n$$I_{rms} = \\frac{142.9}{30} = 4.76\\text{ A}$$\n\n---\n\n### Page 70 – Page 71\n#### Single-Phase Semi-Converter (Half-Controlled Bridge) with RLE Load\n* Uses two thyristors and two diodes (with a freewheeling diode).\n* Output voltage cannot become negative:\n$$V_{dc} = \\frac{V_m}{\\pi} (1 + \\cos \\alpha)$$\n$$V_{rms} = \\frac{V_m}{\\sqrt{2}} \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n\n---"
+    },
+    {
+      "id": 112,
+      "document_id": 7,
+      "chunk_index": 76,
+      "page_number": 1,
+      "content": "sqrt{2}} \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n\n---\n\n### Page 72 – Page 74\n#### Three-Phase Full-Wave Controlled Converter (6-Pulse)\n* Six thyristors ($Th_1$ to $Th_6$). Firing sequence: $Th_1, Th_2, Th_3, Th_4, Th_5, Th_6$.\n* Each thyristor conducts for $120^\\circ$. Commutation occurs every $60^\\circ$.\n* **Average Output Voltage:**\n$$V_{dc} = \\frac{3}{\\pi} \\int_{\\frac{\\pi}{6} + \\alpha}^{\\frac{\\pi}{2} + \\alpha} v_{ab}\\,d(\\omega t) = \\frac{3\\sqrt{3} V_m}{\\pi} \\cos \\alpha = \\frac{3 V_{ml}}{\\pi} \\cos \\alpha$$\n* **RMS Output Voltage:**\n$$V_{rms} = \\sqrt{3} V_m \\left[\\frac{1}{2} + \\frac{3\\sqrt{3}}{4\\pi}\\cos 2\\alpha\\right]^{1/2}$$"
+    },
+    {
+      "id": 113,
+      "document_id": 7,
+      "chunk_index": 77,
+      "page_number": 1,
+      "content": "ge:**\n$$V_{rms} = \\sqrt{3} V_m \\left[\\frac{1}{2} + \\frac{3\\sqrt{3}}{4\\pi}\\cos 2\\alpha\\right]^{1/2}$$\n\n---\n\n### Page 75 – Page 79\n#### Dual Converters\nConsists of two full converters connected back-to-back across the same load to provide four-quadrant operation:\n$$V_{dc1} = \\frac{2V_m}{\\pi}\\cos \\alpha_1, \\quad V_{dc2} = \\frac{2V_m}{\\pi}\\cos \\alpha_2$$\nTo ensure equal average DC terminal voltages ($V_{dc1} = -V_{dc2}$):\n$$\\cos \\alpha_2 = -\\cos \\alpha_1 = \\cos(\\pi - \\alpha_1) \\implies \\alpha_1 + \\alpha_2 = 180^\\circ$$"
+    },
+    {
+      "id": 114,
+      "document_id": 7,
+      "chunk_index": 78,
+      "page_number": 1,
+      "content": ":\n$$\\cos \\alpha_2 = -\\cos \\alpha_1 = \\cos(\\pi - \\alpha_1) \\implies \\alpha_1 + \\alpha_2 = 180^\\circ$$\n\n#### Modes of Dual Converter:\n1. **Non-Circulating Current Mode:** Only one converter operates at any time. Requires a dead time of $10\\text{ to }20\\text{ ms}$ before switching between converters.\n2. **Circulating Current Mode:** Both converters operate simultaneously. An inductor (reactor) is connected between converters to limit the circulating ripple currents:\n$$i_r(\\omega t) = \\frac{2V_m}{\\omega L} (\\cos \\omega t - \\cos \\alpha_1)$$"
+    },
+    {
+      "id": 115,
+      "document_id": 7,
+      "chunk_index": 79,
+      "page_number": 1,
+      "content": "rculating ripple currents:\n$$i_r(\\omega t) = \\frac{2V_m}{\\omega L} (\\cos \\omega t - \\cos \\alpha_1)$$\n\n#### Solved Problems on Dual Converter:\n* **Problem 1 (Page 78):** $V_s = 230\\text{ V}, 50\\text{ Hz}, R = 15\\,\\Omega, L = 50\\text{ mH}, \\alpha_1 = 60^\\circ, \\alpha_2 = 120^\\circ$.\n$$\\omega L = 2\\pi(50)(0.05) = 15.71\\,\\Omega, \\quad V_m = 230\\sqrt{2} = 325.2\\text{ V}$$\n$$\\text{Peak Circulating Current } I_{r(\\text{peak})} = \\frac{2 \\times 325.2}{15.71}(1 - \\cos 60^\\circ) = 20.7\\text{ A}$$\n$$\\text{Peak Load Current} = \\frac{325.2}{15} = 21.68\\text{ A}$$\n$$\\text{Total Peak Converter Current} = 21.68 + 20.7 = 42.38\\text{ A}$$\n* **Problem 2 (Page 79):** Given peak circulating current $= 10.2\\text{ A}$, find required reactor inductance $L$:\n$$L = \\frac{230\\sqrt{2} \\times 2 \\times (1 - \\cos 30^\\circ)}{314 \\times 10.2} = 0.0272\\text{ H} = 27.2\\text{ mH}$$"
+    },
+    {
+      "id": 116,
+      "document_id": 7,
+      "chunk_index": 80,
+      "page_number": 1,
+      "content": "0\\sqrt{2} \\times 2 \\times (1 - \\cos 30^\\circ)}{314 \\times 10.2} = 0.0272\\text{ H} = 27.2\\text{ mH}$$\n\n---\n\n# UNIT 4: AC VOLTAGE CONTROLLERS & CYCLOCONVERTERS\n\n---"
+    },
+    {
+      "id": 117,
+      "document_id": 7,
+      "chunk_index": 81,
+      "page_number": 1,
+      "content": "} = 0.0272\\text{ H} = 27.2\\text{ mH}$$\n\n---\n\n# UNIT 4: AC VOLTAGE CONTROLLERS & CYCLOCONVERTERS\n\n---\n\n### Page 80 – Page 82\n#### AC Voltage Controllers\nUsed to convert fixed AC voltage directly into variable AC voltage at the same frequency.\n1. **Integral Cycle Control (ON-OFF Control):**\n* Thyristors conduct for $n$ cycles and remain OFF for $m$ cycles.\n* Duty Cycle: $\\alpha = \\frac{n}{n + m}$\n* RMS Output Voltage:\n$$V_L = V_i \\sqrt{\\frac{n}{n + m}} = V_i \\sqrt{\\alpha}$$\n2. **Phase Control:**\n* **Single-Phase Half-Wave Regulator:** (One SCR and one Diode in antiparallel):\n$$V_{rms} = V_m \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2}$$"
+    },
+    {
+      "id": 118,
+      "document_id": 7,
+      "chunk_index": 82,
+      "page_number": 1,
+      "content": "$V_{rms} = V_m \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2}$$\n\n---"
+    },
+    {
+      "id": 119,
+      "document_id": 7,
+      "chunk_index": 83,
+      "page_number": 1,
+      "content": "ms} = V_m \\left[\\frac{1}{2\\pi} \\int_{\\alpha}^{2\\pi} \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2}$$\n\n---\n\n### Page 83 – Page 85\n#### Single-Phase Full-Wave AC Voltage Controller (Two Thyristors in Antiparallel)\n* **Average Output Voltage:** $V_{av} = 0$ (symmetrical AC).\n* **RMS Output Voltage (Resistive Load):**\n$$V_{rms} = V_m \\left[\\frac{1}{\\pi} \\int_{\\alpha}^{\\pi} \\sin^2 \\omega t\\,d(\\omega t)\\right]^{1/2} = V_i \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n* **Average Power Delivered to Load:**\n$$P = \\frac{V_{rms}^2}{R} = \\frac{V_m^2}{2\\pi R}\\left[(\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right]$$\n* **Input Power Factor:**\n$$\\text{PF} = \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$"
+    },
+    {
+      "id": 120,
+      "document_id": 7,
+      "chunk_index": 84,
+      "page_number": 1,
+      "content": "$$\\text{PF} = \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n\n---"
+    },
+    {
+      "id": 121,
+      "document_id": 7,
+      "chunk_index": 85,
+      "page_number": 1,
+      "content": "xt{PF} = \\left[\\frac{1}{\\pi}\\left((\\pi - \\alpha) + \\frac{\\sin 2\\alpha}{2}\\right)\\right]^{1/2}$$\n\n---\n\n### Page 86 – Page 88\n#### Three-Phase Full-Wave AC Voltage Controller\n* Six thyristors connected in star or delta configurations.\n* **Control Ranges:**\n* **$0 \\le \\alpha \\le 60^\\circ$:** Conduction alternates between 2 and 3 thyristors conducting.\n* **$60^\\circ \\le \\alpha \\le 90^\\circ$:** Only 2 thyristors conduct at any instant.\n* **$90^\\circ \\le \\alpha \\le 150^\\circ$:** Either 2 thyristors conduct or none conduct (discontinuous).\n* **$\\alpha \\ge 150^\\circ$:** Output voltage drops to zero."
+    },
+    {
+      "id": 122,
+      "document_id": 7,
+      "chunk_index": 86,
+      "page_number": 1,
+      "content": "conduct or none conduct (discontinuous).\n* **$\\alpha \\ge 150^\\circ$:** Output voltage drops to zero.\n\n---\n\n### Page 89 – Page 91\n#### Static On-Load Tap Changing of Transformers\n* Uses pairs of inverse-parallel thyristors on transformer taps to achieve fast, arc-less voltage adjustment under load.\n* Output voltage can transition smoothly between tap voltage $V_1$ and $(V_1 + V_2)$ by phase control without short-circuiting windings.\n\n---"
+    },
+    {
+      "id": 123,
+      "document_id": 7,
+      "chunk_index": 87,
+      "page_number": 1,
+      "content": "between tap voltage $V_1$ and $(V_1 + V_2)$ by phase control without short-circuiting windings.\n\n---\n\n### Page 92 – Page 99\n#### Cycloconverters\nA cycloconverter converts input AC power at one frequency to output AC power at a different (lower) frequency without an intermediate DC link."
+    },
+    {
+      "id": 124,
+      "document_id": 7,
+      "chunk_index": 88,
+      "page_number": 1,
+      "content": "t one frequency to output AC power at a different (lower) frequency without an intermediate DC link.\n\n#### Classifications:\n1. **By relative frequency:**\n* **Step-Down Cycloconverter:** Output frequency $f_o < f_s$ (uses natural/line commutation).\n* **Step-Up Cycloconverter:** Output frequency $f_o > f_s$ (requires forced commutation).\n2. **By phases:**\n* $1$-phase to $1$-phase\n* $3$-phase to $1$-phase\n* $3$-phase to $3$-phase"
+    },
+    {
+      "id": 125,
+      "document_id": 7,
+      "chunk_index": 89,
+      "page_number": 1,
+      "content": "ation).\n2. **By phases:**\n* $1$-phase to $1$-phase\n* $3$-phase to $1$-phase\n* $3$-phase to $3$-phase\n\n#### Operation Principle:\n* Composed of a **Positive (+ve) Converter Group** and a **Negative (-ve) Converter Group**.\n* The positive group conducts for half the desired output period ($\\frac{T_o}{2}$), creating positive half-cycles.\n* The negative group conducts for the next half-period, creating negative half-cycles."
+    },
+    {
+      "id": 126,
+      "document_id": 7,
+      "chunk_index": 90,
+      "page_number": 1,
+      "content": "half-cycles.\n* The negative group conducts for the next half-period, creating negative half-cycles.\n\n#### Mathematical Analysis of a $P$-Pulse Cycloconverter:\n* Conduction period per phase segment $= \\frac{2\\pi}{P}$.\n* **Mean Output Voltage:**\n$$V_{mean} = \\frac{P V_m}{\\pi} \\sin\\left(\\frac{\\pi}{P}\\right) \\cos \\alpha$$\n* **Maximum Output Voltage (at $\\alpha = 0^\\circ$):**\n$$V_{o(\\max)} = \\frac{P V_m}{\\pi} \\sin\\left(\\frac{\\pi}{P}\\right)$$\n* **RMS Value of Output Voltage:**\n$$V_{o(rms)} = \\frac{P}{\\pi} \\frac{V_m}{\\sqrt{2}} \\sin\\left(\\frac{\\pi}{P}\\right) \\cos \\alpha$$"
     }
   ],
   "quizzes": [
@@ -152,6 +995,86 @@
           "explanation": "In sample_biology_notes.pdf: Krebs Cycle (Citric Acid Cycle) is specifically documented as: \"Occurs in mitochondrial matrix; yields electron carriers.\"."
         }
       ]
+    },
+    {
+      "id": 3,
+      "document_id": 4,
+      "title": "Signal System_260912_144655 Quiz (Medium)",
+      "difficulty": "Medium",
+      "number_of_questions": 5,
+      "created_at": "2026-10-11T17:32:40.958Z",
+      "questions": [
+        {
+          "id": 7,
+          "quiz_id": 3,
+          "question_index": 0,
+          "question": "According to Chapter 6, what condition must the Region of Convergence (ROC) satisfy for a continuous-time LTI system to be stable?",
+          "options": [
+            "The ROC must strictly exclude the imaginary axis",
+            "The jw-axis must lie within the ROC, meaning Re{s} = 0 is included",
+            "The ROC must be confined entirely within the unit circle",
+            "The ROC must extend only to the left of the leftmost pole"
+          ],
+          "correct_answer": "The jw-axis must lie within the ROC, meaning Re{s} = 0 is included",
+          "explanation": "Chapter 6 states that for an LTI system to be stable, the jw-axis must lie within the ROC, which means that Re{s} = 0 is included."
+        },
+        {
+          "id": 8,
+          "quiz_id": 3,
+          "question_index": 1,
+          "question": "In Chapter 7, what is the stability criterion for a causal discrete-time LTI system in terms of its transfer function H(z)?",
+          "options": [
+            "All poles of H(z) must lie strictly inside the unit circle: |p_i| < 1",
+            "All poles of H(z) must lie strictly on the unit circle: |p_i| = 1",
+            "All poles of H(z) must lie in the open left-half plane: Re{p_i} < 0",
+            "All poles of H(z) must lie strictly outside the unit circle: |p_i| > 1"
+          ],
+          "correct_answer": "All poles of H(z) must lie strictly inside the unit circle: |p_i| < 1",
+          "explanation": "Chapter 7 explicitly states: 'A causal discrete-time LTI system is BIBO stable if and only if all poles of H(z) lie strictly inside the unit circle: |p_i| < 1.'"
+        },
+        {
+          "id": 9,
+          "quiz_id": 3,
+          "question_index": 2,
+          "question": "Based on Chapter 3, how is the impulse response h(t) of an LTI system derived from its unit step response s(t)?",
+          "options": [
+            "By convolving the step response with another step function: h(t) = s(t) * u(t)",
+            "By integrating the step response: h(t) = integral from -infinity to t of s(tau) dtau",
+            "By taking the time-derivative of the step response: h(t) = ds(t)/dt",
+            "By evaluating the reciprocal of the step response: h(t) = 1 / s(t)"
+          ],
+          "correct_answer": "By taking the time-derivative of the step response: h(t) = ds(t)/dt",
+          "explanation": "Under the Step Response section in Chapter 3, the document notes: 'Conversely, the impulse response is the time-derivative of the step response: h(t) = ds(t)/dt.'"
+        },
+        {
+          "id": 10,
+          "quiz_id": 3,
+          "question_index": 3,
+          "question": "According to the Continuous-Time Fourier Transform properties in Chapter 5, what is the frequency-domain equivalent of time-domain differentiation d/dt[x(t)]?",
+          "options": [
+            "(1 / (j*w)) * X(jw)",
+            "(j*w) * X(jw)",
+            "X(j(w - w0))",
+            "exp(-j * w * t0) * X(jw)"
+          ],
+          "correct_answer": "(j*w) * X(jw)",
+          "explanation": "Chapter 5 explicitly lists the property 'Differentiation in Time: d/dt[x(t)] <-> (j*w) * X(jw)'."
+        },
+        {
+          "id": 11,
+          "quiz_id": 3,
+          "question_index": 4,
+          "question": "According to Chapter 10, how does a Chebyshev Type I filter differ in response from a Butterworth filter for the same filter order N?",
+          "options": [
+            "It provides a maximally flat magnitude response with zero ripple across the passband",
+            "It features an equiripple stopband and a strictly monotonic passband",
+            "It features an equiripple passband and monotonic stopband, providing steeper roll-off",
+            "It provides a slower roll-off with identical passband flatness"
+          ],
+          "correct_answer": "It features an equiripple passband and monotonic stopband, providing steeper roll-off",
+          "explanation": "Chapter 10 defines the Chebyshev Type I Filter as having an 'Equiripple passband and monotonic stopband, providing steeper roll-off than Butterworth for the same filter order N.'"
+        }
+      ]
     }
   ],
   "attempts": [
@@ -190,9 +1113,660 @@
         }
       ],
       "created_at": "2026-10-11T17:10:28.424Z"
+    },
+    {
+      "id": 2,
+      "document_id": 4,
+      "question": "what is signal",
+      "answer": "### Grounded Answer from Signal System_260912_144655.pdf\n\n\n\nThis information is referenced directly from page 1 of your notes.",
+      "sources": [
+        {
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "-- 1 of 74 --\n\n-- 2 of 74 --\n\n-- 3 of 74 --\n\n-- 4 of 74 --\n\n-- 5 of 74 --\n\n-- 6 of 74 --\n\n-- 7 of 74 --\n\n-- 8 of 74 --\n\n-- 9 of 74 --\n\n-- 10 of 74 --\n\n-- 11 of 74 --\n\n-- 12 of 74 --\n\n-- 13 of 74 --\n\n-- 14 of 74 --\n\n-- 15 of 74 --\n\n-- 16 of 74 --\n\n-- 17 of 74 --\n\n-- 18 of 74 --\n\n-- 19 of 74 --\n\n-- 20 of 74 --\n\n-- 21 of 74 --\n\n-- 22 of 74 --\n\n-- 23 of 74 --\n\n-- 24 of 74 --\n\n-- 25 of 74 --\n\n-- 26 of 74 --\n\n-- 27 of 74 --\n\n-- 28 of 74 --\n\n-- 29 of 74 --\n\n-- 30 of 74 --\n\n-- 31 of 74 --\n\n-- 32 of 74 --\n\n-- 33 of 74 --\n\n-- 34 of 74 --\n\n-- 35 of 74 --\n\n-- 36 of 74 --\n\n-- 37 of 74 --\n\n-- 38 of 74 --",
+          "relevance_score": 1
+        },
+        {
+          "chunk_index": 1,
+          "page_number": 1,
+          "content": "4 --\n\n-- 33 of 74 --\n\n-- 34 of 74 --\n\n-- 35 of 74 --\n\n-- 36 of 74 --\n\n-- 37 of 74 --\n\n-- 38 of 74 --\n\n-- 39 of 74 --\n\n-- 40 of 74 --\n\n-- 41 of 74 --\n\n-- 42 of 74 --\n\n-- 43 of 74 --\n\n-- 44 of 74 --\n\n-- 45 of 74 --\n\n-- 46 of 74 --\n\n-- 47 of 74 --\n\n-- 48 of 74 --\n\n-- 49 of 74 --\n\n-- 50 of 74 --\n\n-- 51 of 74 --\n\n-- 52 of 74 --\n\n-- 53 of 74 --\n\n-- 54 of 74 --\n\n-- 55 of 74 --\n\n-- 56 of 74 --\n\n-- 57 of 74 --\n\n-- 58 of 74 --\n\n-- 59 of 74 --\n\n-- 60 of 74 --\n\n-- 61 of 74 --\n\n-- 62 of 74 --\n\n-- 63 of 74 --\n\n-- 64 of 74 --\n\n-- 65 of 74 --\n\n-- 66 of 74 --\n\n-- 67 of 74 --\n\n-- 68 of 74 --\n\n-- 69 of 74 --",
+          "relevance_score": 1
+        },
+        {
+          "chunk_index": 2,
+          "page_number": 1,
+          "content": "4 --\n\n-- 64 of 74 --\n\n-- 65 of 74 --\n\n-- 66 of 74 --\n\n-- 67 of 74 --\n\n-- 68 of 74 --\n\n-- 69 of 74 --\n\n-- 70 of 74 --\n\n-- 71 of 74 --\n\n-- 72 of 74 --\n\n-- 73 of 74 --\n\n-- 74 of 74 --",
+          "relevance_score": 1
+        }
+      ],
+      "created_at": "2026-10-11T17:15:49.558Z"
+    },
+    {
+      "id": 3,
+      "document_id": 4,
+      "question": "why are you not giving answers directly",
+      "answer": "### Information Not Found in Document\n\nThe requested topic was **not found** in the uploaded material (`Signal System_260912_144655.pdf`).\n\nAccording to the StudyAI system instructions, answers are strictly grounded in your provided study materials to prevent misinformation. Please ensure your question relates to the subjects covered in this PDF.",
+      "sources": [
+        {
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "-- 1 of 74 --\n\n-- 2 of 74 --\n\n-- 3 of 74 --\n\n-- 4 of 74 --\n\n-- 5 of 74 --\n\n-- 6 of 74 --\n\n-- 7 of 74 --\n\n-- 8 of 74 --\n\n-- 9 of 74 --\n\n-- 10 of 74 --\n\n-- 11 of 74 --\n\n-- 12 of 74 --\n\n-- 13 of 74 --\n\n-- 14 of 74 --\n\n-- 15 of 74 --\n\n-- 16 of 74 --\n\n-- 17 of 74 --\n\n-- 18 of 74 --\n\n-- 19 of 74 --\n\n-- 20 of 74 --\n\n-- 21 of 74 --\n\n-- 22 of 74 --\n\n-- 23 of 74 --\n\n-- 24 of 74 --\n\n-- 25 of 74 --\n\n-- 26 of 74 --\n\n-- 27 of 74 --\n\n-- 28 of 74 --\n\n-- 29 of 74 --\n\n-- 30 of 74 --\n\n-- 31 of 74 --\n\n-- 32 of 74 --\n\n-- 33 of 74 --\n\n-- 34 of 74 --\n\n-- 35 of 74 --\n\n-- 36 of 74 --\n\n-- 37 of 74 --\n\n-- 38 of 74 --",
+          "relevance_score": 1
+        },
+        {
+          "chunk_index": 1,
+          "page_number": 1,
+          "content": "4 --\n\n-- 33 of 74 --\n\n-- 34 of 74 --\n\n-- 35 of 74 --\n\n-- 36 of 74 --\n\n-- 37 of 74 --\n\n-- 38 of 74 --\n\n-- 39 of 74 --\n\n-- 40 of 74 --\n\n-- 41 of 74 --\n\n-- 42 of 74 --\n\n-- 43 of 74 --\n\n-- 44 of 74 --\n\n-- 45 of 74 --\n\n-- 46 of 74 --\n\n-- 47 of 74 --\n\n-- 48 of 74 --\n\n-- 49 of 74 --\n\n-- 50 of 74 --\n\n-- 51 of 74 --\n\n-- 52 of 74 --\n\n-- 53 of 74 --\n\n-- 54 of 74 --\n\n-- 55 of 74 --\n\n-- 56 of 74 --\n\n-- 57 of 74 --\n\n-- 58 of 74 --\n\n-- 59 of 74 --\n\n-- 60 of 74 --\n\n-- 61 of 74 --\n\n-- 62 of 74 --\n\n-- 63 of 74 --\n\n-- 64 of 74 --\n\n-- 65 of 74 --\n\n-- 66 of 74 --\n\n-- 67 of 74 --\n\n-- 68 of 74 --\n\n-- 69 of 74 --",
+          "relevance_score": 1
+        },
+        {
+          "chunk_index": 2,
+          "page_number": 1,
+          "content": "4 --\n\n-- 64 of 74 --\n\n-- 65 of 74 --\n\n-- 66 of 74 --\n\n-- 67 of 74 --\n\n-- 68 of 74 --\n\n-- 69 of 74 --\n\n-- 70 of 74 --\n\n-- 71 of 74 --\n\n-- 72 of 74 --\n\n-- 73 of 74 --\n\n-- 74 of 74 --",
+          "relevance_score": 1
+        }
+      ],
+      "created_at": "2026-10-11T17:16:06.809Z"
+    },
+    {
+      "id": 4,
+      "document_id": 4,
+      "question": "why are you not giving answers directly",
+      "answer": "I apologize for any frustration! My goal is to provide **clear, direct, and accurate answers** while helping you learn and prepare for your exams. \n\nHere is how I work and why my responses might have seemed indirect:\n\n1. **Grounded in Course Material:** I check your uploaded document (**\"Signal System_260912_144655.pdf\"**) to ensure the answers match your specific syllabus, formulas, and terminology (with citations like **[Page X]**).\n2. **Concept Clarity:** Rather than just dropping a single formula without context, I often provide the underlying steps or definitions so you can apply them to different exam problems.\n\n### Going Forward:\nI will make sure my answers are **concise, straight to the point, and directly answer what you ask**. \n\nWhat specific question or problem from your **Signals and Systems** notes can I solve or explain for you right now?",
+      "sources": [
+        {
+          "chunk_index": 20,
+          "page_number": 21,
+          "content": "Inverse Z-Transform Methods:\n1. Partial Fraction Expansion: Decompose H(z) into first and second-order terms and use transform lookup tables.\n2. Power Series / Long Division: Expand H(z) into negative powers of z, where the coefficients yield x[n] directly.\n3. Contour Integration: Using Cauchy Residue Theorem: x[n] = (1 / 2*pi*j) * contour_integral X(z) * z^(n-1) dz.",
+          "relevance_score": 3.859
+        },
+        {
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time signals x(t) are defined along a continuous independent time continuum t in R. Discrete-time signals x[n] are defined at integer index values n in Z, commonly obtained by periodic sampling with interval Ts.",
+          "relevance_score": 0
+        },
+        {
+          "chunk_index": 1,
+          "page_number": 2,
+          "content": "Elementary Signals:\n1. Unit Impulse Function delta(t): Characterized by zero value for all t != 0 and infinite height at t = 0 with unit area: integral from -infinity to +infinity of delta(t) dt = 1. The sifting property states: integral of x(t)*delta(t - t0) dt = x(t0).\n2. Unit Step Function u(t): Defined as u(t) = 1 for t >= 0 and u(t) = 0 for t < 0. Related to delta(t) via d/dt[u(t)] = delta(t).",
+          "relevance_score": 0
+        },
+        {
+          "chunk_index": 2,
+          "page_number": 3,
+          "content": "Signal Operations & Classifications:\nTransformations of independent variable: Time shifting x(t - t0) (delay if t0 > 0, advance if t0 < 0), Time reversal x(-t), and Time scaling x(at) (compression if |a| > 1, expansion if 0 < |a| < 1).\nEnergy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt. Average power P = lim T->inf (1/2T) integral from -T to +T |x(t)|^2 dt. An energy signal has 0 < E < inf and P = 0. A power signal has 0 < P < inf and E = inf.",
+          "relevance_score": 0
+        }
+      ],
+      "created_at": "2026-10-11T17:24:21.046Z"
+    },
+    {
+      "id": 5,
+      "document_id": 4,
+      "question": "What is convolution and what are its properties?",
+      "answer": "### What is Convolution?\n\n**Convolution** is a mathematical operation that expresses the output $y(t)$ (or $y[n]$) of a **Linear Time-Invariant (LTI) system** given an input signal $x(t)$ and the system's impulse response $h(t)$ **[Page 7]**.\n\nAn LTI system is completely characterized by its impulse response ($h(t) = T\\{\\delta(t)\\}$). The convolution can be defined for both continuous-time and discrete-time domains:\n\n*   **Continuous-Time Convolution Integral [Page 7]:**\n    $$y(t) = x(t) * h(t) = \\int_{-\\infty}^{+\\infty} x(\\tau) h(t - \\tau) \\, d\\tau$$\n\n*   **Discrete-Time Convolution Sum [Page 7]:**\n    $$y[n] = x[n] * h[n] = \\sum_{k=-\\infty}^{+\\infty} x[k] h[n - k]$$\n\n---\n\n### Key Properties of Convolution\n\nAccording to the document notes, convolution satisfies several fundamental algebraic and transform properties:\n\n#### 1. Commutative Property **[Page 8]**\nThe order of the signals does not affect the output:\n$$x(t) * h(t) = h(t) * x(t)$$\n\n#### 2. Associative Property **[Page 8]**\nConvolution can be grouped in any order:\n$$[x(t) * h_1(t)] * h_2(t) = x(t) * [h_1(t) * h_2(t)]$$\n* **System Interpretation:** A cascade (series) connection of two LTI systems with impulse responses $h_1(t)$ and $h_2(t)$ can be replaced by a single overall impulse response $h(t) = h_1(t) * h_2(t)$.\n\n#### 3. Distributive Property **[Page 8]**\nConvolution is distributive over addition:\n$$x(t) * [h_1(t) + h_2(t)] = x(t) * h_1(t) + x(t) * h_2(t)$$\n* **System Interpretation:** A parallel connection of two LTI systems combines their impulse responses through standard addition: $h(t) = h_1(t) + h_2(t)$.\n\n#### 4. Convolution in the Frequency Domain (Fourier Transform) **[Page 14]**\nConvolution in the time domain corresponds to point-by-point multiplication in the frequency domain:\n$$x(t) * h(t) \\ \\longleftrightarrow\\ X(j\\omega) \\cdot H(j\\omega)$$\nThis property makes frequency-domain analysis particularly powerful, as solving differential equations or finding system outputs reduces to simple algebraic multiplication.",
+      "sources": [
+        {
+          "chunk_index": 13,
+          "page_number": 14,
+          "content": "Key Properties of Fourier Transform:\n1. Linearity: a*x1(t) + b*x2(t) <-> a*X1(jw) + b*X2(jw).\n2. Time Shifting: x(t - t0) <-> exp(-j * w * t0) * X(jw).\n3. Frequency Shifting: exp(j * w0 * t) * x(t) <-> X(j(w - w0)).\n4. Convolution in Time: x(t) * h(t) <-> X(jw) * H(jw). Convolution in time corresponds to point-by-point multiplication in frequency domain!\n5. Differentiation in Time: d/dt[x(t)] <-> (j*w) * X(jw).\n6. Parseval Energy Theorem: integral |x(t)|^2 dt = (1 / (2*pi)) * integral |X(jw)|^2 dw.",
+          "relevance_score": 6.346
+        },
+        {
+          "chunk_index": 7,
+          "page_number": 8,
+          "content": "Properties of Convolution:\n1. Commutative Property: x(t) * h(t) = h(t) * x(t).\n2. Associative Property: [x(t) * h1(t)] * h2(t) = x(t) * [h1(t) * h2(t)]. Series/cascade connection of LTI systems can be combined into h(t) = h1(t) * h2(t).\n3. Distributive Property: x(t) * [h1(t) + h2(t)] = x(t)*h1(t) + x(t)*h2(t). Parallel connection combines impulse responses by addition.",
+          "relevance_score": 6.058
+        },
+        {
+          "chunk_index": 6,
+          "page_number": 7,
+          "content": "Chapter 3: Linear Time-Invariant (LTI) Systems and Convolution\nLTI systems are completely characterized by their impulse response h(t) = T{delta(t)}.\nContinuous-Time Convolution Integral:\ny(t) = x(t) * h(t) = integral from -infinity to +infinity of x(tau) * h(t - tau) dtau.\nDiscrete-Time Convolution Sum:\ny[n] = x[n] * h[n] = sum from k = -infinity to +infinity of x[k] * h[n - k].",
+          "relevance_score": 4.473
+        },
+        {
+          "chunk_index": 3,
+          "page_number": 4,
+          "content": "Chapter 2: System Properties and Classifications\nA system takes an input signal x(t) and produces an output signal y(t) according to a transformation operator y(t) = T{x(t)}.\n1. Linearity: A system is linear if it satisfies the superposition principle (additivity and homogeneity): T{a*x1(t) + b*x2(t)} = a*T{x1(t)} + b*T{x2(t)} for all scalar constants a and b.",
+          "relevance_score": 3.043
+        }
+      ],
+      "created_at": "2026-10-11T17:24:38.832Z"
+    },
+    {
+      "id": 6,
+      "document_id": 4,
+      "question": "what is signal",
+      "answer": "In signals and systems, a **signal** is defined fundamentally as:\n\n> **A signal** is a function of one or more independent variables (most commonly time, $t$) that conveys information about the state, behavior, or nature of a physical phenomenon or system.\n\n---\n\n### How Signals are Defined and Characterized in Your Course Material\n\nWhile the document notes focus on the mathematical operations and classifications rather than a single introductory sentence, they present signals through the following core concepts:\n\n#### 1. Mathematical Representation\n* **Continuous-Time Signals:** Denoted as $x(t)$, where the independent variable $t$ is continuous **[Page 3]**.\n* **Discrete-Time Signals:** Denoted as $x[n] = x(n T_s)$, obtained by sampling a continuous signal at discrete intervals $T_s$ **[Page 22]**.\n\n---\n\n#### 2. Signal Classifications (Energy & Power) **[Page 3]**\nSignals are classified based on their total energy and average power:\n* **Energy Signal:** A signal with finite total energy and zero average power ($0 < E < \\infty$ and $P = 0$).\n  $$\\text{Total Energy: } E = \\int_{-\\infty}^{+\\infty} |x(t)|^2 \\, dt$$\n* **Power Signal:** A signal with finite, non-zero average power and infinite energy ($0 < P < \\infty$ and $E = \\infty$).\n  $$\\text{Average Power: } P = \\lim_{T \\to \\infty} \\frac{1}{2T} \\int_{-T}^{+T} |x(t)|^2 \\, dt$$\n\n---\n\n#### 3. Basic Operations on Signals **[Page 3]**\nSignals undergo transformations of their independent variable:\n* **Time Shifting:** $x(t - t_0)$ (causes a delay if $t_0 > 0$, or an advance if $t_0 < 0$)\n* **Time Reversal:** $x(-t)$ (reflects the signal across the vertical axis)\n* **Time Scaling:** $x(at)$ (compresses the signal if $|a| > 1$, or expands it if $0 < |a| < 1$)\n\n---\n\n#### 4. Role in Systems **[Page 4]**\nA signal serves as the **input** $x(t)$ to a system, which processes it via a transformation operator $T\\{\\cdot\\}$ to produce an **output signal** $y(t)$:\n$$y(t) = T\\{x(t)\\}$$",
+      "sources": [
+        {
+          "chunk_index": 2,
+          "page_number": 3,
+          "content": "Signal Operations & Classifications:\nTransformations of independent variable: Time shifting x(t - t0) (delay if t0 > 0, advance if t0 < 0), Time reversal x(-t), and Time scaling x(at) (compression if |a| > 1, expansion if 0 < |a| < 1).\nEnergy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt. Average power P = lim T->inf (1/2T) integral from -T to +T |x(t)|^2 dt. An energy signal has 0 < E < inf and P = 0. A power signal has 0 < P < inf and E = inf.",
+          "relevance_score": 2.765
+        },
+        {
+          "chunk_index": 23,
+          "page_number": 24,
+          "content": "Ideal Signal Reconstruction:\nUsing an ideal lowpass filter with cutoff wc = ws/2 and gain Ts, the continuous-time signal is reconstructed via Whittaker-Shannon interpolation formula:\nx(t) = sum from n = -infinity to +infinity of x(n*Ts) * sinc((t - n*Ts) / Ts),\nwhere sinc(u) = sin(pi*u) / (pi*u).",
+          "relevance_score": 2.743
+        },
+        {
+          "chunk_index": 3,
+          "page_number": 4,
+          "content": "Chapter 2: System Properties and Classifications\nA system takes an input signal x(t) and produces an output signal y(t) according to a transformation operator y(t) = T{x(t)}.\n1. Linearity: A system is linear if it satisfies the superposition principle (additivity and homogeneity): T{a*x1(t) + b*x2(t)} = a*T{x1(t)} + b*T{x2(t)} for all scalar constants a and b.",
+          "relevance_score": 2.607
+        },
+        {
+          "chunk_index": 21,
+          "page_number": 22,
+          "content": "Chapter 8: Sampling Theorem and Signal Reconstruction\nNyquist-Shannon Sampling Theorem:\nA continuous-time bandlimited signal x(t) with highest frequency f_max (or bandwidth w_max = 2*pi*f_max) can be uniquely and completely reconstructed from its samples x[n] = x(n*Ts) if and only if the sampling frequency fs satisfies:\nfs >= 2 * f_max  (or ws >= 2 * w_max).\nThe threshold frequency fs_nyquist = 2 * f_max is called the Nyquist rate.",
+          "relevance_score": 2.544
+        }
+      ],
+      "created_at": "2026-10-11T17:31:16.509Z"
+    },
+    {
+      "id": 7,
+      "document_id": null,
+      "document_name": "All Documents (3 PDFs)",
+      "question": "What is digital signal processing?",
+      "answer": "### Direct Answer (Signal System_260912_144655.pdf)\n\n> An analog Anti-Aliasing Lowpass Filter is placed prior to the Analog-to-Digital Converter (ADC) to remove any spectral content above fs/2 before sampling.\n\n> Chapter 10: Analog and Digital Filter Foundations\n\n> Signal Operations & Classifications:\n\n> Energy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt.\n\n> An energy signal has 0 < E < inf and P = 0.\n\n*Referenced from **Signal System_260912_144655.pdf** [Page 23].*",
+      "sources": [
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 22,
+          "page_number": 23,
+          "content": "Aliasing and Anti-Aliasing Filters:\nIf sampling occurs at fs < 2*f_max (undersampling), spectral replicas overlap in the frequency domain, creating irreversible frequency distortion called aliasing.\nAn analog Anti-Aliasing Lowpass Filter is placed prior to the Analog-to-Digital Converter (ADC) to remove any spectral content above fs/2 before sampling.",
+          "relevance_score": 3.717
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 25,
+          "page_number": 26,
+          "content": "Chapter 10: Analog and Digital Filter Foundations\nFilter Types: Lowpass, Highpass, Bandpass, and Bandstop filters.\nSpecifications: Passband ripple delta_p, Stopband attenuation delta_s, Passband cutoff wp, Stopband cutoff ws.\nButterworth Filter: Maximally flat magnitude response in the passband with no ripple: |H(jw)|^2 = 1 / [1 + (w/wc)^(2N)].\nChebyshev Type I Filter: Equiripple passband and monotonic stopband, providing steeper roll-off than Butterworth for the same filter order N.",
+          "relevance_score": 3.406
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 2,
+          "page_number": 3,
+          "content": "Signal Operations & Classifications:\nTransformations of independent variable: Time shifting x(t - t0) (delay if t0 > 0, advance if t0 < 0), Time reversal x(-t), and Time scaling x(at) (compression if |a| > 1, expansion if 0 < |a| < 1).\nEnergy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt. Average power P = lim T->inf (1/2T) integral from -T to +T |x(t)|^2 dt. An energy signal has 0 < E < inf and P = 0. A power signal has 0 < P < inf and E = inf.",
+          "relevance_score": 2.918
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 23,
+          "page_number": 24,
+          "content": "Ideal Signal Reconstruction:\nUsing an ideal lowpass filter with cutoff wc = ws/2 and gain Ts, the continuous-time signal is reconstructed via Whittaker-Shannon interpolation formula:\nx(t) = sum from n = -infinity to +infinity of x(n*Ts) * sinc((t - n*Ts) / Ts),\nwhere sinc(u) = sin(pi*u) / (pi*u).",
+          "relevance_score": 2.895
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 3,
+          "page_number": 4,
+          "content": "Chapter 2: System Properties and Classifications\nA system takes an input signal x(t) and produces an output signal y(t) according to a transformation operator y(t) = T{x(t)}.\n1. Linearity: A system is linear if it satisfies the superposition principle (additivity and homogeneity): T{a*x1(t) + b*x2(t)} = a*T{x1(t)} + b*T{x2(t)} for all scalar constants a and b.",
+          "relevance_score": 2.752
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 21,
+          "page_number": 22,
+          "content": "Chapter 8: Sampling Theorem and Signal Reconstruction\nNyquist-Shannon Sampling Theorem:\nA continuous-time bandlimited signal x(t) with highest frequency f_max (or bandwidth w_max = 2*pi*f_max) can be uniquely and completely reconstructed from its samples x[n] = x(n*Ts) if and only if the sampling frequency fs satisfies:\nfs >= 2 * f_max  (or ws >= 2 * w_max).\nThe threshold frequency fs_nyquist = 2 * f_max is called the Nyquist rate.",
+          "relevance_score": 2.685
+        }
+      ],
+      "created_at": "2026-10-11T17:39:12.908Z"
+    },
+    {
+      "id": 8,
+      "document_id": null,
+      "document_name": "All Documents (3 PDFs)",
+      "question": "Compare the topics in my uploaded course notes",
+      "answer": "Based on your uploaded course notes, the materials span two distinct academic domains: **Cellular Biology and Bioenergetics** and **Electrical Engineering (Signals, Systems, and Signal Processing)**. \n\nBelow is a structured breakdown and comparative synthesis of the topics covered across your three documents.\n\n---\n\n### 1. Biological Sciences: Cellular Bioenergetics\n**Document:** `sample_biology_notes.pdf`\n\nThis document focuses on metabolic processes and energy transformations within living cells:\n* **Cellular Respiration:** The catabolic process that breaks down biological macromolecules to generate adenosine triphosphate (ATP), the primary cellular energy currency **[Document: sample_biology_notes.pdf | Page 1]**. The stages include:\n  1. *Glycolysis* (occurs in the cytoplasm; generates $2\\text{ ATP}$ and $2\\text{ NADH}$).\n  2. *Krebs Cycle / Citric Acid Cycle* (takes place in the mitochondrial matrix to produce electron carriers).\n  3. *Electron Transport Chain (ETC)* (drives high ATP yield via a proton gradient across the inner mitochondrial membrane).\n* **Photosynthesis:** The anabolic conversion of solar light photons into chemical energy stored in glucose bonds **[Document: sample_biology_notes.pdf | Page 1]**:\n  * *Light-dependent reactions:* Occur in the thylakoid membrane.\n  * *Calvin cycle (Light-independent):* Fixes $\\text{CO}_2$ into $\\text{G3P}$ carbohydrates.\n\n---\n\n### 2. Electrical & Computer Engineering: Signals and Systems\n**Documents:** `Signal System_260912_144655.pdf` and `digital_signal_processing_ch1.pdf`\n\nThese two documents form a sequential progression from foundational signal theory to discrete-time processing and frequency-domain analysis:\n\n#### A. Fundamentals of Signals & Systems\n**Document:** `Signal System_260912_144655.pdf`\n* **Signal Types:** Formulates signals mathematically as continuous-time $x(t)$ ($t \\in \\mathbb{R}$) or discrete-time $x[n]$ ($n \\in \\mathbb{Z}$), typically sampled at intervals $T_s$ **[Document: Signal System_260912_144655.pdf | Page 1]**.\n* **Elementary Signals:**\n  * *Unit Impulse Function $\\delta(t)$:* Zero for $t \\neq 0$, infinite at $t = 0$, with unit area $\\int_{-\\infty}^{\\infty} \\delta(t)\\,dt = 1$ and the sifting property $\\int_{-\\infty}^{\\infty} x(t)\\delta(t - t_0)\\,dt = x(t_0)$ **[Document: Signal System_260912_144655.pdf | Page 2]**.\n  * *Unit Step Function $u(t)$:* Equal to $1$ for $t \\ge 0$ and $0$ for $t < 0$, related to the impulse by $\\frac{d}{dt}[u(t)] = \\delta(t)$ **[Document: Signal System_260912_144655.pdf | Page 2]**.\n* **Signal Operations:** Transformations of the independent variable, including time shifting ($x(t - t_0)$), time reversal ($x(-t)$), and time scaling ($x(at)$) **[Document: Signal System_260912_144655.pdf | Page 3]**.\n* **Energy and Power Classification:** \n  * Total energy: $E = \\int_{-\\infty}^{\\infty} |x(t)|^2\\,dt$\n  * Average power: $P = \\lim_{T \\to \\infty} \\frac{1}{2T} \\int_{-T}^{T} |x(t)|^2\\,dt$\n  * Differentiates energy signals ($0 < E < \\infty, P = 0$) from power signals ($0 < P < \\infty, E = \\infty$) **[Document: Signal System_260912_144655.pdf | Page 3]**.\n\n#### B. Discrete-Time Signals & Digital Signal Processing (DSP)\n**Document:** `digital_signal_processing_ch1.pdf`\n* **Bridging Continuous and Discrete Domains:** Employs the **Nyquist-Shannon Sampling Theorem** to define the boundary for lossless continuous-to-discrete conversion, requiring sampling frequency $f_s \\ge 2 f_{\\max}$ **[Document: digital_signal_processing_ch1.pdf | Page 1]**.\n* **Transform Domain Analysis:** \n  * *Discrete Fourier Transform (DFT):* Converts a length-$N$ sequence of complex numbers into discrete frequency components **[Document: digital_signal_processing_ch1.pdf | Page 1]**.\n  * *Z-Transform & Region of Convergence (ROC):* Evaluates the stability of Linear Time-Invariant (LTI) discrete systems based on pole locations relative to the unit circle **[Document: digital_signal_processing_ch1.pdf | Page 1]**.\n\n---\n\n### Comparative Synthesis\n\n| Feature / Dimension | `sample_biology_notes.pdf` | `Signal System_260912_144655.pdf` | `digital_signal_processing_ch1.pdf` |\n| :--- | :--- | :--- | :--- |\n| **Field** | Cellular Biology / Biochemistry | Signals & Systems (Introductory ECE) | Digital Signal Processing (Advanced ECE) |\n| **Core Subject** | Metabolic pathways (Energy storage & breakdown) | Time-domain continuous & discrete signal properties | Discrete frequency transforms and LTI system stability |\n| **Primary Domain** | Biochemical / Organic ($e^-$, $\\text{H}^+$ gradients, ATP) | Continuous/Discrete time ($t \\in \\mathbb{R}$, $n \\in \\mathbb{Z}$) | Discrete frequency & complex $z$-plane ($f_s$, DFT, ROC) |\n| **Key Mathematical Tools** | Stoichiometric yields ($2\\text{ ATP}$, $2\\text{ NADH}$) | Integrals, derivatives, piecewise functions ($\\delta(t)$, $u(t)$) | Inequalities ($f_s \\ge 2f_{\\max}$), sequence transforms (DFT, Z-transform) |\n\n**Relationship across documents:**\n* The two engineering files are directly linked: `Signal System_260912_144655.pdf` introduces basic signal definitions and sampling concepts that `digital_signal_processing_ch1.pdf` relies on for sampling theorem constraints, discrete frequency analysis (DFT), and filter/system stability (Z-transform).\n* `sample_biology_notes.pdf` is completely independent, covering biological energy transduction mechanisms.",
+      "sources": [
+        {
+          "document_id": 1,
+          "document_name": "sample_biology_notes.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 4: Cellular Respiration and Energy\nCellular respiration is the process by which biological macromolecules are broken down\nto produce ATP, the universal energy currency of cells.\nKey Stages of Cellular Respiration:\n1. Glycolysis: Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.\n2. Krebs Cycle (Citric Acid Cycle): Occurs in mitochondrial matrix; yields electron carriers.\n3. Electron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 1,
+          "document_name": "sample_biology_notes.pdf",
+          "chunk_index": 1,
+          "page_number": 1,
+          "content": "ctron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --\n\nChapter 5: Photosynthesis and Chloroplasts\nPhotosynthesis converts solar light photons into organic chemical bonds (glucose).\nLight-dependent reactions take place in the thylakoid membrane.\nThe Calvin cycle (light-independent) fixes carbon dioxide into G3P carbohydrates.\n\n-- 2 of 2 --",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 2,
+          "document_name": "digital_signal_processing_ch1.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time signals x(t) are defined along a continuous independent time continuum t in R. Discrete-time signals x[n] are defined at integer index values n in Z, commonly obtained by periodic sampling with interval Ts.",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 1,
+          "page_number": 2,
+          "content": "Elementary Signals:\n1. Unit Impulse Function delta(t): Characterized by zero value for all t != 0 and infinite height at t = 0 with unit area: integral from -infinity to +infinity of delta(t) dt = 1. The sifting property states: integral of x(t)*delta(t - t0) dt = x(t0).\n2. Unit Step Function u(t): Defined as u(t) = 1 for t >= 0 and u(t) = 0 for t < 0. Related to delta(t) via d/dt[u(t)] = delta(t).",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 2,
+          "page_number": 3,
+          "content": "Signal Operations & Classifications:\nTransformations of independent variable: Time shifting x(t - t0) (delay if t0 > 0, advance if t0 < 0), Time reversal x(-t), and Time scaling x(at) (compression if |a| > 1, expansion if 0 < |a| < 1).\nEnergy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt. Average power P = lim T->inf (1/2T) integral from -T to +T |x(t)|^2 dt. An energy signal has 0 < E < inf and P = 0. A power signal has 0 < P < inf and E = inf.",
+          "relevance_score": 0.75
+        }
+      ],
+      "created_at": "2026-10-11T17:42:51.381Z"
+    },
+    {
+      "id": 9,
+      "document_id": null,
+      "document_name": "All Documents (3 PDFs)",
+      "question": "What is discrete time signal?",
+      "answer": "A **discrete-time signal** is a mathematical sequence or function defined only at discrete integer index values rather than over a continuous time continuum. \n\n---\n\n### 1. Fundamental Definition\n* A discrete-time signal is formally represented as **$x[n]$**, where the independent variable **$n \\in \\mathbb{Z}$** is an integer index **[Document: Signal System_260912_144655.pdf | Page 1]**.\n* Unlike continuous-time signals $x(t)$, which are defined for all real numbers $t \\in \\mathbb{R}$, discrete-time signals are only defined at discrete points in time and are undefined between consecutive integers **[Document: Signal System_260912_144655.pdf | Page 1]**.\n\n---\n\n### 2. Generation via Periodic Sampling\nDiscrete-time signals are commonly obtained by sampling a continuous-time signal $x(t)$ at uniform, periodic time intervals $T_s$ such that:\n$$x[n] = x(n T_s)$$\nwhere $T_s$ is the sampling interval **[Document: Signal System_260912_144655.pdf | Page 1]**.\n\nTo reconstruct the continuous signal accurately without loss of information, the sampling must satisfy the **Nyquist-Shannon Sampling Theorem**:\n$$f_s \\ge 2 f_{\\max}$$\nwhere $f_s = \\frac{1}{T_s}$ is the sampling frequency and $f_{\\max}$ is the highest frequency present in the continuous signal **[Document: digital_signal_processing_ch1.pdf | Page 1]**.\n\n---\n\n### 3. Key Operations and Representations\n\n* **Discrete-Time Convolution Sum:** \n  When a discrete-time signal $x[n]$ passes through a Linear Time-Invariant (LTI) system with impulse response $h[n]$, the output sequence $y[n]$ is computed via the convolution sum:\n  $$y[n] = x[n] * h[n] = \\sum_{k=-\\infty}^{+\\infty} x[k] h[n - k]$$\n  **[Document: Signal System_260912_144655.pdf | Page 7]**\n\n* **Transform-Domain Representations:**\n  * **Z-Transform:** A fundamental tool for analyzing discrete-time signals and LTI system stability, defined as:\n    $$X(z) = \\sum_{n=-\\infty}^{+\\infty} x[n] z^{-n}$$\n    where $z = r e^{j\\omega}$ is a complex variable **[Document: Signal System_260912_144655.pdf | Page 19]**.\n  * **Discrete-Time Fourier Transform (DTFT):** Obtained by evaluating the Z-transform on the unit circle ($|z| = 1$, $r = 1$), yielding $X(e^{j\\omega})$ **[Document: Signal System_260912_144655.pdf | Page 19]**.\n  * **Discrete Fourier Transform (DFT):** Used in digital signal processing to convert a finite sequence of $N$ samples into its discrete frequency components **[Document: digital_signal_processing_ch1.pdf | Page 1]**.",
+      "sources": [
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 19,
+          "page_number": 20,
+          "content": "Region of Convergence (ROC) in the Z-Plane:\n1. The ROC is a ring or annular region centered at the origin: r_min < |z| < r_max.\n2. The ROC cannot contain any poles.\n3. For a causal discrete-time signal, the ROC extends outward from the outermost pole: |z| > r_max.\n4. Stability Criterion: A causal discrete-time LTI system is BIBO stable if and only if all poles of H(z) lie strictly inside the unit circle: |p_i| < 1.",
+          "relevance_score": 9.868
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time signals x(t) are defined along a continuous independent time continuum t in R. Discrete-time signals x[n] are defined at integer index values n in Z, commonly obtained by periodic sampling with interval Ts.",
+          "relevance_score": 9.774
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 18,
+          "page_number": 19,
+          "content": "Chapter 7: The Z-Transform for Discrete-Time Signals\nThe bilateral Z-Transform is defined as: X(z) = sum from n = -infinity to +infinity of x[n] * z^(-n), where z = r * exp(j*w) is a complex variable.\nThe Z-transform evaluated on the unit circle (|z| = 1, r = 1) reduces to the Discrete-Time Fourier Transform (DTFT): X(exp(jw)).",
+          "relevance_score": 8.216
+        },
+        {
+          "document_id": 2,
+          "document_name": "digital_signal_processing_ch1.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --",
+          "relevance_score": 8.008
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 2,
+          "page_number": 3,
+          "content": "Signal Operations & Classifications:\nTransformations of independent variable: Time shifting x(t - t0) (delay if t0 > 0, advance if t0 < 0), Time reversal x(-t), and Time scaling x(at) (compression if |a| > 1, expansion if 0 < |a| < 1).\nEnergy and Power Signals: Total energy E = integral from -inf to +inf |x(t)|^2 dt. Average power P = lim T->inf (1/2T) integral from -T to +T |x(t)|^2 dt. An energy signal has 0 < E < inf and P = 0. A power signal has 0 < P < inf and E = inf.",
+          "relevance_score": 7.79
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 6,
+          "page_number": 7,
+          "content": "Chapter 3: Linear Time-Invariant (LTI) Systems and Convolution\nLTI systems are completely characterized by their impulse response h(t) = T{delta(t)}.\nContinuous-Time Convolution Integral:\ny(t) = x(t) * h(t) = integral from -infinity to +infinity of x(tau) * h(t - tau) dtau.\nDiscrete-Time Convolution Sum:\ny[n] = x[n] * h[n] = sum from k = -infinity to +infinity of x[k] * h[n - k].",
+          "relevance_score": 7.584
+        }
+      ],
+      "created_at": "2026-10-11T17:44:56.222Z"
+    },
+    {
+      "id": 10,
+      "document_id": null,
+      "document_name": "All Documents (4 PDFs)",
+      "question": "what is bjt",
+      "answer": "Based on the course materials, a **Bipolar Junction Transistor (BJT)** is a fundamental power semiconductor device classified under power transistors **[Document: Power Electronics notes (501).pdf | Page 1]**. \n\n### 1. Key Definitions & Terminology\n* **Bipolar Nature:** The term **\"bipolar\"** denotes that the electric current flow inside the device is carried by the movement of **both charge carriers** (holes and electrons) **[Document: Power Electronics notes (501).pdf | Page 3]**.\n* **Control Mechanism:** A BJT is a **current-controlled device**, meaning the output current (collector current) is governed by the input control current supplied to its base terminal **[Document: Power Electronics notes (501).pdf | Page 10]**.\n\n---\n\n### 2. Device Terminals\nA BJT is a three-terminal device consisting of **[Document: Power Electronics notes (501).pdf | Page 3]**:\n1. **Base ($B$):** The control terminal.\n2. **Collector ($C$):** The terminal through which majority carriers leave the device.\n3. **Emitter ($E$):** The terminal that emits carriers into the base region.\n\n---\n\n### 3. Operational Characteristics in Power Electronics\n* **Conduction Losses:** BJTs are characterized by having **low on-state conduction losses** compared to field-effect devices **[Document: Power Electronics notes (501).pdf | Page 22]**.\n* **Switching Role:** Like other power transistors, a BJT can be operated across a load line between the cutoff region (OFF state) and the saturation region (ON state) to act as an electronic power switch **[Document: Power Electronics notes (501).pdf | Page 13]**.",
+      "sources": [
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 5,
+          "page_number": 1,
+          "content": "$0.25\\,I_{RM}$ is reached.\n* **Softness Factor ($S$-factor):**\n$$S\\text{-factor} = \\frac{t_a}{t_b}$$\n\n#### Power Transistors Types:\n1. **Bipolar Junction Transistors (BJT)**\n2. **Metal Oxide Semiconductor Field-Effect Transistors (MOSFET)**\n3. **Insulated Gate Bipolar Transistors (IGBT)**\n\n---\n\n### Page 3\n#### 1. Power BJT (Bipolar Junction Transistor)\n* A BJT has three terminals named: **Collector ($C$)**, **Emitter ($E$)**, and **Base ($B$)**.\n* The term \"bipolar\" denotes that current flow in the device is due to the movement of both holes and electrons.",
+          "relevance_score": 5.733
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 36,
+          "page_number": 1,
+          "content": "turn-on and turn-off times.\n* **Applications:** DC/AC motor drives, UPS systems, induction heating.\n\n---\n\n### Page 22 – Page 25\n#### IGBT (Insulated Gate Bipolar Transistor)\n* Also known as IGT, MOSIGT, COMFET (Conductivity Modulated FET).\n* Combines the **high input impedance** and high speed of a Power MOSFET with the **low on-state conduction loss** of a BJT.\n* **Terminals:** Gate ($G$), Collector ($C$), Emitter ($E$).\n* Voltage-controlled device (controlled by $V_{GE}$).",
+          "relevance_score": 4.008
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 9,
+          "page_number": 1,
+          "content": "* **Breakdown & Breakover Voltage:** Beyond safe operating voltage limits, device enters breakdown.\n\n#### 2. Power MOSFET\n* A Power MOSFET has three terminals: **Drain ($D$)**, **Source ($S$)**, and **Gate ($G$)**.\n* **Comparison:**\n* BJT is a **current-controlled** device.\n* MOSFET is a **voltage-controlled** device.\n* **Basic Structure:** N-Channel Enhancement Type Power MOSFET consists of a $p$-substrate with heavily doped $n^+$ regions forming source and drain, separated by a channel controlled by an insulated gate electrode.\n\n---",
+          "relevance_score": 3.953
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 2,
+          "page_number": 1,
+          "content": "ctronic Circuit.\n* **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit.\n\n* **Key Concepts:**\n* The control of electric motor devices requires control of electric power.\n* Power electronics is based on the switching of power semiconductor devices.\n\n#### Broad Categorization of Power Semiconductor Devices:\n1. **Power Diodes** (e.g., ratings up to $600\\text{ V}, 4500\\text{ A}$)\n2. **Transistors** (BJT, MOSFET, IGBT)\n3. **Thyristors** (e.g., ratings up to $10\\text{ kV}, 300\\text{ A}, 30\\text{ MW}$)",
+          "relevance_score": 3.812
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 37,
+          "page_number": 1,
+          "content": "** Gate ($G$), Collector ($C$), Emitter ($E$).\n* Voltage-controlled device (controlled by $V_{GE}$).\n\n#### Structural and Operational Features:\n* Four layers ($P^+-N^--P-N^+$). The $P^+$ substrate injects minority carriers into the wide $N^-$ drift region during conduction, reducing resistivity (conductivity modulation).\n* **Output Characteristics:** Resembles BJT ($I_C$ vs $V_{CE}$ controlled by $V_{GE}$).\n* **Transfer Characteristics:** Similar to MOSFET ($I_C$ vs $V_{GE}$ above threshold voltage $V_{GET}$).\n* **Advantages:**\n* Simple voltage drive circuitry.\n* Fast switching speed ($\\sim 20\\text{ kHz}$).\n* High voltage and current handling ($1200\\text{ V}, 500\\text{ A}$).\n* **Disadvantages:** Possibility of dynamic latch-up; cannot block high reverse voltage.",
+          "relevance_score": 3.457
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 12,
+          "page_number": 1,
+          "content": "$V_{GS}$.\n* Device remains OFF until $V_{GS}$ exceeds the threshold voltage $V_{GST}$ ($V_{th}$).\n2. **Output Characteristics:**\n* Plot of drain current $I_D$ versus drain-source voltage $V_{DS}$ for different values of $V_{GS}$ ($V_{GS5} > V_{GS4} > V_{GS3} > V_{GS2} > V_{GS1}$).\n* A load line intersects the output characteristics at points $A$ (ON state / saturation) and $B$ (OFF state / cutoff), functioning as a switch like a BJT.\n3. **Switching Characteristics:**\n* Heavily influenced by internal capacitances ($C_{gs}, C_{gd}, C_{ds}$) and internal impedance of the gate drive circuit.\n* **Turn-on Delay Time ($t_{dn}$):** Time during which input capacitance charges to gate threshold voltage $V_{GST}$.\n* **Rise Time ($t_r$):** Time during which gate voltage rises from $V_{GST}$ to full gate voltage $V_{GSP}$ sufficient to drive the device into full conduction.",
+          "relevance_score": 3.018
+        }
+      ],
+      "created_at": "2026-10-11T18:04:18.473Z"
+    },
+    {
+      "id": 11,
+      "document_id": null,
+      "document_name": "All Documents (4 PDFs)",
+      "question": "what is thyresitor",
+      "answer": "Based on your course materials, a **Thyristor** is defined as follows:\n\n### Definition and Role\nA **Thyristor** is a major category of **power semiconductor switching devices** used in power electronics to control and convert electric power **[Document: Power Electronics notes (501).pdf | Page 1]**. Power electronic systems rely on the switching operations of these semiconductor devices to regulate power delivered from a main power source to a load.\n\n---\n\n### Classification & Key Specifications\nWithin the broad categorization of power semiconductor devices, thyristors are distinguished alongside power diodes and transistors:\n\n1. **Power Diodes** (e.g., ratings up to $600\\text{ V}$, $4500\\text{ A}$)\n2. **Transistors** (BJT, MOSFET, IGBT)\n3. **Thyristors** — Designed for high-power switching capabilities, with typical operating ratings reaching up to:\n   * **Voltage Rating:** Up to $10\\text{ kV}$\n   * **Current Rating:** Up to $300\\text{ A}$\n   * **Power Handling:** Up to $30\\text{ MW}$\n\n**Citation:** **[Document: Power Electronics notes (501).pdf | Page 1]**",
+      "sources": [
+        {
+          "document_id": 1,
+          "document_name": "sample_biology_notes.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 4: Cellular Respiration and Energy\nCellular respiration is the process by which biological macromolecules are broken down\nto produce ATP, the universal energy currency of cells.\nKey Stages of Cellular Respiration:\n1. Glycolysis: Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.\n2. Krebs Cycle (Citric Acid Cycle): Occurs in mitochondrial matrix; yields electron carriers.\n3. Electron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 2,
+          "document_name": "digital_signal_processing_ch1.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time signals x(t) are defined along a continuous independent time continuum t in R. Discrete-time signals x[n] are defined at integer index values n in Z, commonly obtained by periodic sampling with interval Ts.",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Here is the comprehensive extraction and compilation of the academic study text, lecture notes, circuit analyses, formulas, and solved numerical problems from the manuscript, organized sequentially by **Units** and **Pages**.\n\n---\n\n# UNIT 1: POWER SEMICONDUCTOR DEVICES\n\n---",
+          "relevance_score": 0.85
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 1,
+          "page_number": 1,
+          "content": "organized sequentially by **Units** and **Pages**.\n\n---\n\n# UNIT 1: POWER SEMICONDUCTOR DEVICES\n\n---\n\n### Page 1\n#### Block Diagram of a Typical Power Electronic System\n* **Elements:**\n* **Command Signal** $\\rightarrow$ **Control Unit** $\\rightarrow$ **Digital Circuit** $\\rightarrow$ **Power Electronic Circuit** $\\rightarrow$ **Load**\n* **Main Power Source** supplies the Power Electronic Circuit.\n* **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit.",
+          "relevance_score": 0.75
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 2,
+          "page_number": 1,
+          "content": "ctronic Circuit.\n* **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit.\n\n* **Key Concepts:**\n* The control of electric motor devices requires control of electric power.\n* Power electronics is based on the switching of power semiconductor devices.\n\n#### Broad Categorization of Power Semiconductor Devices:\n1. **Power Diodes** (e.g., ratings up to $600\\text{ V}, 4500\\text{ A}$)\n2. **Transistors** (BJT, MOSFET, IGBT)\n3. **Thyristors** (e.g., ratings up to $10\\text{ kV}, 300\\text{ A}, 30\\text{ MW}$)",
+          "relevance_score": 0.75
+        }
+      ],
+      "created_at": "2026-10-11T18:09:37.201Z"
+    },
+    {
+      "id": 12,
+      "document_id": null,
+      "document_name": "All Documents (4 PDFs)",
+      "question": "What is discrete time signal?",
+      "answer": "### Synthesized Answer (All Documents (4 PDFs))\n\nHere are the relevant findings retrieved across your uploaded documents:\n\n#### 📄 Signal System_260912_144655.pdf\n> For a causal discrete-time signal, the ROC extends outward from the outermost pole: |z| > r_max. Stability Criterion: A causal discrete-time LTI system is BIBO stable if and only if all poles of H(z) lie strictly inside the unit circle: |p_i| < 1.\n\n*Source: **Signal System_260912_144655.pdf** [Page 20]*\n\n#### 📄 digital_signal_processing_ch1.pdf\n> ECE301: Discrete-Time Signals & Systems\n1. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --\n\n*Source: **digital_signal_processing_ch1.pdf** [Page 1]*\n\n#### 📄 Power Electronics notes (501).pdf\n> ---\n\n# UNIT 1: POWER SEMICONDUCTOR DEVICES\n\n---\n\n### Page 1\n#### Block Diagram of a Typical Power Electronic System\n* **Elements:**\n* **Command Signal** $\\rightarrow$ **Control Unit** $\\rightarrow$ **Digital Circuit** $\\rightarrow$ **Power Electronic Circuit** $\\rightarrow$ **Load**\n* **Main Power Source** supplies the Power Electronic Circuit. * **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit.\n\n*Source: **Power Electronics notes (501).pdf** [Page 1]*\n\n",
+      "sources": [
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 19,
+          "page_number": 20,
+          "content": "Region of Convergence (ROC) in the Z-Plane:\n1. The ROC is a ring or annular region centered at the origin: r_min < |z| < r_max.\n2. The ROC cannot contain any poles.\n3. For a causal discrete-time signal, the ROC extends outward from the outermost pole: |z| > r_max.\n4. Stability Criterion: A causal discrete-time LTI system is BIBO stable if and only if all poles of H(z) lie strictly inside the unit circle: |p_i| < 1.",
+          "relevance_score": 13.915
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 1: Introduction to Signals and Systems\nA signal is a formal mathematical function that conveys information about the state or behavior of a physical system. Continuous-time signals x(t) are defined along a continuous independent time continuum t in R. Discrete-time signals x[n] are defined at integer index values n in Z, commonly obtained by periodic sampling with interval Ts.",
+          "relevance_score": 13.756
+        },
+        {
+          "document_id": 4,
+          "document_name": "Signal System_260912_144655.pdf",
+          "chunk_index": 18,
+          "page_number": 19,
+          "content": "Chapter 7: The Z-Transform for Discrete-Time Signals\nThe bilateral Z-Transform is defined as: X(z) = sum from n = -infinity to +infinity of x[n] * z^(-n), where z = r * exp(j*w) is a complex variable.\nThe Z-transform evaluated on the unit circle (|z| = 1, r = 1) reduces to the Discrete-Time Fourier Transform (DTFT): X(exp(jw)).",
+          "relevance_score": 11.44
+        },
+        {
+          "document_id": 2,
+          "document_name": "digital_signal_processing_ch1.pdf",
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --",
+          "relevance_score": 11.114
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 1,
+          "page_number": 1,
+          "content": "organized sequentially by **Units** and **Pages**.\n\n---\n\n# UNIT 1: POWER SEMICONDUCTOR DEVICES\n\n---\n\n### Page 1\n#### Block Diagram of a Typical Power Electronic System\n* **Elements:**\n* **Command Signal** $\\rightarrow$ **Control Unit** $\\rightarrow$ **Digital Circuit** $\\rightarrow$ **Power Electronic Circuit** $\\rightarrow$ **Load**\n* **Main Power Source** supplies the Power Electronic Circuit.\n* **Feedback Signal** feeds back from the Load / Power Circuit to the Control Unit.",
+          "relevance_score": 4.299
+        },
+        {
+          "document_id": 7,
+          "document_name": "Power Electronics notes (501).pdf",
+          "chunk_index": 20,
+          "page_number": 1,
+          "content": "signal.\n* **Reverse Breakover Voltage ($V_{BR}$):** Maximum reverse voltage before avalanche occurs.\n\n---",
+          "relevance_score": 4.294
+        }
+      ],
+      "created_at": "2026-10-11T18:09:54.744Z"
     }
   ],
   "activity": [
+    {
+      "id": "chat_question-1791742194744-6ntp",
+      "type": "chat_question",
+      "title": "Asked AI: \"What is discrete time signal?\"",
+      "description": "RAG query on All Documents (4 PDFs)",
+      "timestamp": "2026-10-11T18:09:54.744Z",
+      "meta": {
+        "document_name": "All Documents (4 PDFs)"
+      }
+    },
+    {
+      "id": "chat_question-1791742177201-m96x",
+      "type": "chat_question",
+      "title": "Asked AI: \"what is thyresitor\"",
+      "description": "RAG query on All Documents (4 PDFs)",
+      "timestamp": "2026-10-11T18:09:37.201Z",
+      "meta": {
+        "document_name": "All Documents (4 PDFs)"
+      }
+    },
+    {
+      "id": "chat_question-1791741858473-sgs9",
+      "type": "chat_question",
+      "title": "Asked AI: \"what is bjt\"",
+      "description": "RAG query on All Documents (4 PDFs)",
+      "timestamp": "2026-10-11T18:04:18.473Z",
+      "meta": {
+        "document_name": "All Documents (4 PDFs)"
+      }
+    },
+    {
+      "id": "document_uploaded-1791741687226-epf5",
+      "type": "document_uploaded",
+      "title": "Uploaded: Power Electronics notes (501).pdf",
+      "description": "99 pages • 9383.5 KB",
+      "timestamp": "2026-10-11T18:01:27.226Z",
+      "meta": {
+        "pages": 99
+      }
+    },
+    {
+      "id": "chat_question-1791740696222-6em1",
+      "type": "chat_question",
+      "title": "Asked AI: \"What is discrete time signal?\"",
+      "description": "RAG query on All Documents (3 PDFs)",
+      "timestamp": "2026-10-11T17:44:56.222Z",
+      "meta": {
+        "document_name": "All Documents (3 PDFs)"
+      }
+    },
+    {
+      "id": "chat_question-1791740571381-j50l",
+      "type": "chat_question",
+      "title": "Asked AI: \"Compare the topics in my uploaded course notes\"",
+      "description": "RAG query on All Documents (3 PDFs)",
+      "timestamp": "2026-10-11T17:42:51.381Z",
+      "meta": {
+        "document_name": "All Documents (3 PDFs)"
+      }
+    },
+    {
+      "id": "chat_question-1791740352909-9cco",
+      "type": "chat_question",
+      "title": "Asked AI: \"What is digital signal processing?\"",
+      "description": "RAG query on All Documents (3 PDFs)",
+      "timestamp": "2026-10-11T17:39:12.909Z",
+      "meta": {
+        "document_name": "All Documents (3 PDFs)"
+      }
+    },
+    {
+      "id": "chat_question-1791739876509-7rtj",
+      "type": "chat_question",
+      "title": "Asked AI: \"what is signal\"",
+      "description": "Grounded query on Signal System_260912_144655.pdf",
+      "timestamp": "2026-10-11T17:31:16.509Z",
+      "meta": {
+        "document_name": "Signal System_260912_144655.pdf"
+      }
+    },
+    {
+      "id": "document_uploaded-1791739805078-83qf",
+      "type": "document_uploaded",
+      "title": "Uploaded: test_sample.pdf",
+      "description": "1 pages • 0.4 KB",
+      "timestamp": "2026-10-11T17:30:05.078Z",
+      "meta": {
+        "pages": 1
+      }
+    },
+    {
+      "id": "document_uploaded-1791739802032-t00h",
+      "type": "document_uploaded",
+      "title": "Uploaded: test_sample.pdf",
+      "description": "1 pages • 0.4 KB",
+      "timestamp": "2026-10-11T17:30:02.032Z",
+      "meta": {
+        "pages": 1
+      }
+    },
+    {
+      "id": "chat_question-1791739478832-ldd8",
+      "type": "chat_question",
+      "title": "Asked AI: \"What is convolution and what are its properties?\"",
+      "description": "Grounded query on Signal System_260912_144655.pdf",
+      "timestamp": "2026-10-11T17:24:38.832Z",
+      "meta": {
+        "document_name": "Signal System_260912_144655.pdf"
+      }
+    },
+    {
+      "id": "chat_question-1791739461047-rhns",
+      "type": "chat_question",
+      "title": "Asked AI: \"why are you not giving answers directly\"",
+      "description": "Grounded query on Signal System_260912_144655.pdf",
+      "timestamp": "2026-10-11T17:24:21.047Z",
+      "meta": {
+        "document_name": "Signal System_260912_144655.pdf"
+      }
+    },
+    {
+      "id": "chat_question-1791738966809-l2lc",
+      "type": "chat_question",
+      "title": "Asked AI: \"why are you not giving answers directly\"",
+      "description": "Grounded query on Signal System_260912_144655.pdf",
+      "timestamp": "2026-10-11T17:16:06.810Z",
+      "meta": {
+        "document_name": "Signal System_260912_144655.pdf"
+      }
+    },
+    {
+      "id": "chat_question-1791738949558-faac",
+      "type": "chat_question",
+      "title": "Asked AI: \"what is signal\"",
+      "description": "Grounded query on Signal System_260912_144655.pdf",
+      "timestamp": "2026-10-11T17:15:49.558Z",
+      "meta": {
+        "document_name": "Signal System_260912_144655.pdf"
+      }
+    },
+    {
+      "id": "document_uploaded-1791738940175-v1d2",
+      "type": "document_uploaded",
+      "title": "Uploaded: Signal System_260912_144655.pdf",
+      "description": "74 pages • 5125.3 KB",
+      "timestamp": "2026-10-11T17:15:40.175Z",
+      "meta": {
+        "pages": 74
+      }
+    },
     {
       "id": "document_uploaded-1791738674855-h5xn",
       "type": "document_uploaded",
@@ -247,10 +1821,10 @@
       }
     }
   ],
-  "nextDocId": 4,
-  "nextChunkId": 5,
-  "nextQuizId": 3,
-  "nextQuestionId": 7,
+  "nextDocId": 8,
+  "nextChunkId": 127,
+  "nextQuizId": 4,
+  "nextQuestionId": 12,
   "nextAttemptId": 2,
-  "nextQueryId": 2
+  "nextQueryId": 13
 }

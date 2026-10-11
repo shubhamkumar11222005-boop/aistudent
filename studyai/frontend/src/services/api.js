@@ -153,10 +153,11 @@ export async function deleteDocument(id) {
 }
 
 /**
- * Send a question to the AI Chat RAG engine for a specific document.
+ * Send a question to the AI Chat RAG engine across multiple documents or a specific document.
  * Target: POST /api/chat
  */
-export async function chatWithDocument(documentId, question) {
+export async function chatWithDocument(documentId, question, documentIds = null) {
+  const isAll = !documentId || documentId === 'all';
   const response = await fetch(`${API_BASE_URL}/api/chat`, {
     method: 'POST',
     headers: {
@@ -164,7 +165,8 @@ export async function chatWithDocument(documentId, question) {
       'Accept': 'application/json',
     },
     body: JSON.stringify({
-      document_id: Number(documentId),
+      document_id: isAll ? 'all' : Number(documentId),
+      document_ids: Array.isArray(documentIds) && documentIds.length > 0 ? documentIds : undefined,
       question: question.trim(),
     }),
   });
@@ -178,11 +180,15 @@ export async function chatWithDocument(documentId, question) {
 }
 
 /**
- * Fetch chat history for a specific document.
- * Target: GET /api/chat/history/{document_id}
+ * Fetch unified chat history across all documents or for a specific document.
+ * Target: GET /api/chat/history or GET /api/chat/history/{document_id}
  */
-export async function fetchChatHistory(documentId) {
-  const response = await fetch(`${API_BASE_URL}/api/chat/history/${documentId}`, {
+export async function fetchChatHistory(documentId = 'all') {
+  const endpoint = (!documentId || documentId === 'all')
+    ? `${API_BASE_URL}/api/chat/history`
+    : `${API_BASE_URL}/api/chat/history/${documentId}`;
+
+  const response = await fetch(endpoint, {
     headers: {
       'Accept': 'application/json',
     },
@@ -193,6 +199,25 @@ export async function fetchChatHistory(documentId) {
   }
 
   return await response.json();
+}
+
+/**
+ * Clear chat history.
+ * Target: DELETE /api/chat/history or DELETE /api/chat/history/{document_id}
+ */
+export async function clearChatHistory(documentId = 'all') {
+  const endpoint = (!documentId || documentId === 'all')
+    ? `${API_BASE_URL}/api/chat/history`
+    : `${API_BASE_URL}/api/chat/history/${documentId}`;
+
+  const response = await fetch(endpoint, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+    },
+  });
+
+  return response.ok;
 }
 
 /**
