@@ -1,0 +1,7 @@
+{
+  "name": "StudyAI",
+  "description": "AI-Powered Study Assistant with FastAPI backend, React/Vite frontend, SQLite/SQLAlchemy ORM, PyPDF document chunking, grounded AI Chat (RAG) with Gemini 3.6 Flash, AI Quiz Generator with difficulty levels, interactive quiz taking, score review with explanations, and real-time study analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

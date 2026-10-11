@@ -1,0 +1,256 @@
+{
+  "documents": [
+    {
+      "id": 1,
+      "filename": "1791738610506_sample_biology_notes.pdf",
+      "original_filename": "sample_biology_notes.pdf",
+      "file_size": 2590,
+      "page_count": 2,
+      "upload_date": "2026-10-11T17:10:10.506Z",
+      "processing_status": "completed",
+      "text_preview": "Chapter 4: Cellular Respiration and Energy\nCellular respiration is the process by which biological macromolecules are broken down\nto produce ATP, the universal energy currency of cells.\nKey Stages of ...",
+      "extracted_text": "Chapter 4: Cellular Respiration and Energy\nCellular respiration is the process by which biological macromolecules are broken down\nto produce ATP, the universal energy currency of cells.\nKey Stages of Cellular Respiration:\n1. Glycolysis: Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.\n2. Krebs Cycle (Citric Acid Cycle): Occurs in mitochondrial matrix; yields electron carriers.\n3. Electron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --\n\nChapter 5: Photosynthesis and Chloroplasts\nPhotosynthesis converts solar light photons into organic chemical bonds (glucose).\nLight-dependent reactions take place in the thylakoid membrane.\nThe Calvin cycle (light-independent) fixes carbon dioxide into G3P carbohydrates.\n\n-- 2 of 2 --\n\n",
+      "file_path": null
+    },
+    {
+      "id": 2,
+      "filename": "1791738610513_digital_signal_processing_ch1.pdf",
+      "original_filename": "digital_signal_processing_ch1.pdf",
+      "file_size": 1922,
+      "page_count": 1,
+      "upload_date": "2026-10-11T17:10:10.513Z",
+      "processing_status": "completed",
+      "text_preview": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Disc...",
+      "extracted_text": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --\n\n",
+      "file_path": null
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "document_id": 1,
+      "chunk_index": 0,
+      "page_number": 1,
+      "content": "Chapter 4: Cellular Respiration and Energy\nCellular respiration is the process by which biological macromolecules are broken down\nto produce ATP, the universal energy currency of cells.\nKey Stages of Cellular Respiration:\n1. Glycolysis: Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.\n2. Krebs Cycle (Citric Acid Cycle): Occurs in mitochondrial matrix; yields electron carriers.\n3. Electron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --"
+    },
+    {
+      "id": 2,
+      "document_id": 1,
+      "chunk_index": 1,
+      "page_number": 1,
+      "content": "ctron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --\n\nChapter 5: Photosynthesis and Chloroplasts\nPhotosynthesis converts solar light photons into organic chemical bonds (glucose).\nLight-dependent reactions take place in the thylakoid membrane.\nThe Calvin cycle (light-independent) fixes carbon dioxide into G3P carbohydrates.\n\n-- 2 of 2 --"
+    },
+    {
+      "id": 3,
+      "document_id": 2,
+      "chunk_index": 0,
+      "page_number": 1,
+      "content": "ECE301: Discrete-Time Signals & Systems\n1. Nyquist-Shannon Sampling Theorem:\nThe minimum sampling frequency fs must be at least twice the highest frequency fmax:\nfs >= 2 * fmax (Nyquist rate).\n2. Discrete Fourier Transform (DFT):\nTransforms a sequence of N complex numbers into another sequence of frequency components.\n3. Z-Transform and Region of Convergence (ROC):\nAnalysis of Linear Time-Invariant (LTI) system stability depends on pole locations relative to unit cir\n\n-- 1 of 1 --"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": 1,
+      "document_id": 1,
+      "title": "sample_biology_notes Quiz (Medium)",
+      "difficulty": "Medium",
+      "number_of_questions": 3,
+      "created_at": "2026-10-11T17:10:34.186Z",
+      "questions": [
+        {
+          "id": 1,
+          "quiz_id": 1,
+          "question_index": 0,
+          "question": "According to sample_biology_notes.pdf, what is the primary role or definition of \"Chapter 4\"?",
+          "options": [
+            "Cellular Respiration and Energy",
+            "the process by which biological macromolecules are broken down",
+            "",
+            "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules."
+          ],
+          "correct_answer": "Cellular Respiration and Energy",
+          "explanation": "In sample_biology_notes.pdf: Chapter 4 is specifically documented as: \"Cellular Respiration and Energy\"."
+        },
+        {
+          "id": 2,
+          "quiz_id": 1,
+          "question_index": 1,
+          "question": "According to sample_biology_notes.pdf, what is the primary role or definition of \"Cellular respiration\"?",
+          "options": [
+            "Cellular Respiration and Energy",
+            "",
+            "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.",
+            "the process by which biological macromolecules are broken down"
+          ],
+          "correct_answer": "the process by which biological macromolecules are broken down",
+          "explanation": "In sample_biology_notes.pdf: Cellular respiration is specifically documented as: \"the process by which biological macromolecules are broken down\"."
+        },
+        {
+          "id": 3,
+          "quiz_id": 1,
+          "question_index": 2,
+          "question": "According to sample_biology_notes.pdf, what is the primary role or definition of \"Glycolysis\"?",
+          "options": [
+            "",
+            "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.",
+            "Cellular Respiration and Energy",
+            "the process by which biological macromolecules are broken down"
+          ],
+          "correct_answer": "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.",
+          "explanation": "In sample_biology_notes.pdf: Glycolysis is specifically documented as: \"Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.\"."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "document_id": 1,
+      "title": "sample_biology_notes Quiz (Medium)",
+      "difficulty": "Medium",
+      "number_of_questions": 3,
+      "created_at": "2026-10-11T17:11:03.063Z",
+      "questions": [
+        {
+          "id": 4,
+          "quiz_id": 2,
+          "question_index": 0,
+          "question": "According to sample_biology_notes.pdf, what is the primary role or definition of \"Cellular respiration\"?",
+          "options": [
+            "the process by which biological macromolecules are broken down",
+            "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.",
+            "Occurs in mitochondrial matrix; yields electron carriers.",
+            "High ATP yield driven by proton gradient across inner membrane."
+          ],
+          "correct_answer": "the process by which biological macromolecules are broken down",
+          "explanation": "In sample_biology_notes.pdf: Cellular respiration is specifically documented as: \"the process by which biological macromolecules are broken down\"."
+        },
+        {
+          "id": 5,
+          "quiz_id": 2,
+          "question_index": 1,
+          "question": "According to sample_biology_notes.pdf, what is the primary role or definition of \"Glycolysis\"?",
+          "options": [
+            "the process by which biological macromolecules are broken down",
+            "Occurs in mitochondrial matrix; yields electron carriers.",
+            "High ATP yield driven by proton gradient across inner membrane.",
+            "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules."
+          ],
+          "correct_answer": "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.",
+          "explanation": "In sample_biology_notes.pdf: Glycolysis is specifically documented as: \"Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.\"."
+        },
+        {
+          "id": 6,
+          "quiz_id": 2,
+          "question_index": 2,
+          "question": "According to sample_biology_notes.pdf, what is the primary role or definition of \"Krebs Cycle (Citric Acid Cycle)\"?",
+          "options": [
+            "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.",
+            "High ATP yield driven by proton gradient across inner membrane.",
+            "Occurs in mitochondrial matrix; yields electron carriers.",
+            "the process by which biological macromolecules are broken down"
+          ],
+          "correct_answer": "Occurs in mitochondrial matrix; yields electron carriers.",
+          "explanation": "In sample_biology_notes.pdf: Krebs Cycle (Citric Acid Cycle) is specifically documented as: \"Occurs in mitochondrial matrix; yields electron carriers.\"."
+        }
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "id": 1,
+      "quiz_id": 2,
+      "score": 2,
+      "total_questions": 3,
+      "percentage": 66.7,
+      "user_answers": {
+        "4": "the process by which biological macromolecules are broken down",
+        "5": "Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.",
+        "6": "wrong option"
+      },
+      "completed_at": "2026-10-11T17:11:07.496Z"
+    }
+  ],
+  "queries": [
+    {
+      "id": 1,
+      "document_id": 1,
+      "question": "What is cellular respiration?",
+      "answer": "### Grounded Answer from sample_biology_notes.pdf\n\n> Key Stages of Cellular Respiration:\n1.\n\nThis information is referenced directly from page 1 of your notes.",
+      "sources": [
+        {
+          "chunk_index": 0,
+          "page_number": 1,
+          "content": "Chapter 4: Cellular Respiration and Energy\nCellular respiration is the process by which biological macromolecules are broken down\nto produce ATP, the universal energy currency of cells.\nKey Stages of Cellular Respiration:\n1. Glycolysis: Occurs in cytoplasm; yields 2 ATP and 2 NADH molecules.\n2. Krebs Cycle (Citric Acid Cycle): Occurs in mitochondrial matrix; yields electron carriers.\n3. Electron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --",
+          "relevance_score": 1
+        },
+        {
+          "chunk_index": 1,
+          "page_number": 1,
+          "content": "ctron Transport Chain: High ATP yield driven by proton gradient across inner membrane.\n\n-- 1 of 2 --\n\nChapter 5: Photosynthesis and Chloroplasts\nPhotosynthesis converts solar light photons into organic chemical bonds (glucose).\nLight-dependent reactions take place in the thylakoid membrane.\nThe Calvin cycle (light-independent) fixes carbon dioxide into G3P carbohydrates.\n\n-- 2 of 2 --",
+          "relevance_score": 1
+        }
+      ],
+      "created_at": "2026-10-11T17:10:28.424Z"
+    }
+  ],
+  "activity": [
+    {
+      "id": "document_uploaded-1791738674855-h5xn",
+      "type": "document_uploaded",
+      "title": "Uploaded: test_sample.pdf",
+      "description": "1 pages • 0.4 KB",
+      "timestamp": "2026-10-11T17:11:14.855Z",
+      "meta": {
+        "pages": 1
+      }
+    },
+    {
+      "id": "quiz_completed-1791738667496-2myb",
+      "type": "quiz_completed",
+      "title": "Completed: sample_biology_notes Quiz (Medium)",
+      "description": "Score: 2/3 (66.7%)",
+      "timestamp": "2026-10-11T17:11:07.496Z",
+      "meta": {
+        "score": 2,
+        "total": 3,
+        "percentage": 66.7,
+        "difficulty": "Medium"
+      }
+    },
+    {
+      "id": "chat_question-1791738628424-p0y9",
+      "type": "chat_question",
+      "title": "Asked AI: \"What is cellular respiration?\"",
+      "description": "Grounded query on sample_biology_notes.pdf",
+      "timestamp": "2026-10-11T17:10:28.424Z",
+      "meta": {
+        "document_name": "sample_biology_notes.pdf"
+      }
+    },
+    {
+      "id": "document_uploaded-1791738610513-djrs",
+      "type": "document_uploaded",
+      "title": "Uploaded: digital_signal_processing_ch1.pdf",
+      "description": "1 pages • 1.9 KB",
+      "timestamp": "2026-10-11T17:10:10.513Z",
+      "meta": {
+        "pages": 1
+      }
+    },
+    {
+      "id": "document_uploaded-1791738610507-qfem",
+      "type": "document_uploaded",
+      "title": "Uploaded: sample_biology_notes.pdf",
+      "description": "2 pages • 2.5 KB",
+      "timestamp": "2026-10-11T17:10:10.507Z",
+      "meta": {
+        "pages": 2
+      }
+    }
+  ],
+  "nextDocId": 4,
+  "nextChunkId": 5,
+  "nextQuizId": 3,
+  "nextQuestionId": 7,
+  "nextAttemptId": 2,
+  "nextQueryId": 2
+}
